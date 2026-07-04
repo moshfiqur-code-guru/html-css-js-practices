@@ -1,0 +1,109 @@
+
+ body{
+    margin: 0px;
+    padding: 0px;
+    background-color: #555;
+}
+
+
+#initial-block{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;    
+}
+#initial-block div {
+    /*height: 200px;
+    width: calc(33.33% - 3px);*/
+    /*border-left: 3px solid black;
+    border-top: 3px solid black;*/
+}
+#heder{
+    height: 100px;
+    display: flex;
+}
+#heder div{
+    height: 100%;
+    background-color: aliceblue;
+}
+#logo{
+    width: 25%;
+    margin-right: 2px;
+}
+#menu{
+    width: 75%;
+}
+
+#body-1{
+    height: 80px;
+    background-color: aliceblue ;
+    margin-top: 2px;
+    
+}
+#body-2{
+    height: 200px;
+    margin-top: 2px;
+    display: flex;
+}
+#body-2 div{
+    height: 100%;
+    background-color: aliceblue;
+}
+#block1{
+    width: 25%;
+}
+#block2{
+    width: 25%;
+    margin: 0px 2px;
+}
+#block3{
+    width: 25%;
+    margin-right: 2px;
+}
+#block4{
+    width: 25%;
+}
+#body-3{
+    height: 300px;
+    margin-top: 2px;
+    display: flex;
+}
+#body-3 div{
+    height: 100%;
+    background-color: aliceblue;
+}
+#block5{
+    width: 33.33%;
+}
+#block6{
+    width: 33.33%;
+    margin: 0px 2px;
+}
+#block7{
+     width: 33.33%;
+}
+#body-4{
+    height: 150px;
+    background-color: aliceblue ;
+    margin-top: 2px;
+}
+#body-5{
+  height: 100px;
+    margin-top: 2px;
+    display: flex;
+}
+#body-5 div{
+    height: 100%;
+    background-color: aliceblue;
+}
+#block8{
+    width: 35%;
+    margin-right: 2px;
+}
+#block9{
+    width: 65%;
+}
+#footer{
+   height: 200px;
+    background-color: aliceblue ;
+    margin-top: 2px;
+}
