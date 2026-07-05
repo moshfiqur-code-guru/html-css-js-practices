@@ -1,0 +1,53 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: blanchedalmond;
+}
+
+#main{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    margin-bottom: 5%;
+}
+#main div{
+    display: flex;
+}
+#top{
+    height: 100px;
+    margin: 2px 0px;
+}
+#top div{
+    height: 100%;
+    background-color: aquamarine;
+}
+#logo{
+    width: 20%;
+    margin-right: 2px;
+}
+#menu{
+    width: 80%;
+}
+#bottom{
+    height: 1000px;
+}
+#bottom div{
+    height: 100%;
+}
+#side-panel{
+    width: 25%;
+    margin-right: 2px;
+    background-color: aquamarine;
+}
+#body{
+    width: 75%;
+}
+#body div{
+
+}
+#block1{
+    height: 200px;
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: aquamarine;
+}

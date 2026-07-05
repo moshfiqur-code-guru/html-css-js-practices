@@ -11,12 +11,6 @@
     margin: auto;
     overflow: hidden;    
 }
-#initial-block div {
-    /*height: 200px;
-    width: calc(33.33% - 3px);*/
-    /*border-left: 3px solid black;
-    border-top: 3px solid black;*/
-}
 #heder{
     height: 100px;
     display: flex;
