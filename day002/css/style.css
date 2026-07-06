@@ -10,12 +10,11 @@ body{
     overflow: hidden;
     margin-bottom: 5%;
 }
-#main div{
-    display: flex;
-}
+
 #top{
     height: 100px;
     margin: 2px 0px;
+    display: flex
 }
 #top div{
     height: 100%;
@@ -30,24 +29,32 @@ body{
 }
 #bottom{
     height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
 }
-#bottom div{
-    height: 100%;
-}
+
 #side-panel{
     width: 25%;
     margin-right: 2px;
     background-color: aquamarine;
 }
-#body{
-    width: 75%;
-}
-#body div{
 
-}
+
 #block1{
     height: 200px;
     width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     background-color: aquamarine;
+}
+
+#block2{
+    height: 200px;
+    width: 100%;
+    margin-bottom: 2px;
+    background-color: aquamarine;
+}
+
+#content{
+    width: calc(75% - 2px);
+    
 }

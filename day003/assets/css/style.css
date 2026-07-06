@@ -1,0 +1,96 @@
+/*---------------------------- NORMALIZE ---------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/*---------------------------- COMMON STYLE ---------------------------*/
+.section{
+    padding: 0 0;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.center{
+    align-items: center;
+}
+.column{
+    flex-direction: column;
+}
+
+/*---------------------------- HEADER SECTION ---------------------------*/
+
+#header{
+    background: url(../img/background.png) center center / cover;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+.black-bar{
+    height: 100%;
+    width: 40%;
+    background-color: rgb(14, 11, 11);
+    position: absolute;
+    z-index: -1;
+}
+.container.header-container{
+    width: 90%;
+}
+nav{
+    color: #fff;
+}
+.logo{
+    color: #fff;
+    font-family: "Unbounded", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+}
+.menu{
+    font-family: "Gloock", serif;
+}
+.menu li a{
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 20px;
+    display: flex;
+}
+.seaech{
+    margin-left: 100px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.intro{
+    color: #fff;
+    font-family: "Gloock", serif;
+    padding-top: 100px;
+}
+.introduction{
+    font-size: 100px;
+}
+.other-context{
+    margin-top: 40px;
+}
+.other-context p{
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.other-context button{
+    background-color: rgb(255, 140, 0);
+    border: none;
+    padding: 20px 30px;
+    margin-top: 30px;
+    font-family: "Cal Sans", sans-serif;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
