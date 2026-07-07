@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>practic3</title>
+    <script src="https://unpkg.com/feather-icons"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Gloock&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Gloock&family=Unbounded:wght@200..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <section id="header" class="section">
-        <div id="black-bar" class="black-bar"></div>
-        <div class="container header-container">
-            <nav class="flex align-center">
+        <div class="black-bar"></div>
+
+        <nav>
+            <div class="container header-container flex align-center space-between nav-div">
                 <div class="logo">
                     <span>Sadik</span>
                 </div>
@@ -28,26 +34,145 @@
                         </ul>
                     </div>
                     <div class="search">
-                        <span>Search</span>
+                        @ <span>Search</span>
                     </div>
                 </div>
+            </div>
+        </nav>
 
-            </nav>
+        <div class="container header-container">
+
             <div class="intro">
                 <div class="introduction flex column">
-                    <span>We Make</span>
-                    <span>Creative Things</span>
-                    <span>Everyday</span>
+                    <span class="we">We Make</span>
+                    <span class="we">Creative <span class="things">Things<br></span>
+                        <span class="things">Everyday</span>
                 </div>
                 <div class="other-context">
                     <p>We are digital agency that helps immersive <br>and engaging user experiences that</p>
                     <button>view our works</button>
                 </div>
-
             </div>
 
         </div>
+
+        <div class="black-bar-bottom"></div>
+        <div class="address container header-container flex">
+            <div>
+
+                <ul class="center">
+                    <li>27 Division St, New York, NY </li>
+                    <li>10002, USA</li>
+                </ul>
+            </div>
+            <div>
+                <ul class="center">
+                    <li>+1 800 123 654</li>
+                    <li>frisk.agency@mail.com</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
+    <section id="marquee-section">
+        <marquee>
+            <span>
+                # We Give Unparalleled Flexibility
+            </span>
+        </marquee>
+    </section>
+
+    <section id="offers" class="section">
+        <div class="container">
+            <div class="section-title text-center">
+                <span>What We Can Do <br /> for Our Clients</span>
+            </div>
+
+            <div class="offer-list flex">
+                <div class="single-offer">
+                    <i data-feather="command"></i>
+                    <h3>Branding Design</h3>
+                    <p>Branding Design</p>
+                    <a href="#">VIEW DETAILS</a>
+                </div>
+
+                <div class="single-offer">
+                    <i data-feather="table"></i>
+                    <h3>Website Development</h3>
+                    <p>Website Development</p>
+                    <a href="#">VIEW DETAILS</a>
+                </div>
+                <div class="single-offer">
+                    <i data-feather="layers"></i>
+                    <h3>Illustration Modelling</h3>
+                    <p>Illustration Modelling</p>
+                    <a href="#">VIEW DETAILS</a>
+                </div>
+
+                <div class="single-offer">
+                    <i data-feather="shopping-bag"></i>
+                    <h3>Digital Marketing</h3>
+                    <p>Digital Marketing</p>
+                    <a href="#">VIEW DETAILS</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="service-range" class="section">
+        <div class="side-thumb">
+            <img src="assets/img/side img.jpg">
+        </div>
+        <div class="container flex end">
+             <div class="range-content">
+                <span class="range-content-title">We Offer a Wide <br />Range of Brand <br /> Services</span>
+                <p>We are a creative agency working with brands building insightful strategy, creating unique designs
+                    and crafting value</p>
+                <div>
+                    <ul>
+                        <li>
+                            <div class="flex space-between">
+                                <span>Branding</span>
+                                <span>86%</span>
+                            </div>
+                            <div class="bar"></div>
+                        </li>
+                        <li>
+                            <div class="flex space-between">
+                                <span>Development</span>
+                                <span>93%</span>
+                            </div>
+                            <div class="bar"></div>
+                        </li>
+                        <li>
+                            <div class="flex space-between">
+                                <span>Advertising</span>
+                                <span>71%</span>
+                            </div>
+                            <div class="bar"></div>
+                        </li>
+                        <li>
+                           <div class="flex space-between">
+                                <span>Marketing</span>
+                                <span>57%</span>
+                            </div>
+                            <div class="bar"></div>
+                        </li>
+                    </ul>
+                </div>    
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+    <script>
+        feather.replace();
+    </script>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
