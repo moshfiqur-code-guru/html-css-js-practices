@@ -34,6 +34,7 @@ a {
 .center {
     justify-content: center;
 }
+
 .end {
     justify-content: end;
 }
@@ -53,10 +54,12 @@ a {
 .container.header-container {
     width: 90%;
 }
-.text-center{
+
+.text-center {
     text-align: center;
 }
-.section-title{
+
+.section-title {
     font-family: "Gloock", serif;
     font-size: 60px;
     letter-spacing: 3px;
@@ -65,19 +68,62 @@ a {
 /*---------------------------- HEADER SECTION ---------------------------*/
 
 #header {
+    padding: 90px 0px;
     background: url(../img/background.png) center center / cover;
-    height: 80vh;
     position: relative;
     z-index: 1;
 }
-#header.scrolled nav{
-    padding: 50px 0px;
+nav {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
-    background-color: #e25d0a;
+    z-index: 1000;
+
+    padding: 30px 0;
+    background: transparent;
+
+    transition: padding .45s ease;
+}
+
+/* Create the orange background separately */
+nav::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #e25d0a;
+
+    transform: translateY(-100%);
+    opacity: 0;
+
+    transition:
+        transform .45s ease,
+        opacity .45s ease;
+
+    z-index: -1;
+}
+
+/* Menu animation */
+.logo,
+.menu{
+    transition:
+        transform .45s ease,
+        opacity .45s ease;
+}
+
+#header.scrolled nav{
+    padding: 5px 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+#header.scrolled nav::before{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#header.scrolled .logo,
+#header.scrolled .menu{
+    transform: scale(0.96);
 }
 
 .black-bar {
@@ -90,20 +136,19 @@ a {
     top: 0px;
     left: 0px;
 }
-/*.nav-div{
-    box-sizing: border-box;
-    margin-top: -100px;
-}*/
-nav {
-    justify-content: space-between;
-    transition: 1s;
-}
 
 .logo {
     color: #fff;
     font-family: "Unbounded", sans-serif;
     font-weight: 500;
     font-size: 30px;
+}
+
+.logo svg {
+    height: 35px;
+    width: 35px;
+    display: block;
+    padding-right: 10px;
 }
 
 .menu {
@@ -122,6 +167,13 @@ nav {
     margin: 30px;
     font-weight: 400;
     color: #fff;
+}
+
+.search svg {
+    height: 22px;
+    width: 22px;
+    display: block;
+    padding-right: 15px;
 }
 
 .intro {
@@ -160,18 +212,22 @@ nav {
     font-family: "Unbounded", sans-serif;
     font-size: 15px;
     font-weight: 600;
+    border-radius: 50px;
 }
 
 .address div {
     width: calc(50% - 60px);
     padding: 30px 0px;
-    margin: 30px;
+    margin: 30px 30px 0px 0px;
     background-color: #291801;
     font-family: "Gloock", serif;
     color: #fff;
     letter-spacing: 1.2px;
     text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
 }
+
 .black-bar-bottom {
     height: 150px;
     width: 100%;
@@ -180,83 +236,102 @@ nav {
     position: absolute;
     z-index: -1;
 }
+
 /*---------------- MARQUEE SECTION -----------------*/
-#marquee-section{
+#marquee-section {
     background-color: #e25d0a;
     color: #fff;
     font-family: "Gloock", serif;
     font-size: 50px;
-    margin-top: 42px;
     padding: 25px 10px;
+    margin-top: 60px;
 }
+
 /*----------------- OFFER SICTION ------------------*/
-.offer-list{
+.offer-list {
     font-family: "Unbounded", sans-serif;
 }
-.single-offer{
+
+.single-offer {
     background-color: bisque;
     width: calc(50% - 30px);
     padding: 40px;
     margin: 30px 15px 0px 15px;
     box-sizing: border-box;
+    border-radius: 40px;
 }
-.single-offer svg{
+
+.single-offer svg {
     height: 40px;
     width: 40px;
     padding-bottom: 40px;
 }
-.single-offer h3{
+
+.single-offer h3 {
     font-size: 25px;
     padding-bottom: 10px;
 }
-.single-offer p{
+
+.single-offer p {
     font-size: 18px;
     padding-bottom: 20px;
 }
-.single-offer a{
+
+.single-offer a {
     font-size: 15px;
     color: #793200;
 }
+
 /*----------------- SERVICE RANGE -----------------------*/
 
-#service-range{
-    background-color:#e25d0a ;
+#service-range {
+    background-color: #e25d0a;
     color: #fff;
     position: relative;
 }
-.range-content{
+
+.range-content {
     width: 40%;
     float: right;
 }
-.range-content-title{
-        font-family: "Gloock", serif;
+
+.range-content-title {
+    font-family: "Gloock", serif;
     font-size: 60px;
 }
-.range-content p{
-        font-family: "Gloock", serif;
+
+.range-content p {
+    font-family: "Gloock", serif;
     font-size: 25px;
     letter-spacing: 0.5px;
     padding: 30px 0px;
 }
-.side-thumb{
+
+.side-thumb {
     height: 93%;
     width: 50%;
     position: absolute;
     top: -70px;
+    left: 20px;
 }
-.side-thumb img{
+
+.side-thumb img {
     width: 100%;
     height: 100%;
+    border-radius: 30px;
 }
-.range-content ul li span{
+
+.range-content ul li span {
     font-size: 18px;
     font-family: "Unbounded", sans-serif;
     padding: 10px 0px;
     display: block;
 }
-.range-content .bar{
-    height: 3px;
-    border-top: 4px solid #fff;
+
+.range-content .bar {
+    height: 2px;
+    border: 1.5px solid #fff;
+    border-radius: 3px;
 }
 
 
