@@ -64,6 +64,10 @@ a {
     font-size: 60px;
     letter-spacing: 3px;
 }
+.animate__animated.animate__headShake {
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
 
 /*---------------------------- HEADER SECTION ---------------------------*/
 
@@ -128,13 +132,17 @@ nav::before{
 
 .black-bar {
     height: 100%;
-    width: 40%;
+    width: 100%;
     background-color: rgb(14, 11, 11);
     opacity: 1;
     position: absolute;
     z-index: -1;
     top: 0px;
     left: 0px;
+    transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.animation-start .black-bar{
+    width: 40%;
 }
 
 .logo {
@@ -159,14 +167,23 @@ nav::before{
 .menu li a {
     color: #fff;
     font-weight: 400;
-    padding: 20px;
+    padding: 10px;
+    margin: 10px;
     display: block;
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.menu li a:hover{
+    background:#ff9e61;
+    color: black;
+    border-radius: 30px;
+    padding: 10px 20px;
 }
 
 .search {
-    margin: 30px;
+    padding: 10px;
     font-weight: 400;
     color: #fff;
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .search svg {
@@ -174,6 +191,12 @@ nav::before{
     width: 22px;
     display: block;
     padding-right: 15px;
+}
+.search:hover{
+    background:#ff9e61;
+    color: #000;
+    border-radius: 30px;
+    padding: 10px 20px;
 }
 
 .intro {
@@ -187,7 +210,16 @@ nav::before{
 
 .we {
     color: rgb(255, 140, 0);
-    ;
+
+}
+.creative-line {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.creative {
+    color: rgb(255, 140, 0);
 }
 
 .things {
@@ -259,6 +291,10 @@ nav::before{
     margin: 30px 15px 0px 15px;
     box-sizing: border-box;
     border-radius: 40px;
+    transition: 300ms linear;
+}
+.single-offer:hover{
+    scale: 1.02;
 }
 
 .single-offer svg {
@@ -279,7 +315,15 @@ nav::before{
 
 .single-offer a {
     font-size: 15px;
-    color: #793200;
+    color: black;
+    background:#ff9e61;
+    padding: 10px 18px;
+    border-radius: 20px;
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.single-offer a:hover{
+    padding: 13px 21px;
+
 }
 
 /*----------------- SERVICE RANGE -----------------------*/
