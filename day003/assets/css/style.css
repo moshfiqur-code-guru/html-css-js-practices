@@ -64,6 +64,7 @@ a {
     font-size: 60px;
     letter-spacing: 3px;
 }
+
 .animate__animated.animate__headShake {
     animation-iteration-count: infinite;
     animation-duration: 2s;
@@ -77,6 +78,7 @@ a {
     position: relative;
     z-index: 1;
 }
+
 nav {
     position: fixed;
     top: 0;
@@ -91,7 +93,7 @@ nav {
 }
 
 /* Create the orange background separately */
-nav::before{
+nav::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -109,24 +111,24 @@ nav::before{
 
 /* Menu animation */
 .logo,
-.menu{
+.menu {
     transition:
         transform .45s ease,
         opacity .45s ease;
 }
 
-#header.scrolled nav{
+#header.scrolled nav {
     padding: 5px 0;
-    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
 }
 
-#header.scrolled nav::before{
+#header.scrolled nav::before {
     transform: translateY(0);
     opacity: 1;
 }
 
 #header.scrolled .logo,
-#header.scrolled .menu{
+#header.scrolled .menu {
     transform: scale(0.96);
 }
 
@@ -141,7 +143,8 @@ nav::before{
     left: 0px;
     transition: 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.animation-start .black-bar{
+
+.animation-start .black-bar {
     width: 40%;
 }
 
@@ -172,8 +175,9 @@ nav::before{
     display: block;
     transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.menu li a:hover{
-    background:#ff9e61;
+
+.menu li a:hover {
+    background: #ff9e61;
     color: black;
     border-radius: 30px;
     padding: 10px 20px;
@@ -192,8 +196,9 @@ nav::before{
     display: block;
     padding-right: 15px;
 }
-.search:hover{
-    background:#ff9e61;
+
+.search:hover {
+    background: #ff9e61;
     color: #000;
     border-radius: 30px;
     padding: 10px 20px;
@@ -212,6 +217,7 @@ nav::before{
     color: rgb(255, 140, 0);
 
 }
+
 .creative-line {
     display: flex;
     gap: 15px;
@@ -293,7 +299,8 @@ nav::before{
     border-radius: 40px;
     transition: 300ms linear;
 }
-.single-offer:hover{
+
+.single-offer:hover {
     scale: 1.02;
 }
 
@@ -316,12 +323,13 @@ nav::before{
 .single-offer a {
     font-size: 15px;
     color: black;
-    background:#ff9e61;
+    background: #ff9e61;
     padding: 10px 18px;
     border-radius: 20px;
     transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.single-offer a:hover{
+
+.single-offer a:hover {
     padding: 13px 21px;
 
 }
@@ -378,24 +386,88 @@ nav::before{
     border-radius: 3px;
 }
 
+/*-------------------- carousel ------------------*/
 
+.owl-carousel {
+    width: 100%;
+    margin: 40px 0;
+}
 
+.owl-carousel .item {
+    border-radius: 30px;
+    overflow: hidden;
+}
 
+.owl-carousel .item img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    display: block;
+}
 
+/* -------------- yearly list--------------- */
+.year-list {
+    padding: 60px;
+}
+.year-list div {
+    margin: 5px 0px;
+    padding: 10px 0px;
+    box-sizing: border-box;
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
+.year-list div:hover {
+    padding: 10px 15px;
+}
 
+.year-list-1 {
+    border-top: 3px black solid;
+}
 
+.year-list-2 {
+    border-bottom: 3px black solid;
 
+}
 
+.years {
+    width: 20%;
+    font-family: "Unbounded", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+}
 
-/* <script>
-        const header = document.getElementById("header");
+.short-note {
+    width: 20%;
+    font-family: "Unbounded", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    text-align: end;
+}
 
-        window.addEventListener("scroll", function () {
-            if (window.scrollY > 300) {
-                header.classList.add("scrolled");
-            } else {
-                header.classList.remove("scrolled");
-            }
-        });
-    </script>*/
+.years-title {
+    width: 60%;
+}
+
+.years-title h3 {
+    font-family: "Unbounded", sans-serif;
+    font-size: 24px;
+    display: block;
+    padding-bottom: 10px;
+}
+
+.years-title p {
+    font-family: "Unbounded", sans-serif;
+    font-size: 16px;
+    display: block;
+}
+
+/* ----------------- videos --------------- */
+
+.videos{
+    width: 100%;
+    height: 700px;
+    background: url(/day003/assets/img/background2.png) centet center / cover;
+    margin-bottom: 300px;
+}
