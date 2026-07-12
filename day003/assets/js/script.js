@@ -15,13 +15,17 @@ function addAClass() {
 
 $(document).ready(function () {
 
-   $(".owl-carousel").owlCarousel({
-    loop: true,
-    margin: 30,
-    stagePadding: 100,
-    nav: true,
-    dots: true,
-    items: 1
-});
 
+    $('.loop').owlCarousel({
+    center: true,
+    items:2,
+    loop:true,
+    margin:50,
+    dots:true,
+    responsive:{
+        600:{
+            items:2
+        }
+    }
+});
 });

@@ -76,7 +76,7 @@ a {
     padding: 90px 0px;
     background: url(../img/background.png) center center / cover;
     position: relative;
-    z-index: 1;
+    z-index: 99;
 }
 
 nav {
@@ -396,19 +396,66 @@ nav::before {
 .owl-carousel .item {
     border-radius: 30px;
     overflow: hidden;
+    position: relative;
+}
+
+.project-details {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 20%,
+            rgba(0, 0, 0, 0.6) 60%,
+            rgba(0, 0, 0, 0.9) 100%);
+    color: white;
+    padding: 40px;
+    z-index: 1;
+}
+
+.project-details div {
+    font-family: "Unbounded", sans-serif;
+    font-size: 20px;
+}
+
+.project-details svg {
+    height: 20px;
+    width: 20px;
+    padding-right: 10px;
+}
+
+.project-details h3 {
+    font-family: "Gloock", serif;
+    font-size: 35px;
+    letter-spacing: 2px;
+    padding-top: 10px;
+
 }
 
 .owl-carousel .item img {
     width: 100%;
-    height: 550px;
+    height: 450px;
+    border-radius: 30px;
     object-fit: cover;
     display: block;
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: 40px;
+
+}
+
+.item:hover img {
+    transform: scale(1.02);
+    transform-origin: top center;
+    height: 460px;
+
 }
 
 /* -------------- yearly list--------------- */
 .year-list {
     padding: 60px;
 }
+
 .year-list div {
     margin: 5px 0px;
     padding: 10px 0px;
@@ -455,6 +502,7 @@ nav::before {
     font-size: 24px;
     display: block;
     padding-bottom: 10px;
+    color: #fff;
 }
 
 .years-title p {
@@ -469,7 +517,8 @@ nav::before {
     position: relative;
     padding: 0;
 }
-.videos{
+
+.videos {
     width: calc(100% - 20px);
     height: 700px;
     background: url(../day003/assets/img/background2.png) centet center / cover;
@@ -478,6 +527,7 @@ nav::before {
     margin: 0 10px;
 
 }
+
 .play-button {
     width: 150px;
     height: 150px;
@@ -486,17 +536,34 @@ nav::before {
 
     transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.play-button svg{
+
+.play-button svg {
     height: 50px;
     width: 50px;
     transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.play-button:hover svg{
+
+.play-button:hover svg {
     height: 60px;
     width: 60px;
 }
-.play-button:hover{
+
+.play-button:hover {
     height: 140px;
     width: 140px;
     background-color: #ff3c00;
+}
+
+/* ------------ AIRTICAL-AND- NEWS--------------- */
+
+.news {
+    margin: 80px;
+}
+
+.news div {
+    background-color: #ff9e61;
+    height: 300px;
+    width: calc(33.33% - 40px);
+    margin: 10px;
+    box-sizing: border-box;
 }
