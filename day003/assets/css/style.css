@@ -465,9 +465,38 @@ nav::before {
 
 /* ----------------- videos --------------- */
 
+#videos-section {
+    position: relative;
+    padding: 0;
+}
 .videos{
-    width: 100%;
+    width: calc(100% - 20px);
     height: 700px;
-    background: url(/day003/assets/img/background2.png) centet center / cover;
-    margin-bottom: 300px;
+    background: url(../day003/assets/img/background2.png) centet center / cover;
+    background-color: #ff9e61;
+    border-radius: 25px;
+    margin: 0 10px;
+
+}
+.play-button {
+    width: 150px;
+    height: 150px;
+    background-color: #e25d0a;
+    border-radius: 50%;
+
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.play-button svg{
+    height: 50px;
+    width: 50px;
+    transition: 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.play-button:hover svg{
+    height: 60px;
+    width: 60px;
+}
+.play-button:hover{
+    height: 140px;
+    width: 140px;
+    background-color: #ff3c00;
 }
