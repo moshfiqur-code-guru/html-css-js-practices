@@ -215,7 +215,7 @@
                 </a>
             </div>
 
-             <div class="item">
+            <div class="item">
                 <a href="#">
                     <div class="project-details flex column end">
                         <div class="flex align-center">
@@ -241,7 +241,7 @@
                 </a>
             </div>
 
-             <div class="item">
+            <div class="item">
                 <a href="#">
                     <div class="project-details flex column end">
                         <div class="flex align-center">
@@ -267,7 +267,7 @@
                 </a>
             </div>
 
-             <div class="item">
+            <div class="item">
                 <a href="#">
                     <div class="project-details flex column end">
                         <div class="flex align-center">
@@ -294,56 +294,79 @@
             </div>
         </div>
 
-        <div class="year-list container">
+        <div class="yearly-achievement container">
 
-            <div class="year-list-1 flex space-between">
+            <div class="achievements flex space-between">
                 <div class="years"><span>2020</span></div>
-                <div class="years-title">
-                    <a href="#"><h3>New York Design Week</h3></a>
+                <div class="achievement-title">
+                    <a href="#">
+                        <h3>New York Design Week</h3>
+                    </a>
                     <p>We bring to life the most complex projects, specialize</p>
                 </div>
-                <div class="short-note"><span>Main developer</span></div>
+                <div class="author"><span>Main developer</span></div>
             </div>
 
-            <div class="year-list-1 flex space-between">
+            <div class="achievements flex space-between">
                 <div class="years"><span>2021</span></div>
-                <div class="years-title">
-                    <a href="#"><h3>The Blue Design Awards</h3></a>
+                <div class="achievement-title">
+                    <a href="#">
+                        <h3>The Blue Design Awards</h3>
+                    </a>
                     <p>We bring to life the most complex projects, specialize</p>
                 </div>
-                <div class="short-note"><span>Animator</span></div>
+                <div class="author"><span>Animator</span></div>
             </div>
 
-            <div class="year-list-1 flex space-between">
+            <div class="achievements flex space-between">
                 <div class="years"><span>2023</span></div>
-                <div class="years-title">
-                    <a href="#"><h3>Best Web Flow</h3></a>
+                <div class="achievement-title">
+                    <a href="#">
+                        <h3>Best Web Flow</h3>
+                    </a>
                     <p>We bring to life the most complex projects, specialize</p>
                 </div>
-                <div class="short-note"><span>Main developer</span></div>
+                <div class="author"><span>Main developer</span></div>
             </div>
 
-            <div class="year-list-1 year-list-2 flex space-between">
+            <div class="achievements flex space-between">
                 <div class="years"><span>2025</span></div>
-                <div class="years-title">
-                    <a href="#"><h3>Berlin Interactive Award</h3></a>
+                <div class="achievement-title">
+                    <a href="#">
+                        <h3>Berlin Interactive Award</h3>
+                    </a>
                     <p>We bring to life the most complex projects, specialize</p>
                 </div>
-                <div class="short-note"><span>Best innovations</span></div>
+                <div class="author"><span>Best innovations</span></div>
             </div>
 
         </div>
     </section>
 
-    <section id="videos-section" class="section">
-        <div>
-            <div class="videos flex center align-center">
-                <button class="play-button flex center align-center">
-                    <i data-feather="play"></i>
-                </button>
+
+    <section id="video-section" class="section">
+        <div class="container">
+            <div class="play-button flex center align-center">
+                <i data-feather="youtube"></i>
+            </div>
+            <div class="video-overlay flex align-center center">
+                <div id="player-window">
+                    <button class="close"><i data-feather="x-circle"></i></button>
+                    <img class="loader" src="/day003/assets/img/loding-ball.svg">
+                    <iframe 
+                        id="videoFrame"    
+                        width="560" height="315" 
+                        src=""
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
             </div>
         </div>
     </section>
+
+
     <section id="Articles-news" class="section">
         <div class="container">
             <div class="section-title text-center">

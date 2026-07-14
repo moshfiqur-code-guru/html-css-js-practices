@@ -13,9 +13,35 @@ function addAClass() {
 }
 
 
+
+const openButton = document.querySelector(".play-button");
+const closeButton = document.querySelector(".close");
+const video = document.querySelector(".video-overlay");
+const playerWindow = document.getElementById("player-window");
+const videoFrame = document.getElementById("videoFrame");
+
+openButton.addEventListener("click", videoOpener);
+
+closeButton.addEventListener("click", () => {
+    video.classList.remove("show");
+    videoFrame.src = "";
+});
+
+video.addEventListener("click", () => {
+    video.classList.remove("show");
+    videoFrame.src = "";
+});
+
+playerWindow.addEventListener("click", (e) => {
+    e.stopPropagation();
+});
+
+function videoOpener() {
+    video.classList.add("show");
+    videoFrame.src = "https://www.youtube.com/embed/xeXV1KoX034?autoplay=1&mute=1";
+}
+
 $(document).ready(function () {
-
-
     $('.loop').owlCarousel({
     center: true,
     items:2,
