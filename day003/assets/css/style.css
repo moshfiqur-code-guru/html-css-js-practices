@@ -281,7 +281,7 @@ nav::before {
   margin-top: 60px;
 }
 
-/*----------------- OFFER SICTION ------------------*/
+/*----------------- OFFER SeCTION ------------------*/
 .offer-list {
   font-family: "Unbounded", sans-serif;
 }
@@ -613,7 +613,7 @@ nav::before {
   cursor: pointer;
 }
 
-/* ------------ AIRTICAL-AND- NEWS--------------- */
+/* ------------ ARTICLE-AND- NEWS--------------- */
 
 .news-list {
   width: 90%;
@@ -685,8 +685,29 @@ nav::before {
   font-family: "Unbounded", sans-serif;
   font-size: 15px;
   font-weight: 300;
-  display: flex;
   color: #fff;
+}
+
+.read-more-box {
+  height: 20px;
+  overflow: hidden;
+  width: 130px;
+}
+
+.read-more-1 {
+  transition: transform 0.4s ease;
+}
+
+.read-more-2 {
+  transition: transform 0.4s ease;
+}
+
+.read-more-box:hover .read-more-1 {
+  transform: translatey(-20px);
+}
+
+.read-more-box:hover .read-more-2 {
+  transform: translatey(-20px);
 }
 
 .read-more svg {
@@ -725,10 +746,112 @@ nav::before {
   transform: translateX(-150px);
 }
 
-.read-more:hover+.bar .bar-1 {
+.read-more-box:hover+.bar .bar-1 {
   transform: translateX(150px);
 }
 
-.read-more:hover+.bar .bar-2 {
+.read-more-box:hover+.bar .bar-2 {
   transform: translateX(0);
+}
+
+/* ---------partners---------- */
+
+.partners {
+  padding-top: 150px;
+  width: 66.66%;
+  margin: auto;
+}
+
+.client-list-wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 2px solid #000;
+  border-right: 2px solid #000;
+}
+
+.client-list-wrap li {
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  padding: 0px 35px;
+}
+
+.effect {
+  height: 145px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.client-effect {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 35px;
+}
+
+.client-effect-1 {
+  display: block;
+  transition: transform 0.4s ease;
+
+}
+
+.client-effect-2 {
+  display: block;
+  transition: transform 0.4s ease;
+
+}
+
+.effect:hover .client-effect-1 {
+  transform: translatey(-39px);
+}
+
+.effect:hover .client-effect-2 {
+  transform: translatey(-39px);
+}
+
+/* ------------ lets-talk -------------- */
+
+#lets-talk {
+  background-color: #e25d0a;
+  color: #fff;
+}
+
+.lets-talk-sub-title {
+  padding: 30px;
+  font-family: "Unbounded", sans-serif;
+  font-size: 18px;
+  font-weight: 250;
+}
+
+.talk-button {
+  height: 50px;
+  width: 270px;
+  border: none;
+  border-radius: 25px;
+}
+
+.talk-button-effect {
+  font-family: "Unbounded", sans-serif;
+  font-size: 15px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.talk-button-effect-1 {
+  transition: transform 0.3s ease;
+}
+
+.talk-button-effect-2 {
+  transition: transform 0.3s ease;
+}
+
+.talk-button:hover .talk-button-effect-1 {
+  transform: translatey(-20px);
+}
+
+.talk-button:hover .talk-button-effect-2 {
+  transform: translatey(-19px);
 }
