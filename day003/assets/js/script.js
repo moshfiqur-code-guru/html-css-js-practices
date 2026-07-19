@@ -43,15 +43,30 @@ function videoOpener() {
 
 $(document).ready(function () {
     $('.loop').owlCarousel({
-    center: true,
-    items:2,
-    loop:true,
-    margin:50,
-    dots:true,
-    responsive:{
-        600:{
-            items:2
+        center: true,
+        items: 2,
+        loop: true,
+        margin: 50,
+        dots: true,
+        responsive: {
+            600: {
+                items: 2
+            }
         }
-    }
-});
+    });
+
+    const sendBtn = document.getElementById("send-btn");
+    const input = document.getElementById("email");
+    sendBtn.classList.add("disabled")
+    input.classList.add("disabled")
+    input.addEventListener("input", () => {
+        if (input.value.trim() === "") {
+            sendBtn.classList.add("disabled")
+            input.classList.add("disabled")
+        } else {
+            sendBtn.classList.remove("disabled")
+            input.classList.remove("disabled")
+        }
+    })
+
 });

@@ -855,3 +855,213 @@ nav::before {
 .talk-button:hover .talk-button-effect-2 {
   transform: translatey(-19px);
 }
+
+/* ------------- footer-section --------------- */
+.section.footer-section {
+  padding-bottom: 50px;
+}
+
+.links-cntact {
+  margin: auto;
+  width: 90%;
+  height: 400px;
+  font-family: "Unbounded", sans-serif;
+  color: #000;
+  border-bottom: 2px black solid;
+}
+
+.contact-us {
+  width: 50%;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+
+.links {
+  width: 25%;
+  padding: 0px 50px;
+  box-sizing: border-box;
+}
+
+.contact-info {
+  width: 25%;
+  padding-left: 70px;
+  box-sizing: border-box;
+}
+
+.widget_title {
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 40px;
+  width: 80%;
+}
+
+.mail-box {
+  width: 500px;
+  margin: 20px 0;
+}
+
+.contact-us input[type="email"] {
+  font-family: "Unbounded", sans-serif;
+  width: 500px;
+  padding: 5px 0;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  position: relative;
+}
+
+.contact-us input[type="email"].disabled {
+  border-bottom: 2px solid #999;
+}
+
+.contact-us input[type="email"] {
+  border-bottom: 2px solid #e25d0a;
+}
+
+input[type="email"]::placeholder {
+  color: #999;
+  font-family: "Unbounded", sans-serif;
+}
+
+#send-btn {
+  position: absolute;
+  left: 550px;
+  cursor: pointer;
+  color: #e25d0a;
+}
+
+#send-btn.disabled {
+  position: absolute;
+  color: #999;
+  pointer-events: none;
+}
+
+
+.discription {
+  font-size: 14px;
+  font-weight: 400;
+  width: 75%;
+  padding-top: 10px;
+  line-height: 1.5;
+}
+
+.links span {
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 20px;
+  display: block;
+}
+
+.links ul li a {
+  font-size: 18px;
+  font-weight: 400;
+  padding-bottom: 18px;
+  display: inline-block;
+  color: black;
+  position: relative;
+
+}
+
+.links ul li a::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #000;
+  left: 0;
+  bottom: 14px;
+  transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.links ul li a:hover::after {
+  width: 100%;
+}
+
+.contact-info span {
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 20px;
+  display: block;
+}
+
+.contact-info address {
+  font-size: 16px;
+  font-weight: 400;
+  padding-bottom: 20px;
+  display: block;
+}
+
+.ending {
+  width: 90%;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.ending span {
+  font-family: "Unbounded", sans-serif;
+  font-size: 15x;
+  font-weight: 300;
+}
+
+.ending svg {
+  height: 20px;
+  width: 20px;
+  display: block;
+  padding-left: 20px;
+  color: #000;
+}
+
+.social-links-effect {
+  height: 20px;
+  overflow: hidden;
+}
+
+.social-link-1 {
+  transition: transform 0.4s ease;
+}
+
+.social-link-2 {
+  transition: transform 0.4s ease;
+}
+
+.social-links-effect:hover .social-link-1 {
+  transform: translatey(-20px);
+}
+
+.social-links-effect:hover .social-link-2 {
+  transform: translatey(-20px);
+}
+
+.scroll-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 9999;
+}
+
+.scroll-top svg.progress-circle {
+  width: 50px;
+  height: 50px;
+  fill: transparent;
+}
+
+.arrow-up {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-49%, -55%);
+  background: transparent;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #ddd;
+  z-index: -2;
+}
+
+.scroll-top svg.progress-circle path {
+  stroke-width: 4;
+  stroke: #000
+}
