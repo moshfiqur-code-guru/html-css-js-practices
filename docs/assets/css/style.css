@@ -1034,9 +1034,19 @@ input[type="email"]::placeholder {
 
 .scroll-top {
   position: fixed;
+  cursor: pointer;
   right: 30px;
-  bottom: 30px;
+  bottom: -120px;
+  transform: scale(0);
+  transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1);
+  visibility: hidden;
   z-index: 9999;
+}
+
+.scroll-top.show {
+  visibility: visible;
+  transform: scale(1);
+  bottom: 20px;
 }
 
 .scroll-top svg.progress-circle {
@@ -1047,9 +1057,10 @@ input[type="email"]::placeholder {
 
 .arrow-up {
   position: absolute;
+  cursor: pointer;
   top: 50%;
   left: 50%;
-  transform: translate(-49%, -55%);
+  transform: translate(-51%, -55%);
   background: transparent;
   width: 46px;
   height: 46px;
@@ -1057,11 +1068,11 @@ input[type="email"]::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid #ddd;
+  border: 2px solid #ddd;
   z-index: -2;
 }
 
 .scroll-top svg.progress-circle path {
   stroke-width: 4;
-  stroke: #000
+  stroke: black;
 }

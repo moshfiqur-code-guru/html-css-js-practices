@@ -70,3 +70,46 @@ $(document).ready(function () {
     })
 
 });
+
+/*
+* SCROLL TOP ANIMATION & SCROLLING
+* PROGRESS DETECTION
+*  */
+
+const path = document.querySelector(".progress-circle path");
+const total_length = path.getTotalLength();
+const scrollTopBtn = document.querySelector(".scroll-top");
+path.style.strokeDasharray = total_length;
+path.style.strokeDashoffset = total_length;
+
+function toggleVisible(top, hight) {
+
+    if (top > hight) {
+        scrollTopBtn.classList.add("show");
+    } else {
+        scrollTopBtn.classList.remove("show");
+    }
+}
+
+function scrollToTopOnClick() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateScrollProgress() {
+
+    const currentScrollPos = scrollY;
+    const screenHight = innerHeight;
+    toggleVisible(currentScrollPos, screenHight)
+    const docTotalHight = document.documentElement.scrollHeight;
+    const scrollableHight = docTotalHight - screenHight;
+    const scrollPosition = currentScrollPos / scrollableHight;
+    const alreadyProgressed = scrollPosition * total_length;
+    const progressable = total_length - alreadyProgressed;
+    path.style.strokeDashoffset = progressable;
+    console.log(progressable)
+}
+
+
+updateScrollProgress()
+window.addEventListener("scroll", updateScrollProgress);
+scrollTopBtn.addEventListener("click", scrollToTopOnClick);
