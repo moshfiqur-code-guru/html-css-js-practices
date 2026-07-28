@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js002</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee&family=Comfortaa:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Unbounded:wght@200..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section class="section">
+        <div class="form-area">
+            <div id="dashboard" class="dashboard ">
+                <h1>Welcome, </h1>
+                <p>you are successfully logged in. This is your dashboard</p>
+                <h3>July 28, 2026</h3>
+            </div>
+            <div id="title">
+                <h1>User Registration System</h1>
+            </div>
+            <div id="registration-form">
+                <fieldset>
+                    <legend>Registration Form</legend>
+
+                    <form method="get" onsubmit="formSubmission()" name="registerForm">
+
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" placeholder="Enter your username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Enter your password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reEnterPassword">Re-enter Password</label>
+                            <input type="password" id="reEnterPassword" name="reEnterPassword"
+                                placeholder="Confirm your password">
+                        </div>
+
+                        <div class="submit">
+                            <span class="terms">
+                                <input type="checkbox" id="terms" name="terms" required>
+
+                                <label for="terms">
+                                    I agree to the <a href="#">Terms & Conditions</a>
+                                </label>
+                            </span>
+                            <span id="error1"></span>
+                            <div class="button-group">
+                                <input type="submit" value="Register">
+                                <button type="button" onclick="clearForm()">Clear All</button>
+                            </div>
+                            <p>Already registered? Please <a href="#">Login</a> </p>
+                        </div>
+
+                    </form>
+                </fieldset>
+            </div>
+            <div id="login">
+                <fieldset>
+                    <legend>Please Login Here</legend>
+
+                    <form method="get" onsubmit="doLogin()" name="loginForm">
+
+                        <div class="form-group">
+                            <label for="username">User-name</label>
+                            <input type="text" id="user-name" name="username" placeholder="Enter your username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="user-password" name="password" placeholder="Enter your password">
+                        </div>
+                        <div class="submit">
+                            <span id="error2"></span>
+                            <div class="button-group">
+                                <input type="submit" value="login">
+                            </div>
+                            <p><a href="#">Forget Password</a> </p>
+                        </div>
+
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+    <script src="/js002/js/script.js"></script>
+</body>
+
+</html>

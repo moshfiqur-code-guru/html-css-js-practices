@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    background-color:
+        #032981;
+
+    background-image:
+        radial-gradient(#ffffff46 1px, transparent 1px);
+
+    background-size: 25px 25px;
+}
+
+.form-area {
+    margin: 80px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-area h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: "Unbounded", sans-serif;
+    font-size: 50px;
+    color: white;
+    text-decoration: underline;
+}
+
+.form-area p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Unbounded", sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+.form-area h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Unbounded", sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    color: white;
+}
+
+#registration-from {
+    margin-bottom: 100px;
+}
+
+fieldset {
+    width: 600px;
+    padding: 35px;
+
+    background: rgba(255, 255, 255, .12);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 5px 40px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, .25);
+
+    color: white;
+}
+
+legend {
+    font-family: "Unbounded", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+    padding: 0 12px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #f5f2f2;
+}
+
+.form-group input {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 500;
+    width: 100%;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 2px 15px;
+    font-size: 16px;
+    background: #f8f8f8aa;
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.form-group input:focus {
+    outline: none;
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0, 183, 183, .3);
+}
+
+.terms {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    font-family: "Comfortaa", sans-serif;
+    color: #fff;
+}
+
+.terms input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: black;
+    margin: 0;
+}
+
+.terms label {
+    margin: 0;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.terms a {
+    color: #fff;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.button-group input,
+.button-group button {
+    flex: 1;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px 15px;
+    cursor: pointer;
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.submit p {
+    display: block;
+    text-align: center;
+    font-family: "Unbounded", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    padding-top: 20px;
+}
+
+.submit p a {
+    color: #f7f7f8;
+}
+
+.submit input {
+    font-family: "Unbounded", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    background: #050505d6;
+    color: white;
+}
+
+.submit button {
+    font-family: "Unbounded", sans-serif;
+    font-weight: 500;
+    background: #2f2f2fd3;
+    color: white;
+}
+
+.submit input:hover {
+    border-radius: 30px;
+    padding: 18px;
+}
+
+.submit button:hover {
+    transform: scale(0.98);
+}
+
+#error1 {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 15px;
+    color: rgb(255, 151, 151);
+}
+
+#error2 {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 16px;
+    color: rgb(255, 151, 151);
+}
