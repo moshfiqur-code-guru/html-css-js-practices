@@ -372,19 +372,26 @@ function checkEvenOdd() {
 
 function checkPrime() {
 
-    const givenNumber = document.getElementById("givenNumber").value;
+    const givenNumber = Number(document.getElementById("givenNumber").value);
+
     if (givenNumber < 2) {
-        result.value = givenNumber + " - " + "is not prime number";
-    } else if (givenNumber == 2) {
-        result.value = givenNumber + " - " + "is a prime Number";
+        result.value = givenNumber + " - is not prime number";
+        return;
     }
+
+    let isPrime = true;
+
     for (let i = 2; i < givenNumber; i++) {
         if (givenNumber % i === 0) {
-            result.value = givenNumber + " - " + "is not prime number";
-        } else {
-            result.value = givenNumber + " - " + "is a prime Number";
+            isPrime = false;
+            break;
         }
+    }
 
+    if (isPrime) {
+        result.value = givenNumber + " - is a prime number";
+    } else {
+        result.value = givenNumber + " - is not a prime number";
     }
 
 }

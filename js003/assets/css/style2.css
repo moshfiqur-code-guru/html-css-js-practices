@@ -1,0 +1,117 @@
+/* -------------------------common------------------------ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.between {
+    justify-content: space-between;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+}
+
+
+/* ---------------------background & container-------------------- */
+
+.section {
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #c5c5c5;
+}
+
+.side-panel {
+    width: 25%;
+    margin: 8px 0px 8px 8px;
+    border-radius: 10px;
+    padding: 35px;
+}
+
+.main-content {
+    width: 75%;
+    padding: 50px 60px;
+    margin: 8px;
+    border-radius: 10px;
+    background: rgba(253, 253, 253, 0.934);
+}
+
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 50px;
+}
+
+.logo h2 {
+    font-family: "Stack Sans Notch", sans-serif;
+    font-size: 28px;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu svg {
+    height: 25px;
+    width: 25px;
+    padding-right: 5px;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.menu li:hover {
+    background: #00fafaaf;
+}
+
+.top-bar {
+    font-family: "Stack Sans Notch", sans-serif;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.top-bar p {
+    font-family: "Outfit", sans-serif;
+    color: #666;
+    margin-top: 8px;
+}
+
+.profile {
+    align-items: center;
+    gap: 25px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #3b82f6;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
