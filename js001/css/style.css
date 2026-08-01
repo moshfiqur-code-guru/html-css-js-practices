@@ -1,11 +1,104 @@
-.green {
-    color: green;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.blue {
-    color: blue;
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
+    overflow: hidden;
 }
 
-.red {
-    color: red;
+
+.section {
+    width: 700px;
+    padding: 50px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, .12);
+    text-align: start;
+}
+
+
+.header h1 {
+    color: #fff;
+    font-size: 55px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.header p {
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+.number-check input[type="number"] {
+    width: 500px;
+    padding: 14px;
+    border: 2px solid #1e3a8a;
+    outline: none;
+    border-radius: 30px;
+    font-size: 20px;
+    text-align: start;
+    background: rgba(255, 255, 255, .15);
+    color: #fff;
+    transition: 500ms;
+}
+
+.number-check input[type="number"]:focus {
+    border: 2px #60a5fa solid;
+}
+
+.number-check input::placeholder {
+    color: rgb(230, 228, 228);
+    font-size: 16px;
+    font-style: italic;
+}
+
+
+.number-check button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: #fff;
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.number-check button:hover {
+    padding: 12px 28px;
+
+}
+
+.number-check button:active {
+    transform: scale(.96);
+}
+
+
+#result {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    text-align: start;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #fff;
+    background: none;
+}
+
+input:focus-visible {
+    outline: none;
 }

@@ -1,6 +1,6 @@
 
 // //--------------------------------------- Arithmetic Operators --------------------------------------//
-// //   +[addition], -[subtraction], *[multiplication], /[division], %[remainder], **[exponentiation] 
+// //   +[addition], -[subtraction], *[multiplication], /[division], %[remainder], **[exponentiation]
 
 // let a = 10;
 // let b = 20;
@@ -19,7 +19,7 @@
 
 
 // //---------------------------------- Assignment Operators ------------------------------------//
-// //                                =, +=, -=, *=, /=, %=, **= 
+// //                                =, +=, -=, *=, /=, %=, **=
 
 // console.log(a);
 // a += 10;
@@ -296,56 +296,103 @@
 
 //###############################################################################################//
 
-let fruits = ["mango", "banana", "apple", "orange", 234]; // x different types of value should not be in one variable.
-console.log(fruits);
+// let fruits = ["mango", "banana", "apple", "orange", 234]; // x different types of value should not be in one variable.
+// console.log(fruits);
 
-// console.log(window);  // quokka can not show browses related items.
-
-
-let fruitsJOSON = JSON.stringify(fruits); //JSON.stringify - converts different items into string
-
-console.log(fruitsJOSON);
-console.log(typeof fruitsJOSON);
-console.log(fruitsJOSON[0]);
-console.log(fruitsJOSON[6]);
-console.log(fruitsJOSON[5]);
-console.log(fruitsJOSON[3]);
-
-localStorage.setItem("fruits", fruitsJOSON);
+// // console.log(window);  // quokka can not show browses related items.
 
 
-let fruitsJOSONfromStorage = localStorage.getItem("fruits");
-let fruitsArrayfromJOSON = JSON.parse(fruitsJOSONfromStorage); //JSON.parse - converts string into original items
-console.log(fruitsArrayfromJOSON);
+// let fruitsJOSON = JSON.stringify(fruits); //JSON.stringify - converts different items into string
 
-console.log(document);
-console.log(typeof document);
-document.write("<div><h3 style='font-size : 50px'>hello</h3></div>")
+// console.log(fruitsJOSON);
+// console.log(typeof fruitsJOSON);
+// console.log(fruitsJOSON[0]);
+// console.log(fruitsJOSON[6]);
+// console.log(fruitsJOSON[5]);
+// console.log(fruitsJOSON[3]);
 
-let h1 = document.createElement("h1");
-h1.textContent = "hello world"
-h1.id = "head"
-document.body.appendChild(h1);
+// localStorage.setItem("fruits", fruitsJOSON);
 
 
-let age = 20;
-let minRequired = 18;
-let hasID = true;
-let result = document.getElementById("result");
-console.log(result);
+// let fruitsJOSONfromStorage = localStorage.getItem("fruits");
+// let fruitsArrayfromJOSON = JSON.parse(fruitsJOSONfromStorage); //JSON.parse - converts string into original items
+// console.log(fruitsArrayfromJOSON);
 
-let cls = "";
+// console.log(document);
+// console.log(typeof document);
+// document.write("<div><h3 style='font-size : 50px'>hello</h3></div>")
+
+// let h1 = document.createElement("h1");
+// h1.textContent = "hello world"
+// h1.id = "head"
+// document.body.appendChild(h1);
 
 
-if (age >= minRequired && hasID) {
-    result.textContent = "you are allowed to vote"
-    cls = "green"
-} else if (age >= minRequired && hasID === false) {
-    result.textContent = "you are allowed to vote, please apply for the NID card"
-    cls = "blue"
-} else {
-    result.textContent = "you have to wait for the next: " + (minRequired - age) + " " + "yraes"
-    cls = "red"
+// let age = 20;
+// let minRequired = 18;
+// let hasID = true;
+// let result = document.getElementById("result");
+// console.log(result);
+
+// let cls = "";
+
+
+// if (age >= minRequired && hasID) {
+//     result.textContent = "you are allowed to vote"
+//     cls = "green"
+// } else if (age >= minRequired && hasID === false) {
+//     result.textContent = "you are allowed to vote, please apply for the NID card"
+//     cls = "blue"
+// } else {
+//     result.textContent = "you have to wait for the next: " + (minRequired - age) + " " + "yraes"
+//     cls = "red"
+// }
+
+// result.classList.add(cls);
+
+
+
+// ########################################################################################################
+// ########################################################################################################
+// ########################################################################################################
+
+
+const result = document.getElementById("result");
+
+function checkEvenOdd() {
+
+    const givenNumber = document.getElementById("givenNumber").value;
+
+    if (givenNumber % 2 === 0) {
+        result.value = givenNumber + " - " + "is an even Number";
+    } else {
+        result.value = givenNumber + " - " + "is a odd Number";
+    }
 }
 
-result.classList.add(cls);
+function checkPrime() {
+
+    const givenNumber = document.getElementById("givenNumber").value;
+    if (givenNumber < 2) {
+        result.value = givenNumber + " - " + "is not prime number";
+    } else if (givenNumber == 2) {
+        result.value = givenNumber + " - " + "is a prime Number";
+    }
+    for (let i = 2; i < givenNumber; i++) {
+        if (givenNumber % i === 0) {
+            result.value = givenNumber + " - " + "is not prime number";
+        } else {
+            result.value = givenNumber + " - " + "is a prime Number";
+        }
+
+    }
+
+}
+
+
+
+const evenOddBtn = document.getElementById("evenOddBtn");
+evenOddBtn.addEventListener("click", checkEvenOdd);
+
+const primeBtn = document.getElementById("primeBtn");
+primeBtn.addEventListener("click", checkPrime);
