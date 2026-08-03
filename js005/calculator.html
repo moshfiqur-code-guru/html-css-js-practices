@@ -19,6 +19,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="/js005/style2.css">
+    <link rel="stylesheet" href="calculator.css">
 </head>
 
 <body>
@@ -31,6 +32,7 @@
                     </div>
                     <span>Moshfiqur Rahman</span>
                 </div>
+
                 <ul class="menu flex column">
 
                     <li class="dashboard"> <a href="dashboard.html">
@@ -70,7 +72,6 @@
                     </li>
                 </ul>
 
-
                 <div class="footer">
                     <span>&copy; Copyright 2026</span>
 
@@ -81,7 +82,7 @@
             <div class="main-content">
                 <div class="top-bar between flex">
                     <div>
-                        <h1>Welcome Back 👋</h1>
+                        <h1>Calculator 🧮</h1>
                         <p>Here's what's happening today.</p>
                     </div>
 
@@ -98,13 +99,26 @@
 
                     </div>
                 </div>
-            </div>
-        </div>
+
+                <div class="content">
+                    <div class="calculation">
+                        <p id="result">Result:</p>
+
+                        <label for="firstNumber">First Number</label>
+                        <input type="number" id="firstNumber">
+
+                        <label for="secondNumber">Second Number</label>
+                        <input type="number" id="secondNumber">
+
+                        <button onclick="addition()">Add</button>
+                    </div>
+                </div>
     </section>
     <script>
         feather.replace();
     </script>
     <script src="/js005/script.js"></script>
+    <script src="calculator.js"></script>
 </body>
 
 </html>

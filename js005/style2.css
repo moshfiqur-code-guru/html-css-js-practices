@@ -32,8 +32,15 @@ li {
     list-style: none;
 }
 
+li.active a {
+    color: #000;
+}
+
 a {
     text-decoration: none;
+    color: #343333;
+    display: flex;
+    gap: 10px;
 }
 
 /* ---------------------background & container-------------------- */
@@ -89,19 +96,24 @@ a {
     margin-bottom: 10px;
     border-radius: 15px;
     cursor: pointer;
+    color: #666;
     transition: .3s;
 }
 
-.menu li:hover {
+li.active {
     background: #00fafaaf;
+}
+
+.menu li:hover {
+    background: #78e7e76d;
 }
 
 /* -------------------------------main content------------------------ */
 
 .main-content {
     width: 85%;
-    padding: 50px 60px;
-    margin: 8px;
+    padding: 20px 35px;
+    margin: 5px;
     border-radius: 10px;
     background: rgba(224, 223, 223, 0.315);
     backdrop-filter: blur(20px);
@@ -133,8 +145,8 @@ a {
 .options li {
     align-items: center;
     display: flex;
-    margin: 5px;
-    padding: 10px 14px;
+    margin-left: 10px;
+    padding: 10px 10px;
     cursor: pointer;
     font-family: "Outfit", sans-serif;
     font-size: 20px;

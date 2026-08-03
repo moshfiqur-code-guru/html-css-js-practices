@@ -75,7 +75,9 @@ function logout() {
     userLoginStatus();
 }
 
-checkUserLoginStatus();
+
+
+
 
 
 function showPassword(btn) {
@@ -88,12 +90,83 @@ function showPassword(btn) {
     passwordBox.querySelector(".hide").style.display = "block";
 }
 
-function hidePassword(btn) {
-    const passwordBox = btn.closest(".password");
-    const input = passwordBox.querySelector("input");
+// function hidePassword(btn) {
+//     const passwordBox = btn.closest(".password");
+//     const input = passwordBox.querySelector("input");
 
-    input.type = "password";
+//     input.type = "password";
 
-    passwordBox.querySelector(".show").style.display = "block";
-    passwordBox.querySelector(".hide").style.display = "none";
+//     passwordBox.querySelector(".show").style.display = "block";
+//     passwordBox.querySelector(".hide").style.display = "none";
+// }
+
+function toggleVisible(type) {
+    const show = document.querySelector(".show");
+    const hide = document.querySelector(".hide");
+    document.getElementById("UserPass").setAttribute("type", type);
+
+    if (type === "text") {
+        hide.style.display = "block"
+        show.style.display = "none"
+    } else {
+        hide.style.display = "none"
+        show.style.display = "block"
+    }
 }
+
+// UserLoginStatus();
+
+// function addMenu() {
+//     document.querySelector(".menu").innerHTML = `
+//      <ul>
+
+//                     <li class="dashboard"> <a href="dashboard.html">
+//                             <i data-feather="home"></i>
+//                             <span>Home</span>
+//                         </a>
+//                     </li>
+
+//                     <li class="user"><a href="user.html">
+//                             <i data-feather="users"></i>
+//                             <span>Users</span>
+//                         </a>
+//                     </li>
+
+//                     <li class="order"><a href="order.html">
+//                             <i data-feather="shopping-cart"></i>
+//                             <span>Orders</span>
+//                         </a>
+//                     </li>
+
+//                     <li class="analytics"><a href="analytics.html">
+//                             <i data-feather="bar-chart-2"></i>
+//                             <span>Analytics</span>
+//                         </a>
+//                     </li>
+
+//                     <li class="calculator"><a href="calculator.html">
+//                             <i data-feather="divide-square"></i>
+//                             <span>Calculator</span>
+//                         </a>
+//                     </li>
+
+//                     <li class="settings"><a href="settings.html">
+//                             <i data-feather="settings"></i>
+//                             <span>Settings</span>
+//                         </a>
+//                     </li>
+//                 </ul>
+// `
+// }
+
+// addMenu();
+
+function activeMenu() {
+    const currentLocation = location.href;
+    let lastPart = currentLocation.split("/").pop().split(".")[0];
+    console.log(lastPart);
+    document.querySelector(".menu " + "." + lastPart).classList.add("active");
+
+}
+
+activeMenu();

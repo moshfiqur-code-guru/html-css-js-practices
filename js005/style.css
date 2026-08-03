@@ -13,19 +13,30 @@
     justify-content: space-between;
 }
 
+.relative {
+    position: relative;
+}
+
 
 
 
 /* ---------------------background & container-------------------- */
 .section {
     min-height: 100vh;
-    background-color:
-        #19916b;
+    background: url(/js005/background.PNG) no-repeat center center / cover;
+    position: relative;
+    z-index: 1;
+}
 
-    background-image:
-        radial-gradient(#010101e4 1px, transparent 1px);
-
-    background-size: 25px 25px;
+.section:after {
+    position: absolute;
+    background-color: #4a494965;
+    content: "";
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
 .container {
@@ -35,12 +46,9 @@
     box-sizing: border-box;
     overflow: hidden;
     border-radius: 10px;
-    background: rgba(128, 127, 127, 0.132);
-
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    border: 1px solid rgba(225, 215, 215, 0.2);
+    background: rgba(255, 255, 255, 0.457);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, .3);
 
     box-shadow:
         0 10px 40px rgba(0, 0, 0, .25);
@@ -57,11 +65,25 @@
 
 .title {
     font-family: "Stack Sans Notch", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 40px;
     letter-spacing: 1px;
     padding-bottom: 20px;
+    padding-left: 40px;
 }
+
+.login svg {
+    position: absolute;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    height: 35px;
+    width: 35px;
+    top: 8px;
+    stroke-width: 3px;
+}
+
 
 
 .form-group {
@@ -82,11 +104,17 @@
     font-weight: 400;
     margin-bottom: 20px;
     padding: 14px 16px;
+    padding-left: 45px;
     border: none;
     border-radius: 10px;
     font-size: 16px;
     background: #eae9e939;
     transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.form-group input::placeholder {
+    color: #313131;
+    display: block;
 }
 
 .form-group input:focus {
@@ -202,31 +230,41 @@
     font-size: 17px;
 }
 
-/* -----------------------------------dashboard--------------------------- */
-
-#dashbord h3 {
-    font-family: "Stack Sans Notch", sans-serif;
-    font-size: 30px;
-    font-weight: 300;
+.username {
+    position: relative;
 }
 
-#dashbord p {
-    font-family: "Outfit", sans-serif;
-    font-size: 25px;
-    font-weight: 400;
-    padding: 20px 0px;
-    display: block;
+.username svg {
+    position: absolute;
+    color: #414040;
+    height: 20px;
+    width: 20px;
+    top: 14px;
+    left: 15px;
 }
+
 
 .password {
     position: relative;
 }
 
+.password svg {
+    position: absolute;
+    color: #414040;
+    height: 20px;
+    width: 20px;
+    top: 14px;
+    left: 15px;
+}
+
 .toggle {
     position: absolute;
-    right: 40px;
-    top: 12px;
+    right: 0px;
+    top: 0px;
     cursor: pointer;
+    height: 100%;
+    width: 54px;
+    display: flex;
 }
 
 .toggle div {
@@ -234,29 +272,21 @@
 }
 
 .toggle div svg {
-    height: 23px;
-    width: 23px;
-    color: #616060;
-}
+    height: 20px;
+    width: 20px;
+    color: #414040;
 
-.toggle .show {
-    display: block;
-}
+    .toggle .show {
+        display: block;
+    }
 
-.toggle .hide {
-    display: none;
-}
-
-
-.error {
-    color: red;
-    font-size: 14px;
-    display: block;
-    margin-bottom: 10px;
-}
+    .toggle .hide {
+        display: none;
+    }
 
 
-/* font */
-/* font-family: "Outfit",sans-serif;
+
+    /* font */
+    /* font-family: "Outfit",sans-serif;
 font-family: "Splash",cursive;
 font-family: "Stack Sans Notch",sans-serif; */

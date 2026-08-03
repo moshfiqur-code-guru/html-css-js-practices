@@ -25,22 +25,27 @@
     <section class="section flex">
         <div class="container flex">
             <div class="login-area form-area" id="loginContent">
-                <h1 class="title">Login</h1>
+                <div class="login flex relative">
+                    <i data-feather="log-in"></i>
+                    <h1 class="title">Login</h1>
+                </div>
 
                 <form method="get" onsubmit="doLogin()" name="loginContent">
 
-                    <div class="form-group">
+                    <div class="form-group username">
+                        <i data-feather="user-check"></i>
                         <input type="text" id="username" name="username" placeholder="Username">
                     </div>
 
                     <div class="form-group password">
+                        <i data-feather="key"></i>
                         <input type="password" id="UserPass" name="password" placeholder="Password">
                         <div class="toggle flex">
-                            <div class="show" onmousedown="event.preventDefault()" onclick="showPassword(this)">
+                            <div class="show" onmousedown="event.preventDefault()" onclick="toggleVisible('text')">
                                 <i data-feather="eye"></i>
                             </div>
 
-                            <div class="hide" onmousedown="event.preventDefault()" onclick="hidePassword(this)">
+                            <div class="hide" onmousedown="event.preventDefault()" onclick="toggleVisible('password')">
                                 <i data-feather="eye-off"></i>
                             </div>
                         </div>
