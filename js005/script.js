@@ -113,12 +113,12 @@ function toggleVisible(type) {
         show.style.display = "block"
     }
 }
-
 // UserLoginStatus();
 
 // function addMenu() {
-//     document.querySelector(".menu").innerHTML = `
-//      <ul>
+//     document.querySelector(".menu").innerHTML =
+// // `
+// //                 <ul>
 
 //                     <li class="dashboard"> <a href="dashboard.html">
 //                             <i data-feather="home"></i>
@@ -157,9 +157,39 @@ function toggleVisible(type) {
 //                     </li>
 //                 </ul>
 // `
-// }
-
 // addMenu();
+
+
+
+// const arrayOfMenu = ["dashboard", "user", "order", "analytics", "calculator", "settings"];
+// const ul = document.createElement("ul");
+
+// for (let i = 0; i < arrayOfMenu.length; i++) {
+//     ul.innerHTML += `<li class="${arrayOfMenu[i]}"><a href="${arrayOfMenu[i]}.html">${arrayOfMenu[i]}</a></li>`
+// }
+// // document.querySelector(".menu").outerHTML = ul.outerHTML;
+// document.querySelector(".menu").appendChild(ul);
+
+
+
+const arrayOfMenu = [
+    { label: "Dashboard", icon: "home" },
+    { label: "User", icon: "users" },
+    { label: "order", icon: "shopping-cart" },
+    { label: "analytics", icon: "bar-chart-2" },
+    { label: "calculator", icon: "divide-square" },
+    { label: "settings", icon: "settings" },
+];
+const ul = document.createElement("ul");
+
+for (let i = 0; i < arrayOfMenu.length; i++) {
+    ul.innerHTML += `<li class="${arrayOfMenu[i].label}"><i data-feather="${arrayOfMenu[i].icon}"></i>
+        <a href = "${arrayOfMenu[i].label}.html" > ${arrayOfMenu[i].label}</a></li > `
+}
+// document.querySelector(".menu").outerHTML = ul.outerHTML;
+document.querySelector(".menu").appendChild(ul);
+feather.replace();
+
 
 function activeMenu() {
     const currentLocation = location.href;

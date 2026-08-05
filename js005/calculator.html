@@ -33,44 +33,10 @@
                     <span>Moshfiqur Rahman</span>
                 </div>
 
-                <ul class="menu flex column">
+                <div class="menu flex column">
 
-                    <li class="dashboard"> <a href="dashboard.html">
-                            <i data-feather="home"></i>
-                            <span>Home</span>
-                        </a>
-                    </li>
 
-                    <li class="user"><a href="user.html">
-                            <i data-feather="users"></i>
-                            <span>Users</span>
-                        </a>
-                    </li>
-
-                    <li class="orders"><a href="order.html">
-                            <i data-feather="shopping-cart"></i>
-                            <span>Orders</span>
-                        </a>
-                    </li>
-
-                    <li class="analytics"><a href="analytics.html">
-                            <i data-feather="bar-chart-2"></i>
-                            <span>Analytics</span>
-                        </a>
-                    </li>
-
-                    <li class="calculator"><a href="calculator.html">
-                            <i data-feather="divide-square"></i>
-                            <span>Calculator</span>
-                        </a>
-                    </li>
-
-                    <li class="settings"><a href="settings.html">
-                            <i data-feather="settings"></i>
-                            <span>Settings</span>
-                        </a>
-                    </li>
-                </ul>
+                </div>
 
                 <div class="footer">
                     <span>&copy; Copyright 2026</span>
@@ -100,7 +66,7 @@
                     </div>
                 </div>
 
-                <div class="content">
+                <!-- <div class="content">
                     <div class="calculation">
                         <p id="result">Result:</p>
 
@@ -112,7 +78,34 @@
 
                         <button onclick="addition()">Add</button>
                     </div>
+                </div> -->
+
+                <div class="mini-calculator">
+                    <fieldset>
+                        <legend>Simple Calculator</legend>
+                        <div class="result">
+                            <input type="number" id="res" placeholder="Result">
+                        </div>
+                        <div class="inputs">
+                            <input type="number" id="number1" placeholder="1st Number"> &nbsp; &nbsp;
+                            <input type="number" id="number2" placeholder="2nd Number">
+                        </div>
+                        <div id="button"></div>
+                    </fieldset>
                 </div>
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+        </div>
+
     </section>
     <script>
         feather.replace();

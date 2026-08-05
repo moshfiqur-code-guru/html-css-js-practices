@@ -83,6 +83,11 @@ a {
     padding-top: 20px;
 }
 
+.menu {
+    height: 500px;
+    width: 100%;
+}
+
 .menu svg {
     height: 20px;
     width: 20px;
@@ -100,7 +105,7 @@ a {
     transition: .3s;
 }
 
-li.active {
+.menu li.active {
     background: #00fafaaf;
 }
 
