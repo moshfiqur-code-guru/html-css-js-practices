@@ -174,7 +174,7 @@ function toggleVisible(type) {
 
 const arrayOfMenu = [
     { label: "Dashboard", icon: "home" },
-    { label: "User", icon: "users" },
+    { label: "students", icon: "users" },
     { label: "order", icon: "shopping-cart" },
     { label: "analytics", icon: "bar-chart-2" },
     { label: "calculator", icon: "divide-square" },

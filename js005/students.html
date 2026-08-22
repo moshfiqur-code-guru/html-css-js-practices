@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard_page</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Pixelify+Sans:wght@400..700&family=Stack+Sans+Notch:wght@200..700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Splash&family=Stack+Sans+Notch:wght@200..700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/js005/style2.css">
+    <link rel="stylesheet" href="/js005/students.css">
+</head>
+
+<body>
+    <section class="section flex">
+        <div class="container flex">
+
+            <!-- Side Panel -->
+            <div class="side-panel flex column between">
+
+                <div class="profile">
+                    <div class="author flex">
+                        <img src="avater.jpg" alt="author">
+                    </div>
+                    <span>Moshfiqur Rahman</span>
+                </div>
+
+                <div class="menu flex column">
+                    <!-- Menu items -->
+                </div>
+
+                <div class="footer">
+                    <span>&copy; Copyright 2026</span>
+                </div>
+
+            </div>
+            <!-- End Side Panel -->
+
+
+            <!-- Main Content -->
+            <div class="main-content">
+
+                <!-- Top Bar -->
+                <div class="top-bar between flex">
+                    <div>
+                        <h1>User 👤</h1>
+                        <p>Here's what's happening today.</p>
+                    </div>
+
+                    <div class="options flex">
+                        <ul class="flex">
+                            <li>
+                                <i data-feather="bell"></i>
+                            </li>
+
+                            <li onclick="logout()">
+                                <i data-feather="log-out"></i>
+                                <span>Logout</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End Top Bar -->
+
+
+                <!-- Student List -->
+                <div class="student-list">
+
+                    <div class="students-action flex between">
+                        <div class="search-bar">
+                            <input type="text" placeholder="Search student">
+                        </div>
+                        <div class="add-new flex">
+                            <button data-micromodal-trigger="modal-1">
+                                <i data-feather="plus-circle"></i> Add new
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- Modal -->
+                    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+
+                        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+
+                            <div class="modal__container" role="dialog" aria-modal="true"
+                                aria-labelledby="modal-1-title">
+
+                                <header class="modal__header">
+                                    <h2 class="modal__title" id="modal-1-title">
+                                        Add new student
+                                    </h2>
+
+                                    <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+                                    </button>
+                                </header>
+
+
+                                <main class="modal__content" id="modal-1-content">
+
+                                    <form action="" class="add-student-form">
+                                        <label class="preview" for="student-image">
+                                            <img src="avater.jpg" alt="image">
+                                        </label>
+                                        <input class="picker" type="file" id="student-image">
+                                        <input type="text" name="firstName" placeholder="First Name">
+                                        <input type="text" name="lastName" placeholder="Last Name">
+                                        <select name="class" id="">
+                                            <option>--- select class ---</option>
+                                            <option value="10">Class 10</option>
+                                            <option value="09">Class 09</option>
+                                            <option value="08">Class 08</option>
+                                            <option value="07">Class 07</option>
+                                            <option value="06">Class 06</option>
+                                        </select>
+                                        <input type="number" name="STid" placeholder="Student I.D.">
+                                        <input type="email" name="email" id="" placeholder="Email">
+                                        <input type="text" name="address" placeholder="Address">
+                                    </form>
+
+                                </main>
+
+
+                                <footer class="modal__footer">
+
+                                    <button class="modal__btn modal__btn-primary">
+                                        Add new
+                                    </button>
+
+                                    <button class="modal__btn" data-micromodal-close
+                                        aria-label="Close this dialog window">
+                                        Close
+                                    </button>
+
+                                </footer>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Modal -->
+
+
+                    <!-- Student Table -->
+                    <div class="student-listing">
+
+                        <table border="1" align="center">
+
+                            <thead>
+                                <tr>
+                                    <th>SL</th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Class</th>
+                                    <th>St. ID</th>
+                                    <th>Email</th>
+                                    <th>Address</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+
+                            <tbody>
+
+                                <tr>
+                                    <td>001</td>
+                                    <td><img src="avater.jpg" alt=""></td>
+                                    <td>Moshfiqur</td>
+                                    <td>15</td>
+                                    <td>15</td>
+                                    <td>mdsadik3342@gmail.com</td>
+                                    <td>Nayagola</td>
+                                    <td>
+                                        <button><i data-feather="trash"></i></button>
+                                        <button><i data-feather="edit-3"></i></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>002</td>
+                                    <td><img src="avater.jpg" alt=""></td>
+                                    <td>Sadik</td>
+                                    <td>16</td>
+                                    <td>16</td>
+                                    <td>sadik@gmail.com</td>
+                                    <td>Dhaka</td>
+                                    <td>
+                                        <button><i data-feather="trash"></i></button>
+                                        <button><i data-feather="edit-3"></i></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>003</td>
+                                    <td><img src="avater.jpg" alt=""></td>
+                                    <td>Rahim</td>
+                                    <td>17</td>
+                                    <td>17</td>
+                                    <td>rahim@gmail.com</td>
+                                    <td>Rajshahi</td>
+                                    <td>
+                                        <button><i data-feather="trash"></i></button>
+                                        <button><i data-feather="edit-3"></i></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>004</td>
+                                    <td><img src="avater.jpg" alt=""></td>
+                                    <td>Karim</td>
+                                    <td>18</td>
+                                    <td>18</td>
+                                    <td>karim@gmail.com</td>
+                                    <td>Chittagong</td>
+                                    <td>
+                                        <button><i data-feather="trash"></i></button>
+                                        <button><i data-feather="edit-3"></i></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>005</td>
+                                    <td><img src="avater.jpg" alt=""></td>
+                                    <td>Hasan</td>
+                                    <td>19</td>
+                                    <td>19</td>
+                                    <td>hasan@gmail.com</td>
+                                    <td>Khulna</td>
+                                    <td>
+                                        <button><i data-feather="trash"></i></button>
+                                        <button><i data-feather="edit-3"></i></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>006</td>
+                                    <td><img src="avater.jpg" alt=""></td>
+                                    <td>Tanvir</td>
+                                    <td>20</td>
+                                    <td>20</td>
+                                    <td>tanvir@gmail.com</td>
+                                    <td>Sylhet</td>
+                                    <td>
+                                        <button><i data-feather="trash"></i></button>
+                                        <button><i data-feather="edit-3"></i></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>007</td>
+                                    <td><img src="avater.jpg" alt=""></td>
+                                    <td>Rifat</td>
+                                    <td>21</td>
+                                    <td>21</td>
+                                    <td>rifat@gmail.com</td>
+                                    <td>Barisal</td>
+                                    <td>
+                                        <button><i data-feather="trash"></i></button>
+                                        <button><i data-feather="edit-3"></i></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>008</td>
+                                    <td><img src="avater.jpg" alt=""></td>
+                                    <td>Fahim</td>
+                                    <td>22</td>
+                                    <td>22</td>
+                                    <td>fahim@gmail.com</td>
+                                    <td>Comilla</td>
+                                    <td>
+                                        <button><i data-feather="trash"></i></button>
+                                        <button><i data-feather="edit-3"></i></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>009</td>
+                                    <td><img src="avater.jpg" alt=""></td>
+                                    <td>Nayeem</td>
+                                    <td>23</td>
+                                    <td>23</td>
+                                    <td>nayeem@gmail.com</td>
+                                    <td>Gazipur</td>
+                                    <td>
+                                        <button><i data-feather="trash"></i></button>
+                                        <button><i data-feather="edit-3"></i></button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>010</td>
+                                    <td><img src="avater.jpg" alt=""></td>
+                                    <td>Imran</td>
+                                    <td>24</td>
+                                    <td>24</td>
+                                    <td>imran@gmail.com</td>
+                                    <td>Narayanganj</td>
+                                    <td>
+                                        <button><i data-feather="trash"></i></button>
+                                        <button><i data-feather="edit-3"></i></button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                    <!-- End Student Table -->
+
+                </div>
+                <!-- End Student List -->
+
+            </div>
+            <!-- End Main Content -->
+
+        </div>
+        <!-- End Container -->
+
+    </section>
+
+    <script>
+        feather.replace();
+    </script>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="/js005/students.js"></script>
+    <script src="/js005/script.js"></script>
+</body>
+
+</html>
