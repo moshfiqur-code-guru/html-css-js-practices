@@ -54,8 +54,7 @@
                 <!-- Top Bar -->
                 <div class="top-bar between flex">
                     <div>
-                        <h1>User 👤</h1>
-                        <p>Here's what's happening today.</p>
+                        <h1>Students 👤</h1>
                     </div>
 
                     <div class="options flex">
@@ -79,11 +78,12 @@
 
                     <div class="students-action flex between">
                         <div class="search-bar">
+                            <i data-feather="search"></i>
                             <input type="text" placeholder="Search student">
                         </div>
                         <div class="add-new flex">
                             <button data-micromodal-trigger="modal-1">
-                                <i data-feather="plus-circle"></i> Add new
+                                <i data-feather="plus-circle"></i> <span>Add new</span>
                             </button>
                         </div>
                     </div>
@@ -111,11 +111,9 @@
 
                                     <form action="" class="add-student-form">
                                         <label class="preview" for="student-image">
-                                            <img src="avater.jpg" alt="image">
+                                            <img src="add image.png" alt="">
                                         </label>
                                         <input class="picker" type="file" id="student-image">
-                                        <input type="text" name="firstName" placeholder="First Name">
-                                        <input type="text" name="lastName" placeholder="Last Name">
                                         <select name="class" id="">
                                             <option>--- select class ---</option>
                                             <option value="10">Class 10</option>
@@ -124,6 +122,8 @@
                                             <option value="07">Class 07</option>
                                             <option value="06">Class 06</option>
                                         </select>
+                                        <input type="text" name="firstName" placeholder="First Name">
+                                        <input type="text" name="lastName" placeholder="Last Name">
                                         <input type="number" name="STid" placeholder="Student I.D.">
                                         <input type="email" name="email" id="" placeholder="Email">
                                         <input type="text" name="address" placeholder="Address">

@@ -12,19 +12,24 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(28, 28, 28, 0.772);
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 8px;
 }
 
 .modal__container {
     font-family: "Outfit", sans-serif;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     padding: 30px;
     width: 500px;
     box-sizing: border-box;
     border-radius: 20px;
+    background: rgba(255, 255, 255, 0.941);
+    backdrop-filter: blur(100px);
+    border: 1px solid rgba(0, 81, 255, 0.47);
+
 }
 
 .modal__header {
@@ -61,6 +66,7 @@
 }
 
 .modal__btn {
+    background: gainsboro;
     font-family: "Outfit", sans-serif;
     font-size: 15px;
     padding: 10px 14px;
@@ -159,35 +165,71 @@
 
 
 /*===================================action bar======================= */
+.students-action {
+    height: 40px;
+    align-items: end;
+}
+
+.search-bar {
+    width: 300px;
+}
+
 .search-bar input {
-    background-color: #f7f7f7b0;
-    padding: 8px 15px;
+    width: 100%;
+    /* background-color: #53fcf3; */
+    padding: 10px 15px 10px 35px;
     font-size: 15px;
-    border: 1px solid black;
+    border: 1px solid gray;
     border-radius: 20px;
+    color: black;
+
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(128, 128, 128, 0.648);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar svg {
+    transform: translate(12px, 33px);
+    color: rgb(82, 82, 82);
+    width: 20px;
+    height: 20px;
+}
+
+.add-new {
+    height: 39px;
 }
 
 .add-new button {
     border-radius: 20px;
-    border: 1px solid black;
-    background: #00faed;
+    background: #00fafaaf;
+    border: 1px solid rgba(128, 128, 128, 0.648);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     padding: 7px 15px 9px 15px;
-    font-size: 15px;
-    font-weight: 600;
-    font-family: "Outfit", sans-serif;
     transition: 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .add-new svg {
     height: 20px;
     width: 20px;
-    transform: translate(0px, 3px);
+    transform: translate(0px, 1px);
+}
+
+.add-new span {
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "Outfit", sans-serif;
+    display: inline-block;
+    transform: translate(0px, -3px);
 }
 
 .add-new button:hover {
     border-radius: 10px;
-    background: #00a2fa;
+    background: #0064fa;
+    color: white;
     padding: 7px 17px 9px 17px;
 }
 
@@ -217,6 +259,7 @@ form.add-student-form input {
 }
 
 select {
+    margin-top: 20px;
     border-radius: 10px;
     border: 1px solid black;
     padding: 10px;
@@ -235,6 +278,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
+    border: gray;
 }
 
 table th {
@@ -252,10 +296,25 @@ table button {
     border: none;
     background: transparent;
     cursor: pointer;
+    transition: 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 table button svg {
     margin: 5px;
     height: 20px;
     width: 20px;
+}
+
+table button:hover {
+    background: #0064fa;
+    border-radius: 5px;
+    color: white;
+}
+
+tbody tr {
+    transition: background 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+tbody tr:hover {
+    background: #00fafaaf;
 }

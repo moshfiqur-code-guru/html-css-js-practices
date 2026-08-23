@@ -120,10 +120,13 @@ a {
     padding: 20px 35px;
     margin: 5px;
     border-radius: 10px;
-    background: rgba(224, 223, 223, 0.315);
+
+    background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgb(225, 215, 215);
+
+    border: 1px solid rgba(228, 229, 229, 0.954);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 }
 
 
