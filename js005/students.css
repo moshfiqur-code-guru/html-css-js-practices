@@ -7,16 +7,17 @@
 }
 
 .modal__overlay {
+    z-index: 1;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: rgba(28, 28, 28, 0.772);
+    backdrop-filter: blur(2px);
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
 }
 
 .modal__container {
@@ -180,7 +181,7 @@
     padding: 10px 15px 10px 35px;
     font-size: 15px;
     border: 1px solid gray;
-    border-radius: 20px;
+    border-radius: 10px;
     color: black;
 
     background: rgba(255, 255, 255, 0.25);
@@ -189,6 +190,8 @@
 
     border: 1px solid rgba(128, 128, 128, 0.648);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 1;
 }
 
 .search-bar svg {
@@ -196,6 +199,8 @@
     color: rgb(82, 82, 82);
     width: 20px;
     height: 20px;
+    position: relative;
+    z-index: 9;
 }
 
 .add-new {
@@ -203,7 +208,7 @@
 }
 
 .add-new button {
-    border-radius: 20px;
+    border-radius: 10px;
     background: #00fafaaf;
     border: 1px solid rgba(128, 128, 128, 0.648);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
@@ -278,7 +283,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
-    border: gray;
+    border: rgba(201, 199, 199, 0.42);
 }
 
 table th {
@@ -305,6 +310,14 @@ table button svg {
     width: 20px;
 }
 
+table .delete {
+    color: rgb(255, 80, 80);
+}
+
+table .edit {
+    color: rgb(35, 218, 35);
+}
+
 table button:hover {
     background: #0064fa;
     border-radius: 5px;
@@ -316,5 +329,5 @@ tbody tr {
 }
 
 tbody tr:hover {
-    background: #00fafaaf;
+    background: #63ffff72;
 }

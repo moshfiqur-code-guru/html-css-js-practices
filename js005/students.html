@@ -30,8 +30,8 @@
             <div class="side-panel flex column between">
 
                 <div class="profile">
-                    <div class="author flex">
-                        <img src="avater.jpg" alt="author">
+                    <div class="author flex" id="author-img">
+                        <!-- <img src="dp.jpg" alt="author"> -->
                     </div>
                     <span>Moshfiqur Rahman</span>
                 </div>
@@ -74,7 +74,7 @@
 
 
                 <!-- Student List -->
-                <div class="student-list">
+                <div class="student-list layout">
 
                     <div class="students-action flex between">
                         <div class="search-bar">
@@ -170,147 +170,21 @@
                             </thead>
 
 
-                            <tbody>
+                            <tbody id="tableBody">
 
-                                <tr>
+                                <!-- <tr>
                                     <td>001</td>
                                     <td><img src="avater.jpg" alt=""></td>
                                     <td>Moshfiqur</td>
                                     <td>15</td>
-                                    <td>15</td>
+                                    <td>2024100520015</td>
                                     <td>mdsadik3342@gmail.com</td>
                                     <td>Nayagola</td>
                                     <td>
-                                        <button><i data-feather="trash"></i></button>
-                                        <button><i data-feather="edit-3"></i></button>
+                                        <button class="delete"><i data-feather="trash"></i></button>
+                                        <button class="edit"><i data-feather="edit-3"></i></button>
                                     </td>
-                                </tr>
-
-                                <tr>
-                                    <td>002</td>
-                                    <td><img src="avater.jpg" alt=""></td>
-                                    <td>Sadik</td>
-                                    <td>16</td>
-                                    <td>16</td>
-                                    <td>sadik@gmail.com</td>
-                                    <td>Dhaka</td>
-                                    <td>
-                                        <button><i data-feather="trash"></i></button>
-                                        <button><i data-feather="edit-3"></i></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>003</td>
-                                    <td><img src="avater.jpg" alt=""></td>
-                                    <td>Rahim</td>
-                                    <td>17</td>
-                                    <td>17</td>
-                                    <td>rahim@gmail.com</td>
-                                    <td>Rajshahi</td>
-                                    <td>
-                                        <button><i data-feather="trash"></i></button>
-                                        <button><i data-feather="edit-3"></i></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>004</td>
-                                    <td><img src="avater.jpg" alt=""></td>
-                                    <td>Karim</td>
-                                    <td>18</td>
-                                    <td>18</td>
-                                    <td>karim@gmail.com</td>
-                                    <td>Chittagong</td>
-                                    <td>
-                                        <button><i data-feather="trash"></i></button>
-                                        <button><i data-feather="edit-3"></i></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>005</td>
-                                    <td><img src="avater.jpg" alt=""></td>
-                                    <td>Hasan</td>
-                                    <td>19</td>
-                                    <td>19</td>
-                                    <td>hasan@gmail.com</td>
-                                    <td>Khulna</td>
-                                    <td>
-                                        <button><i data-feather="trash"></i></button>
-                                        <button><i data-feather="edit-3"></i></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>006</td>
-                                    <td><img src="avater.jpg" alt=""></td>
-                                    <td>Tanvir</td>
-                                    <td>20</td>
-                                    <td>20</td>
-                                    <td>tanvir@gmail.com</td>
-                                    <td>Sylhet</td>
-                                    <td>
-                                        <button><i data-feather="trash"></i></button>
-                                        <button><i data-feather="edit-3"></i></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>007</td>
-                                    <td><img src="avater.jpg" alt=""></td>
-                                    <td>Rifat</td>
-                                    <td>21</td>
-                                    <td>21</td>
-                                    <td>rifat@gmail.com</td>
-                                    <td>Barisal</td>
-                                    <td>
-                                        <button><i data-feather="trash"></i></button>
-                                        <button><i data-feather="edit-3"></i></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>008</td>
-                                    <td><img src="avater.jpg" alt=""></td>
-                                    <td>Fahim</td>
-                                    <td>22</td>
-                                    <td>22</td>
-                                    <td>fahim@gmail.com</td>
-                                    <td>Comilla</td>
-                                    <td>
-                                        <button><i data-feather="trash"></i></button>
-                                        <button><i data-feather="edit-3"></i></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>009</td>
-                                    <td><img src="avater.jpg" alt=""></td>
-                                    <td>Nayeem</td>
-                                    <td>23</td>
-                                    <td>23</td>
-                                    <td>nayeem@gmail.com</td>
-                                    <td>Gazipur</td>
-                                    <td>
-                                        <button><i data-feather="trash"></i></button>
-                                        <button><i data-feather="edit-3"></i></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>010</td>
-                                    <td><img src="avater.jpg" alt=""></td>
-                                    <td>Imran</td>
-                                    <td>24</td>
-                                    <td>24</td>
-                                    <td>imran@gmail.com</td>
-                                    <td>Narayanganj</td>
-                                    <td>
-                                        <button><i data-feather="trash"></i></button>
-                                        <button><i data-feather="edit-3"></i></button>
-                                    </td>
-                                </tr>
+                                </tr> -->
 
                             </tbody>
 
@@ -334,8 +208,9 @@
         feather.replace();
     </script>
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
-    <script src="/js005/students.js"></script>
     <script src="/js005/script.js"></script>
+    <script src="/js005/students.js"></script>
+
 </body>
 
 </html>

@@ -58,11 +58,17 @@ a {
 
 /* ------------------------------side panel-------------------------- */
 .side-panel {
+    max-height: 100vh;
     width: 20%;
     margin: 8px 0px 8px 8px;
     border-radius: 10px;
     padding: 35px;
     box-sizing: border-box;
+    position: fixed;
+    left: 0px;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
 }
 
 .author {
@@ -72,6 +78,12 @@ a {
     margin: 0px auto;
     border-radius: 50%;
     overflow: hidden;
+}
+
+.author img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .profile span {
@@ -103,6 +115,7 @@ a {
     cursor: pointer;
     color: #666;
     transition: .3s;
+    text-transform: capitalize;
 }
 
 .menu li.active {
@@ -118,13 +131,9 @@ a {
 .main-content {
     width: 85%;
     padding: 20px 35px;
-    margin: 5px;
+    margin: 5px 5px 5px 20%;
     border-radius: 10px;
-
     background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
     border: 1px solid rgba(228, 229, 229, 0.954);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 }
@@ -134,7 +143,7 @@ a {
 .top-bar {
     font-family: "Stack Sans Notch", sans-serif;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     color: black;
 }
 
@@ -165,4 +174,11 @@ a {
 
 .options li:hover {
     background: #00fafaaf;
+}
+
+.layout {
+    padding: 10px;
+    background: #ffffffa1;
+    border-radius: 15px;
+    border: 1px solid rgba(220, 220, 220, 0.429);
 }

@@ -15,7 +15,7 @@ function uuidv4() {
 const user = {
     id: uuidv4(),
     username: "sadik",
-    image: "avater.jpg",
+    image: "dp.jpg",
     email: "sadik@gmail.com",
     password: "123456",
     isLoggedIn: false
@@ -25,7 +25,7 @@ function saveUserInLocalStorage(user) {
     localStorage.setItem("user", JSON.stringify(user))
 }
 
-// saveUserInLocalStorage(user);
+//saveUserInLocalStorage(user);
 
 
 function getUserFromStorage() {
@@ -38,14 +38,21 @@ function userLoginStatus() {
         if (window.location.href.includes("index.html")) {
             window.location.href = "dashboard.html"
         }
+        let author = document.getElementById("author-img");
+        let img = document.createElement("img");
+        img.src = user.image;
+        img.alt = "image";
+
+        author.appendChild(img);
+
     } else {
         if (!window.location.href.includes("index.html")) {
             window.location.href = "index.html"
+
         }
     }
-    userLoginStatus();
-
 }
+
 
 function doLogin() {
     event.preventDefault();
@@ -173,7 +180,7 @@ function toggleVisible(type) {
 
 
 const arrayOfMenu = [
-    { label: "Dashboard", icon: "home" },
+    { label: "dashboard", icon: "home" },
     { label: "students", icon: "users" },
     { label: "order", icon: "shopping-cart" },
     { label: "analytics", icon: "bar-chart-2" },
@@ -182,12 +189,16 @@ const arrayOfMenu = [
 ];
 const ul = document.createElement("ul");
 
+const menu = document.querySelector(".menu");
+
 for (let i = 0; i < arrayOfMenu.length; i++) {
     ul.innerHTML += `<li class="${arrayOfMenu[i].label}"><i data-feather="${arrayOfMenu[i].icon}"></i>
         <a href = "${arrayOfMenu[i].label}.html" > ${arrayOfMenu[i].label}</a></li > `
 }
 // document.querySelector(".menu").outerHTML = ul.outerHTML;
-document.querySelector(".menu").appendChild(ul);
+if (menu !== null) {
+    menu.appendChild(ul);
+}
 feather.replace();
 
 
@@ -195,8 +206,10 @@ function activeMenu() {
     const currentLocation = location.href;
     let lastPart = currentLocation.split("/").pop().split(".")[0];
     console.log(lastPart);
+    // if (menu !== null) {
     document.querySelector(".menu " + "." + lastPart).classList.add("active");
 
 }
 
 activeMenu();
+userLoginStatus();
