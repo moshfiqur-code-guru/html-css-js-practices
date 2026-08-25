@@ -31,6 +31,9 @@ modalSaveBtn.addEventListener("click", () => {
 
     if (editableIndex !== null) {
 
+        errors.textContent = "";
+        studentForm.reset();
+
     } else if (student.firstName.trim() == "" || student.lastName.trim() == "" || student.class.trim() == "" || student.email.trim() == "" || student.address.trim() == "") {
         errors.textContent = "Please fill all the input !!";
     } else {
@@ -137,7 +140,6 @@ function editStudent(index) {
     editableIndex = index;
     setModalTitleAndBtn();
     const student = getStudent[index];
-    console.log(student);
 }
 
 function setModalTitleAndBtn() {
@@ -147,10 +149,12 @@ function setModalTitleAndBtn() {
 
 
 function setDefaultTitle() {
+    editableIndex = null;
     errors.textContent = "";
     modalTitle = "Add New Student";
     modalBtnLabel = "Add new";
     setModalTitleAndBtn();
+    studentForm.reset();
 }
 setModalTitleAndBtn();
 
