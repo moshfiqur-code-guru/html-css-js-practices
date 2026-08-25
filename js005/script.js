@@ -181,9 +181,11 @@ function toggleVisible(type) {
 
 const arrayOfMenu = [
     { label: "dashboard", icon: "home" },
+    { label: "classes", icon: "table" },
+    { label: "teachers", icon: "pen-tool" },
     { label: "students", icon: "users" },
-    { label: "order", icon: "shopping-cart" },
-    { label: "analytics", icon: "bar-chart-2" },
+    { label: "guardians", icon: "umbrella" },
+    { label: "results", icon: "bar-chart-2" },
     { label: "calculator", icon: "divide-square" },
     { label: "settings", icon: "settings" },
 ];
@@ -199,7 +201,7 @@ for (let i = 0; i < arrayOfMenu.length; i++) {
 if (menu !== null) {
     menu.appendChild(ul);
 }
-feather.replace();
+
 
 
 function activeMenu() {
@@ -211,5 +213,6 @@ function activeMenu() {
 
 }
 
+feather.replace();
 activeMenu();
 userLoginStatus();

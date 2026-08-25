@@ -50,13 +50,15 @@
 }
 
 .modal__close {
-    background: transparent;
-    border: 0;
+    border: none;
     cursor: pointer;
+    height: 15px;
+    width: 15px;
+
 }
 
-.modal__header .modal__close:before {
-    content: "\2715";
+.modal__close svg {
+    transform: translate(-7px, -7px);
 }
 
 .modal__content {
@@ -79,14 +81,23 @@
 
 .modal__btn:focus,
 .modal__btn:hover {
-    border-radius: 15px;
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
 }
 
+.modal__btn-primary:hover {
+    background: #0064fa;
+}
+
 .modal__btn-primary {
-    background-color: #0068ef;
+    background-color: #41a5ee;
     color: #fff;
+}
+
+#errors {
+    transform: translate(3px, -16px);
+    color: red;
+    font-size: 16px;
 }
 
 
@@ -192,6 +203,12 @@
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
     position: relative;
     z-index: 1;
+}
+
+.search-bar input:focus {
+    outline: none;
+    /* border: 2px solid #000; */
+    box-shadow: 0 0 0 2px #00fafaaf;
 }
 
 .search-bar svg {

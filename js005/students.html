@@ -82,7 +82,7 @@
                             <input type="text" placeholder="Search student">
                         </div>
                         <div class="add-new flex">
-                            <button data-micromodal-trigger="modal-1">
+                            <button data-micromodal-trigger="modal-1" onclick="setDefaultTitle()">
                                 <i data-feather="plus-circle"></i> <span>Add new</span>
                             </button>
                         </div>
@@ -99,17 +99,18 @@
 
                                 <header class="modal__header">
                                     <h2 class="modal__title" id="modal-1-title">
-                                        Add new student
+                                        <!-- Add new student -->
                                     </h2>
 
                                     <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+                                        <i data-feather="x"></i>
                                     </button>
                                 </header>
 
 
                                 <main class="modal__content" id="modal-1-content">
 
-                                    <form action="" class="add-student-form">
+                                    <form action="" class="add-student-form" id="studentForm">
                                         <label class="preview" for="student-image">
                                             <img src="add image.png" alt="">
                                         </label>
@@ -124,7 +125,6 @@
                                         </select>
                                         <input type="text" name="firstName" placeholder="First Name">
                                         <input type="text" name="lastName" placeholder="Last Name">
-                                        <input type="number" name="STid" placeholder="Student I.D.">
                                         <input type="email" name="email" id="" placeholder="Email">
                                         <input type="text" name="address" placeholder="Address">
                                     </form>
@@ -133,9 +133,10 @@
 
 
                                 <footer class="modal__footer">
+                                    <div id="errors"><span></span></div>
 
-                                    <button class="modal__btn modal__btn-primary">
-                                        Add new
+                                    <button class="modal__btn modal__btn-primary" id="modalSaveBtn">
+                                        <!-- Add new -->
                                     </button>
 
                                     <button class="modal__btn" data-micromodal-close
