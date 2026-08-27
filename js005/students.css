@@ -262,10 +262,12 @@
     margin: auto;
     border-radius: 50%;
     cursor: pointer;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 form.add-student-form .picker {
-    display: none;
+    /* display: none; */
 }
 
 .add-student-form {}
@@ -312,6 +314,7 @@ table img {
     display: block;
     margin: 5px auto;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 table button {
@@ -339,6 +342,11 @@ table button:hover {
     background: #0064fa;
     border-radius: 5px;
     color: white;
+}
+
+#empty-massage {
+    padding: 15px;
+    font-size: 17px;
 }
 
 tbody tr {

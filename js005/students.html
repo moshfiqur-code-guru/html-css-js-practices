@@ -112,21 +112,28 @@
 
                                     <form action="" class="add-student-form" id="studentForm">
                                         <label class="preview" for="student-image">
-                                            <img src="add image.png" alt="">
+                                            <img src="add image.png" alt="" id="preview">
                                         </label>
-                                        <input class="picker" type="file" id="student-image">
+                                        <input class="picker" type="file" id="student-image" name="image"
+                                            accept="image/*">
+                                        <small class="input-error"></small>
                                         <select name="class" id="">
-                                            <option>--- select class ---</option>
+                                            <option value="">--- select class ---</option>
                                             <option value="10">Class 10</option>
                                             <option value="09">Class 09</option>
                                             <option value="08">Class 08</option>
                                             <option value="07">Class 07</option>
                                             <option value="06">Class 06</option>
                                         </select>
+                                        <small class="input-error"></small>
                                         <input type="text" name="firstName" placeholder="First Name">
+                                        <small class="input-error"></small>
                                         <input type="text" name="lastName" placeholder="Last Name">
+                                        <small class="input-error"></small>
                                         <input type="email" name="email" id="" placeholder="Email">
+                                        <small class="input-error"></small>
                                         <input type="text" name="address" placeholder="Address">
+                                        <small class="input-error"></small>
                                     </form>
 
                                 </main>
@@ -209,6 +216,7 @@
         feather.replace();
     </script>
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/js005/script.js"></script>
     <script src="/js005/students.js"></script>
 
