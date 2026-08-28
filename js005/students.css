@@ -267,7 +267,7 @@
 }
 
 form.add-student-form .picker {
-    /* display: none; */
+    display: none;
 }
 
 .add-student-form {}
@@ -289,6 +289,17 @@ select {
     padding: 10px;
     display: block;
     width: 100%;
+}
+
+.input-error {
+    color: red;
+    text-transform: capitalize;
+}
+
+#img-preview-error {
+    padding-top: 10px;
+    display: block;
+    text-align: center;
 }
 
 /* =========================student table========================== */
