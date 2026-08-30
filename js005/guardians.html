@@ -19,12 +19,16 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="/js005/style2.css">
+    <link rel="stylesheet" href="/js005/students.css">
 </head>
 
 <body>
     <section class="section flex">
         <div class="container flex">
+
+            <!-- Side Panel -->
             <div class="side-panel flex column between">
+
                 <div class="profile">
                     <div class="author flex" id="author-img">
                         <!-- <img src="dp.jpg" alt="author"> -->
@@ -33,22 +37,24 @@
                 </div>
 
                 <div class="menu flex column">
-
-
+                    <!-- Menu items -->
                 </div>
 
                 <div class="footer">
                     <span>&copy; Copyright 2026</span>
-
                 </div>
+
             </div>
+            <!-- End Side Panel -->
 
 
+            <!-- Main Content -->
             <div class="main-content">
+
+                <!-- Top Bar -->
                 <div class="top-bar between flex">
                     <div>
                         <h1>Guardians ☂️</h1>
-                        <p>Here's what's happening today.</p>
                     </div>
 
                     <div class="options flex">
@@ -56,21 +62,165 @@
                             <li>
                                 <i data-feather="bell"></i>
                             </li>
+
                             <li onclick="logout()">
                                 <i data-feather="log-out"></i>
                                 <span>Logout</span>
                             </li>
                         </ul>
-
                     </div>
                 </div>
+                <!-- End Top Bar -->
+
+
+                <!-- Student List -->
+                <div class="student-list layout">
+
+                    <div class="students-action flex between">
+                        <div class="search-bar">
+                            <i data-feather="search"></i>
+                            <input type="text" placeholder="Search student">
+                        </div>
+                        <div class="add-new flex">
+                            <button data-micromodal-trigger="modal-1" onclick="setDefaultTitle()">
+                                <i data-feather="plus-circle"></i> <span>Add new</span>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- Modal -->
+                    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+
+                        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+
+                            <div class="modal__container" role="dialog" aria-modal="true"
+                                aria-labelledby="modal-1-title">
+
+                                <header class="modal__header">
+                                    <h2 class="modal__title" id="modal-1-title">
+                                        <!-- Add new student -->
+                                    </h2>
+
+                                    <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+                                        <i data-feather="x"></i>
+                                    </button>
+                                </header>
+
+
+                                <main class="modal__content" id="modal-1-content">
+
+                                    <form action="" class="add-student-form" id="guardiansForm">
+
+                                        <select name="studentsName" id="guardianStudent">
+                                            <option value="">--- select student ---</option>
+                                            <!-- <option value="10">Class 10</option>
+                                            <option value="09">Class 09</option>
+                                            <option value="08">Class 08</option>
+                                            <option value="07">Class 07</option>
+                                            <option value="06">Class 06</option> -->
+                                        </select>
+                                        <select name="relation" id="">
+                                            <option value="">Relation</option>
+                                            <option value="Father">Father</option>
+                                            <option value="Mother">Mother</option>
+                                            <option value="Others">Others</option>
+                                        </select>
+                                        <small class="input-error"></small>
+                                        <input type="text" name="firstName" placeholder="First Name">
+                                        <small class="input-error"></small>
+                                        <input type="text" name="lastName" placeholder="Last Name">
+                                        <small class="input-error"></small>
+                                        <input type="number" name="phone" id="" placeholder="Phone Number">
+                                        <small class="input-error"></small>
+                                        <input type="email" name="email" placeholder="Email">
+                                        <small class="input-error"></small>
+                                    </form>
+
+                                </main>
+
+
+                                <footer class="modal__footer">
+                                    <div id="errors"><span></span></div>
+
+                                    <button class="modal__btn modal__btn-primary" id="modalSaveBtn">
+                                        <!-- Add new -->
+                                    </button>
+
+                                    <button class="modal__btn" data-micromodal-close
+                                        aria-label="Close this dialog window">
+                                        Close
+                                    </button>
+
+                                </footer>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Modal -->
+
+
+                    <!-- Student Table -->
+                    <div class="student-listing">
+
+                        <table border="1" align="center">
+
+                            <thead>
+                                <tr>
+                                    <th>SL</th>
+                                    <th>Guardian's Name</th>
+                                    <th>Relation</th>
+                                    <th>Student's Name</th>
+                                    <th>St. ID</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+
+                            <tbody id="tableBody">
+
+                                <!-- <tr>
+                                    <td>001</td>
+                                    <td><img src="avater.jpg" alt=""></td>
+                                    <td>Moshfiqur</td>
+                                    <td>15</td>
+                                    <td>2024100520015</td>
+                                    <td>mdsadik3342@gmail.com</td>
+                                    <td>Nayagola</td>
+                                    <td>
+                                        <button class="delete"><i data-feather="trash"></i></button>
+                                        <button class="edit"><i data-feather="edit-3"></i></button>
+                                    </td>
+                                </tr> -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                    <!-- End Student Table -->
+
+                </div>
+                <!-- End Student List -->
+
             </div>
+            <!-- End Main Content -->
+
         </div>
+        <!-- End Container -->
+
     </section>
+
     <script>
         feather.replace();
     </script>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/js005/script.js"></script>
+    <script src="/js005/guardians.js"></script>
+
 </body>
 
 </html>
