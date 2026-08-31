@@ -189,26 +189,30 @@ i {
 }
 
 /* ===================================== heder section =============================== */
-.heder-section{
+.heder-section {
     min-height: 100vh;
 }
-.catalog-head{
+
+.catalog-head {
     /*background-color: #00caca;*/
 
 }
-.catalog-container{
+
+.catalog-container {
     margin-top: 20px;
     padding: 15px;
     background-color: #fff;
     border-radius: 15px;
 }
-.catalog-head span{
+
+.catalog-head span {
     font-family: "Inter", sans-serif;
     font-size: 18px;
     font-weight: 500;
     text-decoration: underline;
 }
-.catalog-head button{
+
+.catalog-head button {
     width: 120px;
     height: 40px;
     background-color: transparent;
@@ -220,18 +224,21 @@ i {
     cursor: pointer;
     transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.catalog-head button p{
+
+.catalog-head button p {
     font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 500;
     display: inline-block;
     transform: translate(0px, -3px);
 }
-.catalog-head button i{
+
+.catalog-head button i {
     font-size: 22px;
     display: inline-block;
 }
-.catalog-head button:hover{
+
+.catalog-head button:hover {
     background-color: rgb(59 43 163 / 0.93);
     margin: 0 10px;
     color: white;
@@ -239,7 +246,7 @@ i {
 
 /*================================ product table=====================================*/
 .product-listing {
-    font-family:"Inter", sans-serif;
+    font-family: "Inter", sans-serif;
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -251,7 +258,8 @@ table {
     text-align: center;
     border: rgb(110 110 110 / 0.56);
 }
-table td{
+
+table td {
     padding: 5px 0;
 }
 
@@ -278,7 +286,7 @@ table button {
 table button i {
     font-size: 25px;
     display: block;
-    margin:5px;
+    margin: 5px;
 
 
 }
@@ -491,14 +499,11 @@ tbody tr:hover {
     overflow: hidden;
 }
 
-form.add-student-form .picker {
+form.add-product-form .picker {
     /*display: none;*/
 }
 
-.add-student-form {}
-
-
-form.add-student-form input {
+form.add-product-form input {
     display: block;
     border: none;
     background-color: #c9c1ff80;
@@ -508,6 +513,7 @@ form.add-student-form input {
     width: 100%;
     box-sizing: border-box;
 }
+
 input:focus {
     outline: none;
     /* border: 2px solid #000; */
@@ -535,10 +541,6 @@ select {
     display: block;
     text-align: center;
 }
-
-
-
-
 
 
 /* ================================ footer section ================================== */
