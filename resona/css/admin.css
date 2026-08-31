@@ -195,7 +195,7 @@ i {
 
 /* ===================================== heder section =============================== */
 .heder-section{
-    /*height: 100vh;*/
+   /*min-height: 100vh;*/
 }
 
 .profile-div{
@@ -253,7 +253,6 @@ i {
 .footer-section {
     background-color: #3b2ba3;
     color: #fff;
-    height: 150px;
 }
 
 .footer-container span {

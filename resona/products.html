@@ -51,67 +51,139 @@
 </section>
 
 <section class="section products-catalog heder-section">
-    <div class="container catalog-head flex align-center space-between">
-        <div>
-            <span>Product Catalog</span>
-        </div>
-        <div class="flex">
-            <div class="flex align-center">
-            <button>
-                <i class="ti ti-search"></i>
-                <p>Search</p>
-            </button>
+    <div class="container catalog-container">
+        <div class="catalog-head flex align-center space-between">
+            <div>
+                <span>Product Catalog</span>
             </div>
-            <button>
-                <i class="ti ti-sort-descending"></i>
-                <p>Short</p>
-            </button>
-            <button>
-                <i class="ti ti-playlist-add"></i>
-                <p>Add new</p>
-            </button>
+            <div class="flex">
+                <div class="flex align-center">
+                    <button>
+                        <i class="ti ti-search"></i>
+                        <p>Search</p>
+                    </button>
+                </div>
+                <button>
+                    <i class="ti ti-sort-descending"></i>
+                    <p>Short</p>
+                </button>
+                <button data-micromodal-trigger="modal-1" onclick="setDefaultTitle()">
+                    <i class="ti ti-playlist-add"></i>
+                    <p>Add new</p>
+                </button>
+            </div>
+        </div>
+
+        <!-- Student Table -->
+        <div class="product-listing">
+
+            <table border="1" align="center">
+
+                <thead>
+                <tr>
+                    <th>SL</th>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Type</th>
+                    <th>Product ID</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+
+
+                <tbody id="tableBody">
+
+                <tr>
+                    <td>001</td>
+                    <td><img src="assets/img/t1%20(1).jpg" alt=""></td>
+                    <td>Resona Studio X1</td>
+                    <td>Headphone</td>
+                    <td>2024100520015</td>
+                    <td>$250</td>
+                    <td>400</td>
+                    <td>
+                        <button class="edit"><i class="ti ti-edit"></i></button>
+                        <button class="delete"><i class="ti ti-trash-x"></i></button>
+                    </td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
         </div>
     </div>
 
-    <!-- Student Table -->
-    <div class="container student-listing">
+    <!-- End product Table -->
 
-        <table border="1" align="center">
+    <!-- Modal -->
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
 
-            <thead>
-            <tr>
-                <th>SL</th>
-                <th>Image</th>
-                <th>Product Name</th>
-                <th>Type</th>
-                <th>Product ID</th>
-                <th>Price</th>
-                <th>Action</th>
-            </tr>
-            </thead>
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+
+            <div class="modal__container" role="dialog" aria-modal="true"
+                 aria-labelledby="modal-1-title">
+
+                <header class="modal__header">
+                    <h2 class="modal__title" id="modal-1-title">
+                         Add New Product
+                    </h2>
+
+                    <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+                        <i class="ti ti-x"></i>
+                    </button>
+                </header>
 
 
-            <tbody id="tableBody">
+                <main class="modal__content" id="modal-1-content">
 
-            <tr>
-                <td>001</td>
-                <td><img src="assets/img/t1%20(1).jpg" alt=""></td>
-                <td>Resona Studio X1</td>
-                <td>Headphone</td>
-                <td>2024100520015</td>
-                <td>$250</td>
-                <td>
-                    <button class="edit"><i class="ti ti-edit"></i></button>
-                    <button class="delete"><i class="ti ti-trash-x"></i></button>
-                </td>
-            </tr>
+                    <form action="" class="add-student-form" id="studentForm">
+                        <label class="preview" for="student-image">
+                            <img src="assets/img/avater.jpg" alt="" id="preview">
+                        </label>
+                        <input class="picker" type="file" id="student-image" name="image"
+                               accept="image/*">
+                        <small class="input-error" id="img-preview-error"></small>
+                        <select name="class" id="">
+                            <option value="">Select Type</option>
+                            <option value="1">Headphone</option>
+                            <option value="2">T.W.S.</option>
+                            <option value="3">A.N.C.</option>
+                            <option value="4">Gaming</option>
+                            <option value="5">Wired</option>
+                        </select>
+                        <small class="input-error"></small>
+                        <input type="text" name="productName" placeholder="Product Name">
+                        <small class="input-error"></small>
+                        <input type="number" name="price" placeholder="Price">
+                        <small class="input-error"></small>
+                        <input type="number" name="quantity" placeholder="Quantity">
+                        <small class="input-error"></small>
+                    </form>
 
-            </tbody>
+                </main>
 
-        </table>
 
+                <footer class="modal__footer">
+                    <div id="errors"><span></span></div>
+
+                    <button class="modal__btn modal__btn-primary" id="modalSaveBtn">
+                        Add new
+                    </button>
+
+                    <button class="modal__btn" data-micromodal-close
+                            aria-label="Close this dialog window">
+                        Close
+                    </button>
+
+                </footer>
+
+            </div>
+        </div>
     </div>
-    <!-- End Student Table -->
+    <!-- End Modal -->
 
 </section>
 
@@ -152,14 +224,8 @@
     </div>
 
 </section>
-<!--
-<script>
-    feather.replace();
-</script> -->
-<!-- jQuery FIRST -->
+<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-<!-- Owl Carousel -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="js/script.js"></script>
 </body>

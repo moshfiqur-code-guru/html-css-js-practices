@@ -25,3 +25,8 @@ window.addEventListener("scroll", () => {
         navigation.classList.remove("scrolled");
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    MicroModal.init();
+});

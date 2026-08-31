@@ -23,12 +23,6 @@ a {
 /*---------------------------- COMMON STYLE ---------------------------*/
 body {
     background-color: #d8d2ff3d;
-    background-image:
-            linear-gradient(#a69fd61d 1px, transparent 1px),
-            linear-gradient(90deg, #a69fd61d 1px, transparent 1px);
-
-    background-size: 32px 32px;
-
 }
 
 .section {
@@ -92,7 +86,7 @@ i {
     left: 0;
     width: 100%;
     height: 70px;
-    z-index: 1000;
+    z-index: 1;
     background: transparent;
     transition: padding 0.45s ease;
 }
@@ -121,7 +115,7 @@ i {
 }
 
 .navigation.scrolled .logo,
-.navigation..scrolled .menu {
+.navigation.scrolled .menu {
     transform: scale(0.96);
 }
 
@@ -196,11 +190,17 @@ i {
 
 /* ===================================== heder section =============================== */
 .heder-section{
-    height: 100vh;
+    min-height: 100vh;
 }
 .catalog-head{
     /*background-color: #00caca;*/
+
+}
+.catalog-container{
     margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 15px;
 }
 .catalog-head span{
     font-family: "Inter", sans-serif;
@@ -233,12 +233,13 @@ i {
 }
 .catalog-head button:hover{
     background-color: rgb(59 43 163 / 0.93);
-    margin: 0px 10px;
+    margin: 0 10px;
     color: white;
 }
 
 /*================================ product table=====================================*/
-.student-listing {
+.product-listing {
+    font-family:"Inter", sans-serif;
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -248,14 +249,14 @@ table {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
-    border: rgba(201, 199, 199, 0.42);
+    border: rgb(110 110 110 / 0.56);
 }
 table td{
-    padding: 5px 0px;
+    padding: 5px 0;
 }
 
 table th {
-    padding: 10px 0px;
+    padding: 10px 0;
 }
 
 table img {
@@ -263,7 +264,7 @@ table img {
     width: 45px;
     display: block;
     margin: 5px auto;
-    border-radius: 50%;
+    border-radius: 7px;
     object-fit: cover;
 }
 
@@ -275,7 +276,7 @@ table button {
 }
 
 table button i {
-font-size: 25px;
+    font-size: 25px;
     display: block;
     margin:5px;
 
@@ -283,7 +284,7 @@ font-size: 25px;
 }
 
 table button:hover {
-    background: #0064fa;
+    background-color: rgb(59 43 163 / 0.93);
     border-radius: 5px;
     color: white;
 
@@ -299,15 +300,252 @@ tbody tr {
 }
 
 tbody tr:hover {
-    background: #63ffff72;
+    background-color: rgb(113 92 251 / 0.18);
 }
+
+
+/**************************\
+  Basic Modal Styles
+\**************************/
+
+.modal {
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+}
+
+.modal__overlay {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(28, 28, 28, 0.772);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__container {
+    font-family: "Outfit", sans-serif;
+    /* background-color: #ffffff; */
+    padding: 30px;
+    width: 500px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-color: #f7f6ff;
+    border: 1px solid #3b2ba3;
+
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    color: #3b2ba3;
+    box-sizing: border-box;
+}
+
+.modal__close {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+}
+
+.modal__close i {
+    display: block;
+    font-size: 20px;
+    transform: translate(-3px, -3px);
+}
+
+.modal__content {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, .8);
+}
+
+.modal__btn {
+    background: gainsboro;
+    font-family: "Outfit", sans-serif;
+    font-size: 15px;
+    padding: 10px 14px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 10px;
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal__btn:focus,
+.modal__btn:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.modal__btn-primary:hover {
+    background: #0064fa;
+}
+
+.modal__btn-primary {
+    background-color: #3b2ba3;
+    color: #fff;
+}
+
+#errors {
+    transform: translate(3px, -16px);
+    color: red;
+    font-size: 16px;
+}
+
+/**************************\
+  Demo Animation Style
+\**************************/
+@keyframes mmfadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes mmfadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes mmslideIn {
+    from {
+        transform: translateY(15%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes mmslideOut {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10%);
+    }
+}
+
+.micromodal-slide {
+    display: none;
+}
+
+.micromodal-slide.is-open {
+    display: block;
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay {
+    animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+    animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__overlay {
+    animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__container {
+    animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+    will-change: transform;
+}
+
+/* =======================add new from============================= */
+.preview img {
+    display: block;
+    height: 130px;
+    width: 130px;
+    margin: auto;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+form.add-student-form .picker {
+    /*display: none;*/
+}
+
+.add-student-form {}
+
+
+form.add-student-form input {
+    display: block;
+    border: none;
+    background-color: #c9c1ff80;
+    border-radius: 10px;
+    padding: 8px 10px;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+input:focus {
+    outline: none;
+    /* border: 2px solid #000; */
+    box-shadow: 0 0 0 2px #3b2ba3;
+}
+
+select {
+    margin-top: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #c9c1ff80;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-error {
+    color: red;
+    text-transform: capitalize;
+}
+
+#img-preview-error {
+    padding-top: 10px;
+    display: block;
+    text-align: center;
+}
+
+
+
+
+
 
 /* ================================ footer section ================================== */
 
 .footer-section {
     background-color: #3b2ba3;
     color: #fff;
-    height: 150px;
 }
 
 .footer-container span {
@@ -347,5 +585,5 @@ tbody tr:hover {
     font-family: "Inter", sans-serif;
     font-size: 15px;
     display: block;
-    padding: 20px 0px;
+    padding: 20px 0;
 }
