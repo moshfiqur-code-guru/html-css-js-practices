@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8da8d43e-20fa-41c2-9433-1f553370d367" name="Changes" comment="admin page and product table">
+      <change beforePath="$PROJECT_DIR$/resona/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/resona/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resona/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/resona/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resona/css/products.css" beforeDir="false" afterPath="$PROJECT_DIR$/resona/css/products.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resona/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/resona/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resona/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/resona/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resona/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/resona/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resona/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/resona/products.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="project-1.1" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;moshfiqur-code-guru&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/moshfiqur-code-guru/html-css-js-practices.git&quot;,
+    &quot;accountId&quot;: &quot;c96cbede-ac66-43ae-93d2-0bdb69f241be&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000000000001168" />
+      <entry key="S5" value="1.000008077599592" />
+      <entry key="S10" value="1.0038350772458684" />
+      <entry key="S30" value="1.3253703511353179" />
+      <entry key="S60" value="2.3302019019092013" />
+      <entry key="M2" value="4.376114760583013" />
+      <entry key="M5" value="8.205182207496552" />
+      <entry key="M10" value="14.004882619312413" />
+      <entry key="M15" value="21.254771766713564" />
+      <entry key="M30" value="46.95573868585662" />
+      <entry key="H1" value="98.49542272217343" />
+      <entry key="H2" value="168.34495026672275" />
+      <entry key="H4" value="231.82346530916988" />
+      <entry key="D1" value="311.145299147751" />
+      <entry key="W1" value="328.0679591281996" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="6.9993425826654575E-289" />
+      <entry key="MS500" value="2.3388989025898938E-58" />
+      <entry key="S2" value="3.910685261940685E-15" />
+      <entry key="S5" value="1.7262641079163965E-6" />
+      <entry key="S10" value="0.0013421806306619377" />
+      <entry key="S30" value="0.14080754201051995" />
+      <entry key="S60" value="0.5377974218870476" />
+      <entry key="M2" value="1.232788272574067" />
+      <entry key="M5" value="2.3867921441239854" />
+      <entry key="M10" value="3.648218260583222" />
+      <entry key="M15" value="5.197196618094254" />
+      <entry key="M30" value="12.752986760935226" />
+      <entry key="H1" value="35.2376294800637" />
+      <entry key="H2" value="72.09905260729475" />
+      <entry key="H4" value="108.20988723752787" />
+      <entry key="D1" value="155.07136706249008" />
+      <entry key="W1" value="165.2343991650612" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.8066417592221263" />
+      <entry key="MS500" value="0.9579352182226964" />
+      <entry key="S2" value="0.9893137269832689" />
+      <entry key="S5" value="0.995719026786235" />
+      <entry key="S10" value="1.0024409254786735" />
+      <entry key="S30" value="1.445065459403944" />
+      <entry key="S60" value="2.823005454505186" />
+      <entry key="M2" value="5.556211477919655" />
+      <entry key="M5" value="10.553075930887232" />
+      <entry key="M10" value="17.625992667083125" />
+      <entry key="M15" value="26.428330021773654" />
+      <entry key="M30" value="59.68315264411601" />
+      <entry key="H1" value="133.70019703880118" />
+      <entry key="H2" value="240.41134238053573" />
+      <entry key="H4" value="340.0090871090972" />
+      <entry key="D1" value="466.21090348228273" />
+      <entry key="W1" value="493.3014817316242" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4,
+  "fromUser": true
+}]]></component>
+  <component name="ProjectId" id="3IfQkXfKAvQxSJh7JDxWwOvEzRk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.index.html.executor": "Debug",
+    "JavaScript Debug.products.html.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "project-1.4",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/RealmeBOOK/Desktop/html/practices",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.completion.popup",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/practices/resona/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="products.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/practices/resona/products.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.products.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.9437.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8da8d43e-20fa-41c2-9433-1f553370d367" name="Changes" comment="" />
+      <created>1788153286254</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1788153286254</updated>
+      <workItem from="1788153287260" duration="8537000" />
+      <workItem from="1788162213029" duration="109000" />
+      <workItem from="1788163848777" duration="2692000" />
+      <workItem from="1788178000551" duration="4687000" />
+    </task>
+    <task id="LOCAL-00001" summary="admin page and product table">
+      <option name="closed" value="true" />
+      <created>1788161810898</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1788161810898</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="admin page and product table" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin page and product table" />
+  </component>
+</project>
