@@ -1,0 +1,351 @@
+/*---------------------------- NORMALIZE ---------------------------*/
+/*
+  font-family: "Stack Sans Notch", sans-serif;
+  font-family: "Manrope", sans-serif;
+  font-family: "Inter", sans-serif;
+
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*---------------------------- COMMON STYLE ---------------------------*/
+body {
+    background-color: #d8d2ff3d;
+    background-image:
+            linear-gradient(#a69fd61d 1px, transparent 1px),
+            linear-gradient(90deg, #a69fd61d 1px, transparent 1px);
+
+    background-size: 32px 32px;
+
+}
+
+.section {
+    padding-top: 70px;
+}
+
+.container {
+    width: 85%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.center {
+    justify-content: center;
+}
+
+.end {
+    justify-content: end;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.animate__animated {
+    /* animation-iteration-count: infinite; */
+    animation-duration: 1s;
+}
+
+i {
+    font-size: 30px;
+}
+
+/*================================== navigation ================================*/
+
+.nav-container {
+
+    justify-content: space-between;
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+    background: transparent;
+    transition: padding 0.45s ease;
+}
+
+.navigation::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: -1;
+}
+
+.navigation.scrolled {
+    padding: 5px 0;
+    background: #c9c1ff80;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid #7c94735f;
+}
+
+.navigation.scrolled::before {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.navigation.scrolled .logo,
+.navigation..scrolled .menu {
+    transform: scale(0.96);
+}
+
+.logo {
+    width: 150px;
+    align-items: center;
+}
+
+.logo span {
+    font-family: "Stack Sans Notch", sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+
+}
+
+.logo i {
+    margin-right: 7px;
+    font-size: 35px;
+}
+
+.menu li a {
+    font-family: "Inter", sans-serif;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px;
+    margin: 15px;
+    display: block;
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.menu li a:hover {
+    background: #3B2BA3;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 20px;
+
+}
+
+.end-items {
+    width: 150px;
+    justify-content: end;
+}
+
+.cart {
+    padding: 10px 12px;
+    border-radius: 50px;
+    cursor: pointer;
+
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cart i {
+    padding-right: 8px;
+    font-size: 25px;
+    display: inline-block;
+    transform: translateY(-1px);
+}
+
+.cart span {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.cart:hover {
+    background: #3B2BA3;
+    color: #fff;
+    border-radius: 25px;
+    padding: 10px 18px;
+}
+
+/* ===================================== heder section =============================== */
+.heder-section{
+    height: 100vh;
+}
+.catalog-head{
+    /*background-color: #00caca;*/
+    margin-top: 20px;
+}
+.catalog-head span{
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+.catalog-head button{
+    width: 120px;
+    height: 40px;
+    background-color: transparent;
+    /*background-color: rgb(59 43 163 / 0.93);*/
+    border: none;
+    color: #000;
+    border-radius: 20px;
+
+    cursor: pointer;
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.catalog-head button p{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-block;
+    transform: translate(0px, -3px);
+}
+.catalog-head button i{
+    font-size: 22px;
+    display: inline-block;
+}
+.catalog-head button:hover{
+    background-color: rgb(59 43 163 / 0.93);
+    margin: 0px 10px;
+    color: white;
+}
+
+/*================================ product table=====================================*/
+.student-listing {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    border: rgba(201, 199, 199, 0.42);
+}
+table td{
+    padding: 5px 0px;
+}
+
+table th {
+    padding: 10px 0px;
+}
+
+table img {
+    height: 45px;
+    width: 45px;
+    display: block;
+    margin: 5px auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+table button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+table button i {
+font-size: 25px;
+    display: block;
+    margin:5px;
+
+
+}
+
+table button:hover {
+    background: #0064fa;
+    border-radius: 5px;
+    color: white;
+
+}
+
+#empty-massage {
+    padding: 15px;
+    font-size: 17px;
+}
+
+tbody tr {
+    transition: background 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+tbody tr:hover {
+    background: #63ffff72;
+}
+
+/* ================================ footer section ================================== */
+
+.footer-section {
+    background-color: #3b2ba3;
+    color: #fff;
+    height: 150px;
+}
+
+.footer-container span {
+    font-family: "Stack Sans Notch", sans-serif;
+    font-size: 25px;
+    display: block;
+    padding-bottom: 15px;
+}
+
+.footer-container p {
+    font-family: "Inter", sans-serif;
+    display: block;
+}
+
+.footer-list {
+    width: 250px;
+    height: 100%;
+}
+
+.footer-container ul li {
+    display: block;
+    padding-bottom: 12px;
+    font-family: "Inter", sans-serif;
+    text-transform: capitalize;
+}
+
+.footer-container ul li a {
+    color: #fff;
+}
+
+.line {
+    border: 1px solid rgb(232, 227, 227);
+    margin-top: 50px;
+}
+
+.ending-section span {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    display: block;
+    padding: 20px 0px;
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resona</title>
+    <!-- <script src="https://unpkg.com/feather-icons"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Stack+Sans+Notch:wght@200..700&display=swap"
+            rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link rel="stylesheet" href="css/products.css">
+</head>
+
+<body>
+
+<section>
+    <nav class="navigation">
+        <div
+                class="container header-container nav-container flex align-center animate__animated animate__fadeInDown">
+            <div class="logo flex align-center">
+                <i class="ti ti-brand-framer"></i>
+                <span>RESONA</span>
+            </div>
+            <div class="menu flex center">
+                <div class="main-menu">
+                    <ul class="flex">
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Orders</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="end-items flex">
+                <div class="cart flex align-center">
+                    <i class="ti ti-logout"></i>
+                    <span>logout</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+</section>
+
+<section class="section products-catalog heder-section">
+    <div class="container catalog-head flex align-center space-between">
+        <div>
+            <span>Product Catalog</span>
+        </div>
+        <div class="flex">
+            <div class="flex align-center">
+            <button>
+                <i class="ti ti-search"></i>
+                <p>Search</p>
+            </button>
+            </div>
+            <button>
+                <i class="ti ti-sort-descending"></i>
+                <p>Short</p>
+            </button>
+            <button>
+                <i class="ti ti-playlist-add"></i>
+                <p>Add new</p>
+            </button>
+        </div>
+    </div>
+
+    <!-- Student Table -->
+    <div class="container student-listing">
+
+        <table border="1" align="center">
+
+            <thead>
+            <tr>
+                <th>SL</th>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Type</th>
+                <th>Product ID</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+
+
+            <tbody id="tableBody">
+
+            <tr>
+                <td>001</td>
+                <td><img src="assets/img/t1%20(1).jpg" alt=""></td>
+                <td>Resona Studio X1</td>
+                <td>Headphone</td>
+                <td>2024100520015</td>
+                <td>$250</td>
+                <td>
+                    <button class="edit"><i class="ti ti-edit"></i></button>
+                    <button class="delete"><i class="ti ti-trash-x"></i></button>
+                </td>
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+    <!-- End Student Table -->
+
+</section>
+
+
+
+
+
+
+
+<section class="section footer-section">
+    <div class="container flex space-between footer-container">
+        <div>
+            <span>resona</span>
+            <p>Thoughtfully designed headphones and <br>earbuds
+                built around clarity, comfort, and everyday life.</p>
+        </div>
+        <div class="flex space-between footer-list">
+            <div>
+                <ul class="flex column space-between">
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">shop</a></li>
+                    <li><a href="#">admin panel</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">terms</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="line container"></div>
+    <div class="container flex space-between ending-section">
+        <div><span>© 2026 Resona — student project, not a real store</span></div>
+        <div><span>Made with HTML, CSS & JS</span></div>
+    </div>
+
+</section>
+<!--
+<script>
+    feather.replace();
+</script> -->
+<!-- jQuery FIRST -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Owl Carousel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+
+</html>
