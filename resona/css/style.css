@@ -347,7 +347,7 @@ i {
 .product-section-title {
     font-family: "Stack Sans Notch", sans-serif;
     font-size: 50px;
-
+    padding-bottom: 30px;
 }
 
 .owl-carousel {
