@@ -23,85 +23,108 @@
 
 <body>
 
-<section>
-    <nav class="navigation">
-        <div
-                class="container header-container nav-container flex align-center animate__animated animate__fadeInDown">
-            <div class="logo flex align-center">
-                <i class="ti ti-brand-framer"></i>
-                <span>RESONA</span>
+<section class="login-section">
+    <div class="login-container flex column" id="loginScreen">
+        <div class="flex column align-center login-head">
+            <i class="ti ti-brand-framer"></i>
+            <span>Resona Admin</span>
+        </div>
+        <div class="flex column align-center login-form">
+            <form action="" method="POST" class="flex column">
+                <input type="text" placeholder="Username">
+                <input type="password" placeholder="Password">
+                <small> !error </small>
+                <button class="login-btn">Login</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<section class="Logged-in-content">
+    <section>
+        <nav class="navigation">
+            <div
+                    class="container header-container nav-container flex align-center animate__animated animate__fadeInDown">
+                <div class="logo flex align-center">
+                    <i class="ti ti-brand-framer"></i>
+                    <span>RESONA</span>
+                </div>
+                <div class="menu flex center">
+                    <div class="main-menu">
+                        <ul class="flex">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="#">Orders</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="end-items flex">
+                    <div class="cart flex align-center">
+                        <i class="ti ti-logout"></i>
+                        <span>logout</span>
+                    </div>
+                </div>
             </div>
-            <div class="menu flex center">
-                <div class="main-menu">
-                    <ul class="flex">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="#">Orders</a></li>
+        </nav>
+    </section>
+
+    <section class="section heder-section">
+        <div class="container flex space-between profile-div">
+            <div>
+                <span>Admin panel</span>
+                <h3>Welcome Back, Moshfiqur</h3>
+            </div>
+            <div class="profile-image">
+                <img src="assets/img/avater.jpg">
+            </div>
+        </div>
+    </section>
+
+    <section class="dashboard-section">
+        <div class="container flex center align-center ">
+            <div class="dashboard-div">
+                <h3> Statistics</h3>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section footer-section">
+        <div class="container flex space-between footer-container">
+            <div>
+                <span>resona</span>
+                <p>Thoughtfully designed headphones and <br>earbuds
+                    built around clarity, comfort, and everyday life.</p>
+            </div>
+            <div class="flex space-between footer-list">
+                <div>
+                    <ul class="flex column space-between">
+                        <li><a href="#">about</a></li>
+                        <li><a href="#">shop</a></li>
+                        <li><a href="#">admin panel</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">terms</a></li>
+                        <li><a href="#">contact</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="end-items flex">
-                <div class="cart flex align-center">
-                    <i class="ti ti-logout"></i>
-                    <span>logout</span>
-                </div>
-            </div>
         </div>
-    </nav>
-</section>
+        <div class="line container"></div>
+        <div class="container flex space-between ending-section">
+            <div><span>© 2026 Resona — student project, not a real store</span></div>
+            <div><span>Made with HTML, CSS & JS</span></div>
+        </div>
 
-<section class="section heder-section">
-    <div class="container flex space-between profile-div">
-        <div>
-            <span>Admin panel</span>
-            <h3>Welcome Back, Moshfiqur</h3>
-        </div>
-        <div class="profile-image">
-            <img src="assets/img/avater.jpg">
-        </div>
-    </div>
-</section>
+    </section>
 
-<section class="dashboard-section">
-    <div class="container flex center align-center ">
-        <div class="dashboard-div">
-            <h3> Statistics</h3>
-        </div>
-    </div>
 </section>
 
 
-<section class="section footer-section">
-    <div class="container flex space-between footer-container">
-        <div>
-            <span>resona</span>
-            <p>Thoughtfully designed headphones and <br>earbuds
-                built around clarity, comfort, and everyday life.</p>
-        </div>
-        <div class="flex space-between footer-list">
-            <div>
-                <ul class="flex column space-between">
-                    <li><a href="#">about</a></li>
-                    <li><a href="#">shop</a></li>
-                    <li><a href="#">admin panel</a></li>
-                </ul>
-            </div>
-            <div>
-                <ul>
-                    <li><a href="#">shipping</a></li>
-                    <li><a href="#">terms</a></li>
-                    <li><a href="#">contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="line container"></div>
-    <div class="container flex space-between ending-section">
-        <div><span>© 2026 Resona — student project, not a real store</span></div>
-        <div><span>Made with HTML, CSS & JS</span></div>
-    </div>
-        
-</section>
 <!--
 <script>
     feather.replace();
