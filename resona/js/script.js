@@ -1,6 +1,20 @@
-// #############################################
-// Declaration 
-// #############################################
+// ############################################################//
+// navigation animation when scrolling                        //
+// ##########################################################//
+
+const navigation = document.querySelector(".navigation");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 30) {
+        navigation.classList.add("scrolled");
+    } else {
+        navigation.classList.remove("scrolled");
+    }
+});
+
+// #############################################//
+// Declaration                                 //
+// ###########################################//
 
 
 const productForm = document.getElementById("productForm");
@@ -19,45 +33,29 @@ let modalTitleText = "Add New Product";
 let modalActionBtnText = "Add new";
 
 
-// ###############################################
-// owl carousel
-// ###############################################
+//
+// $('.owl-carousel').owlCarousel({
+//     stagePadding: 50,
+//     loop: true,
+//     margin: 20,
+//     nav: false,
+//     responsive: {
+//         0: {
+//             items: 1
+//         },
+//         600: {
+//             items: 2
+//         },
+//         1000: {
+//             items: 3
+//         }
+//     }
+// })
 
-$('.owl-carousel').owlCarousel({
-    stagePadding: 50,
-    loop: true,
-    margin: 20,
-    nav: false,
-    responsive: {
-        0: {
-            items: 1
-        },
-        600: {
-            items: 2
-        },
-        1000: {
-            items: 3
-        }
-    }
-})
 
-// ############################################################
-// navigation animation when scrolling
-// ############################################################
-
-const navigation = document.querySelector(".navigation");
-
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 30) {
-        navigation.classList.add("scrolled");
-    } else {
-        navigation.classList.remove("scrolled");
-    }
-});
-
-// ###################################################################
-// micro modal
-// ##################################################################
+// ###################################################################//
+// micro modal                                                       //
+// #################################################################//
 document.addEventListener('DOMContentLoaded', () => {
     MicroModal.init();
 });
@@ -91,9 +89,9 @@ function setDefaultTitle() {
 setModalTitleAndButton();
 
 
-// ##################################################################
-// product id generator
-//##################################################################
+// ##################################################################//
+// product id generator                                            //
+//################################################################//
 
 function generateProductID() {
     const time = new Date().getMilliseconds();
@@ -161,7 +159,9 @@ function validateProduct(product) {
     return error;
 }
 
-//######################## clearing error ##############################//
+//##################################//
+// clearing error                 //
+// ##############################//
 
 function clearErrors() {
     errorMsg.forEach((error) => {
@@ -173,7 +173,7 @@ function clearErrors() {
 // ###############################################################################//
 // save product info into local storge                                           //
 //##############################################################################//
-//
+
 // const products = [{
 //     id: generateProductID(),
 //     productName: "Product 1",
@@ -182,7 +182,6 @@ function clearErrors() {
 //     quantity: "342",
 //     image: ""
 // }]
-
 
 function saveProduct() {
     localStorage.setItem('products', JSON.stringify(products));
@@ -207,9 +206,9 @@ function displayProducts() {
                 <td>${index + 1}</td>
                 <td><img src="assets/img/${products.image}" alt=""></td>
                 <td>${products.productName}</td>
-                <td>${products.type}</td>
+                <td>${typeLabel(Number(products.type))}</td>
                 <td>${products.id}</td>
-                <td>${products.price}</td>
+                <td>$${products.price}</td>
                 <td>${products.quantity}</td>
             <td>
                 <button class="edit" onclick="editProduct(${index}, ${products.id})"><i class="ti ti-edit"></i></button>
@@ -295,11 +294,21 @@ function editProduct(index, id) {
 }
 
 
+//################################################################//
+// function for displaying actual type name                      //
+//##############################################################//
 
+function typeLabel(typeValue) {
+    const types = {
+        1: "Headphone",
+        2: "T.W.S.",
+        3: "A.N.C.",
+        4: "Gaming",
+        5: "Wired",
+    }
+    return types[typeValue];
 
-
-
-
+}
 
 
 
