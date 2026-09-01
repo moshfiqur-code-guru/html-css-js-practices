@@ -15,6 +15,9 @@ let editableIndex = null;
 let currentID = null;
 let message = "";
 
+let modalTitleText = "Add New Product";
+let modalActionBtnText = "Add new";
+
 
 // ###############################################
 // owl carousel
@@ -59,15 +62,45 @@ document.addEventListener('DOMContentLoaded', () => {
     MicroModal.init();
 });
 
+
+//##############################################################//
+// function for changing modal title and button                //
+//############################################################//
+
+function setModalTitleAndButton() {
+    modalTitle.textContent = modalTitleText;
+    modalActionBtn.textContent = modalActionBtnText;
+}
+
+function setDefaultTitle() {
+    editableIndex = null;
+
+    clearErrors()
+    productForm.reset();
+    productImagePicker.value = "";
+    preview.src = "assets/img/add-image.png";
+
+    modalTitleText = "Add New Product";
+    modalActionBtnText = "Add new";
+
+    setModalTitleAndButton();
+
+    MicroModal.show("modal-1");
+}
+
+setModalTitleAndButton();
+
+
 // ##################################################################
 // product id generator
 //##################################################################
 
 function generateProductID() {
     const time = new Date().getMilliseconds();
-    const product = JSON.parse(localStorage.getItem('products'));
+    const product = JSON.parse(localStorage.getItem('products')) || [];
     return 2631 + product.length + time;
 }
+
 
 //###################################################################################//
 // script for getting a product info  from HTML form and saving it to local storage //
@@ -81,20 +114,20 @@ modalActionBtn.addEventListener("click", (event) => {
     const product = Object.fromEntries(formData);
     const validationErrors = validateProduct(product);
 
-    product["image"] = product.image.name;
+    product.image = productImagePicker.files[0]?.name || "";
     product["id"] = currentID ?? generateProductID();
 
 
-    if (object.keys(validationErrors).length === 0) {
+    if (Object.keys(validationErrors).length === 0) {
         if (editableIndex !== null) {
             products[editableIndex] = product;
             currentID = null;
             editableIndex = null;
-            massage = "Updated";
+            message = "Updated";
             productForm.reset();
             MicroModal.close('modal-1');
         } else {
-            massage = "Saved";
+            message = "Saved";
             products.push(product);
             MicroModal.close('modal-1');
             productForm.reset();
@@ -102,9 +135,9 @@ modalActionBtn.addEventListener("click", (event) => {
         clearErrors();
         saveProduct();
         displayProducts();
-        studentForm.reset();
+        productForm.reset();
     } else {
-        object.keys(validationErrors).forEach(key => {
+        Object.keys(validationErrors).forEach(key => {
             const input = productForm.elements[key];
             const errorElement = input.nextElementSibling;
             errorElement.textContent = "!" + " " + validationErrors[key];
@@ -131,7 +164,7 @@ function validateProduct(product) {
 //######################## clearing error ##############################//
 
 function clearErrors() {
-    errorElements.forEach((error) => {
+    errorMsg.forEach((error) => {
         error.textContent = "";
     });
 }
@@ -140,7 +173,7 @@ function clearErrors() {
 // ###############################################################################//
 // save product info into local storge                                           //
 //##############################################################################//
-
+//
 // const products = [{
 //     id: generateProductID(),
 //     productName: "Product 1",
@@ -151,7 +184,7 @@ function clearErrors() {
 // }]
 
 
-function saveProduct(products) {
+function saveProduct() {
     localStorage.setItem('products', JSON.stringify(products));
 }
 
@@ -161,15 +194,15 @@ function saveProduct(products) {
 // displaying products in table from local storage               //
 //##############################################################//
 
-const products = JSON.parse(localStorage.getItem('products')) ?? [];
-const row = document.createElement("tr");
+const products = JSON.parse(localStorage.getItem('products')) || [];
+
 
 function displayProducts() {
     tableBody.innerHTML = "";
 
     if (products.length > 0) {
         products.forEach((products, index) => {
-
+            const row = document.createElement("tr");
             row.innerHTML = `
                 <td>${index + 1}</td>
                 <td><img src="assets/img/${products.image}" alt=""></td>
@@ -179,19 +212,102 @@ function displayProducts() {
                 <td>${products.price}</td>
                 <td>${products.quantity}</td>
             <td>
-                <button className="edit"><i className="ti ti-edit"></i></button>
-                <button className="delete"><i className="ti ti-trash-x"></i></button>
+                <button class="edit" onclick="editProduct(${index}, ${products.id})"><i class="ti ti-edit"></i></button>
+                <button class="delete" onclick="deleteProduct(${index})"><i class="ti ti-trash-x"></i></button>
             </td>`;
             tableBody.appendChild(row);
         })
     } else {
+        const row = document.createElement("tr");
         row.innerHTML = `
-        <td colspan="8" id="empty-massage"><i class="ti ti-alert-hexagon"></i><p>Products table is empty</p></td>`;
+        <td colspan="8" id="empty-message"><i class="ti ti-alert-triangle"></i><p>Products table is empty</p></td>`;
         tableBody.appendChild(row);
     }
 }
 
 displayProducts();
+
+
+//########################################################################//
+// preview image                                                         //
+//######################################################################//
+
+productImagePicker.addEventListener("change", (event) => {
+    const file = event.target.files[0];
+
+    if (file) {
+        const url = URL.createObjectURL(file);
+        previewImage.src = url;
+    }
+});
+
+//####################################################################//
+//delete product from list                                           //
+//##################################################################//
+
+
+function deleteProduct(index) {
+    const confirmation = confirm("Are you want to delete this student??");
+    if (!confirmation) {
+        return;
+    } else {
+        products.splice(index, 1);
+        saveProduct();
+        displayProducts();
+    }
+}
+
+//##################################################################//
+// editing product info from list                                  //
+//################################################################//
+
+function editProduct(index, id) {
+    MicroModal.show('modal-1');
+
+    clearErrors()
+    modalTitleText = "Edit Product Info";
+    modalActionBtnText = "Update";
+    editableIndex = index;
+    currentID = id;
+
+    setModalTitleAndButton();
+    const product = products[index];
+    const keys = Object.keys(product);
+
+    keys.forEach((key, index) => {
+        if (key !== "id" && key !== "image") {
+            productForm.elements[key].value = product[key];
+        } else if (product.image === "") {
+            previewImage.src = "assets/img/add-image.png";
+        } else {
+            let url = "assets/img/" + product.image;
+            previewImage.src = url;
+            fetch(url).then(async (result) => {
+                const blob = await result.blob();
+                const file = new File([blob], product.image, {type: blob.type});
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                productImagePicker.files = dataTransfer.files;
+            })
+        }
+    })
+    saveProduct();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

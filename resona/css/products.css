@@ -287,8 +287,6 @@ table button i {
     font-size: 25px;
     display: block;
     margin: 5px;
-
-
 }
 
 table button:hover {
@@ -311,6 +309,10 @@ tbody tr:hover {
     background-color: rgb(113 92 251 / 0.18);
 }
 
+#empty-message {
+    font-weight: 500;
+    font-size: 18px;
+}
 
 /**************************\
   Basic Modal Styles
@@ -493,7 +495,7 @@ tbody tr:hover {
     height: 130px;
     width: 130px;
     margin: auto;
-    border-radius: 50%;
+    border-radius: 20px;
     cursor: pointer;
     object-fit: cover;
     overflow: hidden;
