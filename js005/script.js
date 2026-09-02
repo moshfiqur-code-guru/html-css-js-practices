@@ -1,4 +1,3 @@
-
 // Source - https://stackoverflow.com/a/2117523
 // Posted by broofa, modified by community. See post 'Timeline' for change history
 // Retrieved 2026-08-02, License - CC BY-SA 4.0
@@ -32,26 +31,26 @@ function getUserFromStorage() {
     return JSON.parse(localStorage.getItem("user"));
 }
 
-function userLoginStatus() {
-    const user = getUserFromStorage();
-    if (user && user.isLoggedIn) {
-        if (window.location.href.includes("index.html")) {
-            window.location.href = "dashboard.html"
-        }
-        let author = document.getElementById("author-img");
-        let img = document.createElement("img");
-        img.src = user.image;
-        img.alt = "image";
-
-        author.appendChild(img);
-
-    } else {
-        if (!window.location.href.includes("index.html")) {
-            window.location.href = "index.html"
-
-        }
-    }
-}
+// function userLoginStatus() {
+//     const user = getUserFromStorage();
+//     if (user && user.isLoggedIn) {
+//         if (window.location.href.includes("index.html")) {
+//             window.location.href = "dashboard.html"
+//         }
+//         let author = document.getElementById("author-img");
+//         let img = document.createElement("img");
+//         img.src = user.image;
+//         img.alt = "image";
+//
+//         author.appendChild(img);
+//
+//     } else {
+//         if (!window.location.href.includes("index.html")) {
+//             window.location.href = "index.html"
+//
+//         }
+//     }
+// }
 
 
 function doLogin() {
@@ -81,10 +80,6 @@ function logout() {
     saveUserInLocalStorage(savedUserInfo);
     userLoginStatus();
 }
-
-
-
-
 
 
 function showPassword(btn) {
@@ -120,6 +115,7 @@ function toggleVisible(type) {
         show.style.display = "block"
     }
 }
+
 // UserLoginStatus();
 
 // function addMenu() {
@@ -167,7 +163,6 @@ function toggleVisible(type) {
 // addMenu();
 
 
-
 // const arrayOfMenu = ["dashboard", "user", "order", "analytics", "calculator", "settings"];
 // const ul = document.createElement("ul");
 
@@ -178,16 +173,15 @@ function toggleVisible(type) {
 // document.querySelector(".menu").appendChild(ul);
 
 
-
 const arrayOfMenu = [
-    { label: "dashboard", icon: "home" },
-    { label: "classes", icon: "table" },
-    { label: "teachers", icon: "pen-tool" },
-    { label: "students", icon: "users" },
-    { label: "guardians", icon: "umbrella" },
-    { label: "results", icon: "bar-chart-2" },
-    { label: "calculator", icon: "divide-square" },
-    { label: "settings", icon: "settings" },
+    {label: "dashboard", icon: "home"},
+    {label: "classes", icon: "table"},
+    {label: "teachers", icon: "pen-tool"},
+    {label: "students", icon: "users"},
+    {label: "guardians", icon: "umbrella"},
+    {label: "results", icon: "bar-chart-2"},
+    {label: "calculator", icon: "divide-square"},
+    {label: "settings", icon: "settings"},
 ];
 const ul = document.createElement("ul");
 
@@ -201,7 +195,6 @@ for (let i = 0; i < arrayOfMenu.length; i++) {
 if (menu !== null) {
     menu.appendChild(ul);
 }
-
 
 
 function activeMenu() {

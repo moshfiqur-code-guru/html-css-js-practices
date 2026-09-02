@@ -171,7 +171,7 @@ function clearErrors() {
 
 
 // ###############################################################################//
-// save product info into local storge                                           //
+// save product info into local storage                                           //
 //##############################################################################//
 
 // const products = [{
@@ -283,7 +283,7 @@ function editProduct(index, id) {
             previewImage.src = url;
             fetch(url).then(async (result) => {
                 const blob = await result.blob();
-                const file = new File([blob], product.image, {type: blob.type});
+                const file = new File([blob], product.image, { type: blob.type });
                 const dataTransfer = new DataTransfer();
                 dataTransfer.items.add(file);
                 productImagePicker.files = dataTransfer.files;
