@@ -281,8 +281,11 @@ i {
 
 }
 
-.menu li.active {
-    background: #00fafaaf;
+.menu li a.active {
+    background: #3B2BA3;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 20px;
 }
 
 
