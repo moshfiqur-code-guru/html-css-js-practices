@@ -196,16 +196,38 @@ function saveProduct() {
 const products = JSON.parse(localStorage.getItem('products')) || [];
 
 
+// ============= search product function ========= //
+
+function filterProduct(input) {
+    const keWords = input.value.replace(/\s/g, "");
+    productModerator.search = [keWords];
+    console.log(keWords);
+    displayProducts();
+}
+
+//=> const for search short >
+const productModerator = {
+    search: "",
+    dir: "",
+    column: ""
+}
+
+//=> function for displaying product on table >
 function displayProducts() {
+
+    const formattedProducts = products.filter(product => (product.productName + product.productModel)
+        .replace(/\s/g, "").toLowerCase().includes(productModerator.search));
+
     tableBody.innerHTML = "";
 
     if (products.length > 0) {
-        products.forEach((products, index) => {
+        formattedProducts.forEach((products, index) => {
             const row = document.createElement("tr");
             row.innerHTML = `
                 <td>${index + 1}</td>
                 <td><img src="assets/img/${products.image}" alt=""></td>
                 <td>${products.productName}</td>
+                <td>${products.productModel}</td>
                 <td>${typeLabel(Number(products.type))}</td>
                 <td>${products.id}</td>
                 <td>$${products.price}</td>
@@ -309,7 +331,6 @@ function typeLabel(typeValue) {
     return types[typeValue];
 
 }
-
 
 
 

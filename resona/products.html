@@ -57,10 +57,10 @@
                 </div>
                 <div class="flex">
                     <div class="flex align-center">
-                        <button>
+                        <div class="flex align-center search-bar">
                             <i class="ti ti-search"></i>
-                            <p>Search</p>
-                        </button>
+                            <input type="input" placeholder="Search here" oninput="filterProduct(this)">
+                        </div>
                     </div>
                     <button>
                         <i class="ti ti-sort-descending"></i>
@@ -83,6 +83,7 @@
                             <th>SL</th>
                             <th>Image</th>
                             <th>Product Name</th>
+                            <th>Product Model</th>
                             <th>Type</th>
                             <th>Product ID</th>
                             <th>Price</th>
@@ -153,6 +154,8 @@
                             </select>
                             <small class="input-error"></small>
                             <input type="text" name="productName" placeholder="Product Name">
+                            <small class="input-error"></small>
+                            <input type="text" name="productModel" placeholder="Product Model">
                             <small class="input-error"></small>
                             <input type="number" name="price" placeholder="Price">
                             <small class="input-error"></small>

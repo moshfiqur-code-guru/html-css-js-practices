@@ -219,6 +219,26 @@ i {
     text-decoration: underline;
 }
 
+.search-bar i {
+    position: absolute;
+    z-index: 1;
+    font-size: 22px;
+    transform: translate(12px, -1px);
+    color: gray;
+
+}
+
+.search-bar input {
+    position: relative;
+    width: 255px;
+    border-radius: 20px;
+    padding: 8px 40px;
+    background: #3b2ba329;
+    border: 2px solid #3b2ba37a;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+}
+
 .catalog-head button {
     width: 120px;
     height: 40px;
@@ -509,7 +529,7 @@ tbody tr:hover {
 }
 
 form.add-product-form .picker {
-    /*display: none;*/
+    display: none;
 }
 
 form.add-product-form input {
