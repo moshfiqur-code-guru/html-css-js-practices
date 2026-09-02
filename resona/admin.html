@@ -37,9 +37,11 @@
                     </div>
                     <div class="user-name-pass">
                         <i class="ti ti-key name-pass"></i>
-                        <input type="password" placeholder="Password" name="password">
-                        <i class="ti ti-eye-off show-hide"></i>
-                        <i class="ti ti-eye show-hide"></i>
+                        <input type="password" placeholder="Password" name="password" id="password">
+
+                        <img src="assets/logo/eye-off.svg" alt="" id="hide" onclick="showHidePass('password')">
+                        <img src="assets/logo/eye.svg" alt="" i id="show" onclick="showHidePass('text')">
+
                     </div>
 
                     <small class="animate__animated animate__headShake" id="errorMsg"></small>

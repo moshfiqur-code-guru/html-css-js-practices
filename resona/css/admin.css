@@ -190,14 +190,24 @@ i {
     position: relative;
 }
 
-.show-hide {
+#hide {
     position: absolute;
-    z-index: 1;
-    font-size: 24px;
-    color: rgb(89, 89, 89);
-    transform: translate(-38px, 10px);
+    height: 25px;
+    width: 25px;
+    bottom: 37%;
+    right: 82px;
+    display: none;
+    cursor: pointer;
 }
 
+#show {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    bottom: 37%;
+    right: 82px;
+    cursor: pointer;
+}
 
 /*================================== navigation ================================*/
 

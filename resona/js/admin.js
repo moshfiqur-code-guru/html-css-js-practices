@@ -106,3 +106,25 @@ function logout() {
     saveAdminIntoStorage(savedAdmin);
     loginStatus();
 }
+
+// ===============================================//
+// function show hide pass word                  //
+// =============================================//
+
+
+function showHidePass(type) {
+
+    const input = document.getElementById("password");
+    const show = document.getElementById("show");
+    const hide = document.getElementById("hide");
+
+    input.type = type;
+
+    if (type === "text") {
+        show.style.display = "none";
+        hide.style.display = "flex";
+    } else {
+        show.style.display = "flex";
+        hide.style.display = "none";
+    }
+}
