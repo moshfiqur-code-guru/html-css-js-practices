@@ -10,15 +10,16 @@ const productCarousel = document.getElementById("product-carousel");
 
 function displayInCarousel() {
 
-    productCarousel.innerHTML = "";
+    if (window.location.href.includes("index.html")) {
+        productCarousel.innerHTML = "";
 
-    products.forEach((product) => {
+        products.forEach((product) => {
 
-        const item = document.createElement("div");
+            const item = document.createElement("div");
 
-        item.classList.add("item");
+            item.classList.add("item");
 
-        item.innerHTML = `
+            item.innerHTML = `
             <div class="product-details flex column align-center space-between">
 
                 <div>
@@ -48,26 +49,27 @@ function displayInCarousel() {
             <img src="assets/img/${product.image}" alt="${product.productName}">
         `;
 
-        productCarousel.appendChild(item);
-    });
+            productCarousel.appendChild(item);
+        });
 
-    $('.owl-carousel').owlCarousel({
-        stagePadding: 50,
-        loop: true,
-        margin: 20,
-        nav: false,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 2
-            },
-            1000: {
-                items: 3
+        $('.owl-carousel').owlCarousel({
+            stagePadding: 50,
+            loop: false,
+            margin: 20,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
             }
-        }
-    })
+        })
+    }
 }
 
 displayInCarousel();

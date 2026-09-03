@@ -3,8 +3,6 @@
   font-family: "Stack Sans Notch", sans-serif;
   font-family: "Manrope", sans-serif;
   font-family: "Inter", sans-serif;
-
-
 */
 
 * {
@@ -20,9 +18,23 @@ a {
     text-decoration: none;
 }
 
+.block {
+    display: block;
+}
+
+.none {
+    display: none;
+}
+
+
 /*---------------------------- COMMON STYLE ---------------------------*/
 body {
     background-color: #d8d2ff3d;
+    background-image:
+        linear-gradient(#a69fd61d 1px, transparent 1px),
+        linear-gradient(90deg, #a69fd61d 1px, transparent 1px);
+
+    background-size: 32px 32px;
 }
 
 .section {
@@ -42,6 +54,10 @@ body {
 
 .center {
     justify-content: center;
+}
+
+.block {
+    display: block;
 }
 
 .end {
@@ -69,14 +85,121 @@ body {
     animation-duration: 1s;
 }
 
+.animate__headShake {
+    animation-iteration-count: infinite;
+}
+
 i {
     font-size: 30px;
+}
+
+/*============================= login part=====================================*/
+
+.login-container {
+    height: 350px;
+    width: 500px;
+    background-color: rgb(59 43 163 / 0.84);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.login-head {
+    margin-top: 35px;
+    color: white;
+}
+
+.login-head i {
+    font-size: 55px;
+}
+
+.login-head span {
+    font-family: "Stack Sans Notch", sans-serif;
+    font-size: 30px;
+}
+
+.login-form {
+    padding-top: 10px;
+}
+
+.login-form input {
+    width: 280px;
+    padding: 10px 37px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(255 255 255 / 0.78);
+}
+
+.login-form input:focus {
+    outline: 2px solid rgb(255 255 255 / 0.78);
+    border: none;
+    background-color: #fff;
+}
+
+.login-form button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #FFF;
+    border: none;
+    border-radius: 30px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.login-form button:hover {
+    transform: scale(1.02);
+}
+
+.login-form small {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+}
+
+.name-pass {
+    position: absolute;
+    z-index: 1;
+    font-size: 24px;
+    transform: translate(12px, 10px);
+    color: rgb(89, 89, 89);
+}
+
+.user-name-pass input {
+    position: relative;
+}
+
+#hide {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    bottom: 37%;
+    right: 82px;
+    display: none;
+    cursor: pointer;
+}
+
+#show {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    bottom: 37%;
+    right: 82px;
+    cursor: pointer;
 }
 
 /*================================== navigation ================================*/
 
 .nav-container {
-
     justify-content: space-between;
 }
 
@@ -86,9 +209,10 @@ i {
     left: 0;
     width: 100%;
     height: 70px;
-    z-index: 1;
+    z-index: 1000;
     background: transparent;
     transition: padding 0.45s ease;
+    text-transform: capitalize;
 }
 
 .navigation::before {
@@ -129,7 +253,6 @@ i {
     font-family: "Stack Sans Notch", sans-serif;
     font-size: 25px;
     font-weight: 800;
-
 }
 
 .logo i {
@@ -148,13 +271,6 @@ i {
     transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.menu li a.active {
-    background: #3B2BA3;
-    color: #fff;
-    border-radius: 30px;
-    padding: 10px 20px;
-}
-
 .menu li a:hover {
     background: #3B2BA3;
     color: #fff;
@@ -162,6 +278,12 @@ i {
     padding: 10px 20px;
 
 }
+
+.menu li a.active {
+    text-decoration: underline;
+    color: #3B2BA3;
+}
+
 
 .end-items {
     width: 150px;
@@ -197,13 +319,108 @@ i {
 }
 
 /* ===================================== heder section =============================== */
-.heder-section {
+/* .heder-section {
     min-height: 100vh;
+} */
+
+.profile-div {
+    height: 80px;
+    margin-top: 20px;
 }
 
-.catalog-head {
-    /*background-color: #00caca;*/
+.profile-div span {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    text-decoration: underline;
+}
 
+.profile-div h3 {
+    font-family: "Stack Sans Notch", sans-serif;
+    font-size: 25px;
+    padding-top: 10px;
+}
+
+.profile-image {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.dashboard-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dashboard-div {
+    background-color: #00caca;
+    width: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: rgb(216 210 255 / 0.53);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+/*=====================================charts=======================================*/
+
+.chart-container1 {
+    width: 550px;
+    height: 280px;
+    padding: 20px;
+}
+
+.chart-container1 canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.chart-container2 {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    margin: auto;
+}
+
+.chart-container2 canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.chart-container3 {
+    width: 550px;
+    height: 300px;
+    padding: 20px;
+
+}
+
+.chart-container3 canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.chart-container4 {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    margin: auto;
+}
+
+.chart-container4 canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* ===================================== heder section =============================== */
+.heder-section {
+    min-height: 100vh;
 }
 
 .catalog-container {
@@ -638,7 +855,6 @@ select {
 ================================= */
 
 .resona-alert-title {
-
     color: #3b2ba3 !important;
     font-size: 28px !important;
     font-weight: 700 !important;
@@ -664,25 +880,20 @@ select {
 .resona-confirm-btn {
     background: #3b2ba3 !important;
     color: white !important;
-
     border: none !important;
     border-radius: 20px !important;
     padding: 12px 25px !important;
     margin: 5px;
-
     font-family: "Inter", sans-serif !important;
     font-size: 14px !important;
     font-weight: 600 !important;
-
     cursor: pointer !important;
-
     transition: 0.2s ease !important;
 }
 
 .resona-confirm-btn:hover {
     background: #2f2285 !important;
 }
-
 
 /* =================================
    Cancel Button
@@ -691,18 +902,14 @@ select {
 .resona-cancel-btn {
     background: #e5e2da !important;
     color: #333 !important;
-
     border: none !important;
     border-radius: 20px !important;
     padding: 12px 25px !important;
     margin: 5px;
-
     font-family: "Inter", sans-serif !important;
     font-size: 14px !important;
     font-weight: 600 !important;
-
     cursor: pointer !important;
-
     transition: 0.2s ease !important;
 }
 
