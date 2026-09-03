@@ -230,10 +230,10 @@ i {
 
 .search-bar input {
     position: relative;
-    width: 255px;
+    width: 200px;
     border-radius: 20px;
     padding: 8px 40px;
-    background: #3b2ba329;
+    background: #8977fd29;
     border: 2px solid #3b2ba37a;
     font-family: "Inter", sans-serif;
     font-size: 15px;
@@ -242,12 +242,12 @@ i {
 .catalog-head button {
     width: 120px;
     height: 40px;
-    background-color: transparent;
-    /*background-color: rgb(59 43 163 / 0.93);*/
     border: none;
     color: #000;
     border-radius: 20px;
-
+    background: #8977fd29;
+    border: 2px solid #3b2ba37a;
+    margin-left: 5px;
     cursor: pointer;
     transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -617,4 +617,94 @@ select {
     font-size: 15px;
     display: block;
     padding: 20px 0;
+}
+
+/* ==================== sweet alert =================== */
+/* =================================
+   SweetAlert Main Box
+================================= */
+
+.resona-alert {
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    padding: 30px !important;
+    font-family: "Inter", sans-serif !important;
+}
+
+
+/* =================================
+   Title
+================================= */
+
+.resona-alert-title {
+
+    color: #3b2ba3 !important;
+    font-size: 28px !important;
+    font-weight: 700 !important;
+}
+
+
+/* =================================
+   Text
+================================= */
+
+.resona-alert-text {
+    color: #555 !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+}
+
+
+/* =================================
+   Confirm Button
+================================= */
+
+.resona-confirm-btn {
+    background: #3b2ba3 !important;
+    color: white !important;
+
+    border: none !important;
+    border-radius: 20px !important;
+    padding: 12px 25px !important;
+    margin: 5px;
+
+    font-family: "Inter", sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+
+    cursor: pointer !important;
+
+    transition: 0.2s ease !important;
+}
+
+.resona-confirm-btn:hover {
+    background: #2f2285 !important;
+}
+
+
+/* =================================
+   Cancel Button
+================================= */
+
+.resona-cancel-btn {
+    background: #e5e2da !important;
+    color: #333 !important;
+
+    border: none !important;
+    border-radius: 20px !important;
+    padding: 12px 25px !important;
+    margin: 5px;
+
+    font-family: "Inter", sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+
+    cursor: pointer !important;
+
+    transition: 0.2s ease !important;
+}
+
+.resona-cancel-btn:hover {
+    background: #d5d1c7 !important;
 }

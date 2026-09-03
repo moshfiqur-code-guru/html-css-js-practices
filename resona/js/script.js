@@ -134,6 +134,20 @@ modalActionBtn.addEventListener("click", (event) => {
         saveProduct();
         displayProducts();
         productForm.reset();
+        Swal.fire({
+            title: "Successfully Saved",
+            // text: "You clicked the button!",
+            icon: "success",
+
+            customClass: {
+                popup: "resona-alert",
+                title: "resona-alert-title",
+                htmlContainer: "resona-alert-text",
+                confirmButton: "resona-confirm-btn"
+            },
+
+            buttonsStyling: false
+        });
     } else {
         Object.keys(validationErrors).forEach(key => {
             const input = productForm.elements[key];
@@ -268,14 +282,50 @@ productImagePicker.addEventListener("change", (event) => {
 
 
 function deleteProduct(index) {
-    const confirmation = confirm("Are you want to delete this student??");
-    if (!confirmation) {
-        return;
-    } else {
-        products.splice(index, 1);
-        saveProduct();
-        displayProducts();
-    }
+
+    Swal.fire({
+        title: "Do you want to delete this?",
+        // text: "You won't be able to revert this!",
+        icon: "warning",
+
+        showCancelButton: true,
+
+        confirmButtonText: "Yes, delete",
+        cancelButtonText: "Cancel",
+
+        customClass: {
+            popup: "resona-alert",
+            title: "resona-alert-title",
+            htmlContainer: "resona-alert-text",
+            confirmButton: "resona-confirm-btn",
+            cancelButton: "resona-cancel-btn"
+        },
+
+        buttonsStyling: false
+
+    }).then((result) => {
+
+        if (result.isConfirmed) {
+
+            products.splice(index, 1);
+            saveProduct();
+            displayProducts();
+
+            Swal.fire({
+                title: "Successfully Deleted",
+                // text: "Your file has been deleted.",
+                icon: "success",
+
+                customClass: {
+                    popup: "resona-alert",
+                    title: "resona-alert-title",
+                    htmlContainer: "resona-alert-text",
+                    confirmButton: "resona-confirm-btn"
+                },
+                buttonsStyling: false
+            });
+        }
+    });
 }
 
 //##################################################################//
@@ -329,14 +379,7 @@ function typeLabel(typeValue) {
         5: "Wired",
     }
     return types[typeValue];
-
 }
-
-
-
-
-
-
 
 
 
