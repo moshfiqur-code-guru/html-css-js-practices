@@ -258,13 +258,13 @@ i {
 .logo {
     width: 150px;
     align-items: center;
+    color: #000;
 }
 
 .logo span {
     font-family: "Stack Sans Notch", sans-serif;
     font-size: 25px;
     font-weight: 800;
-
 }
 
 .logo i {

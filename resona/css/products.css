@@ -122,6 +122,7 @@ i {
 .logo {
     width: 150px;
     align-items: center;
+    color: #000;
 }
 
 .logo span {

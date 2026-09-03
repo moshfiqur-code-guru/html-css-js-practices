@@ -44,7 +44,7 @@
 
                     </div>
 
-                    <small class="animate__animated animate__headShake" id="errorMsg"></small>
+                    <small class="animate__animated animate__headShake" id="loginErrorMsg"></small>
                     <button class="login-btn" type="submit">Login</button>
                 </form>
             </div>
@@ -52,124 +52,8 @@
         </div>
     </section>
 
-    <section class="logged-in-content" id="logged-in-content">
-        <section>
-            <nav class="navigation">
-                <div class="container header-container nav-container flex align-center">
-                    <div class="logo flex align-center">
-                        <i class="ti ti-brand-framer"></i>
-                        <span>RESONA</span>
-                    </div>
-                    <div class="menu flex center">
-                        <div class="main-menu">
-                            <ul class="flex">
-                                <li><a href="admin.html" class="active">Dashboard</a></li>
-                                <li><a href="products.html">Products</a></li>
-                                <li><a href="#">Orders</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="end-items flex">
-                        <div class="cart flex align-center" onclick="logout()">
-                            <i class="ti ti-logout"></i>
-                            <span>logout</span>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </section>
-
-        <section class="section heder-section">
-            <div class="container flex space-between profile-div">
-                <div>
-                    <span>Admin panel</span>
-                    <h3>Welcome Back, Moshfiqur</h3>
-                </div>
-                <div class="profile-image">
-                    <img src="assets/img/avater.jpg">
-                </div>
-            </div>
-        </section>
-
-        <section class="dashboard-section">
-            <div class="container flex center align-center ">
-                <div class="dashboard-div">
-                    <div class="flex align-center">
-                        <div class="chart-container1">
-                            <canvas id="myChart-1" class="charts"></canvas>
-                        </div>
-                        <div class="chart-container2">
-                            <canvas id="myChart-2" class="charts"></canvas>
-                        </div>
-                    </div>
-                    <div class="flex align-center">
-                        <div class="chart-container3">
-                            <canvas id="myChart-3" class="charts"></canvas>
-                        </div>
-                        <div class="chart-container4">
-                            <canvas id="myChart-4" class="charts"></canvas>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="chart-container5">
-                            <canvas id="myChart-5" class="charts"></canvas>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </section>
-
-
-        <section class="section footer-section">
-            <div class="container flex space-between footer-container">
-                <div>
-                    <span>resona</span>
-                    <p>Thoughtfully designed headphones and <br>earbuds
-                        built around clarity, comfort, and everyday life.</p>
-                </div>
-                <div class="flex space-between footer-list">
-                    <div>
-                        <ul class="flex column space-between">
-                            <li><a href="#">about</a></li>
-                            <li><a href="#">shop</a></li>
-                            <li><a href="#">admin panel</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul>
-                            <li><a href="#">shipping</a></li>
-                            <li><a href="#">terms</a></li>
-                            <li><a href="#">contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="line container"></div>
-            <div class="container flex space-between ending-section">
-                <div><span>© 2026 Resona — student project, not a real store</span></div>
-                <div><span>Made with HTML, CSS & JS</span></div>
-            </div>
-
-        </section>
-
-    </section>
-
-
-    <!--
-<script>
-    feather.replace();
-</script> -->
-    <!-- jQuery FIRST -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-    <!-- Owl Carousel -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="js/chart.umd.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/admin.js"></script>
-    <script src="js/chart-related.js"></script>
+    <script src="js/login.js"></script>
 </body>
 
 </html>
