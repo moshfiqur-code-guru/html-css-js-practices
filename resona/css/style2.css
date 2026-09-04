@@ -271,7 +271,8 @@ i {
     transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.menu li a:hover {
+.menu li a:hover,
+.menu li a.active:hover {
     background: #3B2BA3;
     color: #fff;
     border-radius: 30px;
@@ -793,6 +794,10 @@ select {
 /* ================================ footer section ================================== */
 
 .footer-section {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: relative;
     background-color: #3b2ba3;
     color: #fff;
 }

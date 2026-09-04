@@ -1,3 +1,64 @@
+// ===============================================//
+// Dynamically add menu buttons                  //
+// =============================================//
+const arrayOfMenu = [
+    {
+        label: "home"
+    },
+    {
+        label: "product"
+    },
+    {
+        label: "shop"
+    },
+    {
+        label: "about"
+    }
+];
+
+const ul = document.createElement("ul");
+const menu = document.querySelector(".main-menu");
+
+for (let i = 0; i < arrayOfMenu.length; i++) {
+    ul.innerHTML += `<li><a href = "${arrayOfMenu[i].label}.html" class="${arrayOfMenu[i].label}"> ${arrayOfMenu[i].label}</a></li > `
+}
+
+if (menu !== null) {
+    ul.classList.add("flex");
+    menu.appendChild(ul);
+}
+
+
+function activeMenu() {
+    const currentLocation = location.href;
+    let lastPart = currentLocation.split("/").pop().split(".")[0];
+    console.log(lastPart);
+    // if (menu !== null) {
+    document.querySelector("." + lastPart).classList.add("active");
+}
+
+activeMenu();
+
+// ===============================================//
+// add logout  and home button                   //
+// =============================================//
+
+const logoutBtnAdd = document.querySelector(".end-items");
+
+logoutBtnAdd.innerHTML = ` <div class="cart flex align-center">
+                            <i class="ti ti-shopping-bag"></i>
+                             <span>Cart</span> </div>`;
+
+
+
+const homeBtnAdd = document.querySelector(".first-items");
+
+homeBtnAdd.innerHTML = `<a href="home.html" class="logo flex align-center">
+                        <i class="ti ti-brand-framer"></i>
+                        <span>RESONA</span>
+                    </a>`;
+
+
 
 // ##############################################//
 //owl carousel                                  //
@@ -10,7 +71,7 @@ const productCarousel = document.getElementById("product-carousel");
 
 function displayInCarousel() {
 
-    if (window.location.href.includes("index.html")) {
+    if (window.location.href.includes("home.html")) {
         productCarousel.innerHTML = "";
 
         products.forEach((product) => {
@@ -104,3 +165,47 @@ function typeIcon(typeValue) {
     }
     return icons[typeValue];
 }
+
+
+//################################################################//
+// function for displaying product in all product page           //
+//##############################################################//
+
+
+
+const productContainer = document.getElementById("product-container");
+
+function displayInContainer() {
+
+    if (window.location.href.includes("product.html")) {
+        productContainer.innerHTML = "";
+
+        products.forEach((product) => {
+
+            const item = document.createElement("div");
+
+            item.classList.add("single-product");
+
+            item.innerHTML = `
+             <div class="product-img">
+                    <img src="assets/img/${product.image}" alt="${product.productName}">
+                </div>
+                <div class="flex space-between info-div">
+                    <div>
+                        <h3>${product.productName}</h3>
+                        <p>${typeLabel(Number(product.type))}</p>
+                        <span>$${product.price}</span>
+                    </div>
+                    <div class="flex column end">
+                        <button>Add to Cart 🛒</button>
+                    </div>
+                </div>
+        `;
+
+            productContainer.appendChild(item);
+        });
+
+    }
+}
+
+displayInContainer();

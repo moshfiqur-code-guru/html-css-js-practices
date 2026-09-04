@@ -153,29 +153,35 @@ function activeMenu() {
     const currentLocation = location.href;
     let lastPart = currentLocation.split("/").pop().split(".")[0];
     console.log(lastPart);
-    // if (menu !== null) {
-    document.querySelector("." + lastPart).classList.add("active");
+
+    const activeItem = document.querySelector("." + lastPart);
+
+    if (activeItem !== null) {
+        activeItem.classList.add("active");
+    }
 }
 
 activeMenu();
 
 
 // ===============================================//
-// add logout button                             //
+// add logout  and home button                   //
 // =============================================//
 
 const logoutBtnAdd = document.querySelector(".end-items");
 
-logoutBtnAdd.innerHTML = `<div class="cart flex align-center" onclick="logout()">
+if (logoutBtnAdd !== null) {
+    logoutBtnAdd.innerHTML = `<div class="cart flex align-center" onclick="logout()">
                             <i class="ti ti-logout"></i>
                             <span>logout</span>
                         </div>`;
-
-
+}
 
 const homeBtnAdd = document.querySelector(".first-items");
 
-homeBtnAdd.innerHTML = `<a href="index.html" class="logo flex align-center">
+if (homeBtnAdd !== null) {
+    homeBtnAdd.innerHTML = `<a href="home.html" class="logo flex align-center">
                         <i class="ti ti-brand-framer"></i>
                         <span>RESONA</span>
                     </a>`;
+}
