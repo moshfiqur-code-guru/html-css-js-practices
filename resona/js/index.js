@@ -33,8 +33,11 @@ function activeMenu() {
     const currentLocation = location.href;
     let lastPart = currentLocation.split("/").pop().split(".")[0];
     console.log(lastPart);
-    // if (menu !== null) {
-    document.querySelector("." + lastPart).classList.add("active");
+
+    const menu = document.querySelector("." + lastPart);
+    if (menu !== null) {
+        menu.classList.add("active");
+    }
 }
 
 activeMenu();
@@ -45,9 +48,12 @@ activeMenu();
 
 const logoutBtnAdd = document.querySelector(".end-items");
 
-logoutBtnAdd.innerHTML = ` <div class="cart flex align-center">
+logoutBtnAdd.innerHTML = ` <a href="cart.html">
+                        <div class="cart flex align-center">
                             <i class="ti ti-shopping-bag"></i>
-                             <span>Cart</span> </div>`;
+                            <span>Cart</span>
+                        </div>
+                    </a>`;
 
 
 
@@ -175,7 +181,7 @@ function typeIcon(typeValue) {
 
 const productContainer = document.getElementById("product-container");
 
-function displayInContainer() {
+function displayInContainer(products) {
 
     if (window.location.href.includes("product.html")) {
         productContainer.innerHTML = "";
@@ -208,4 +214,19 @@ function displayInContainer() {
     }
 }
 
-displayInContainer();
+displayInContainer(products);
+
+// ------------------------------------------------//
+// search function one all product list           //
+// ----------------------------------------------//
+
+
+function keyWords(input) {
+    const keyWords = input.value.replace(/\s/g, "");
+
+    const formattedProducts = products.filter(product => (product.productName + product.price + product.type)
+        .replace(/\s/g, "").toLowerCase().includes(keyWords.toLowerCase()));
+
+    displayInContainer(formattedProducts);
+}
+

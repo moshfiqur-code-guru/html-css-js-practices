@@ -5,6 +5,11 @@
   font-family: "Inter", sans-serif;
 */
 
+html,
+body {
+    min-height: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -29,11 +34,14 @@ a {
 
 /*---------------------------- COMMON STYLE ---------------------------*/
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
     background-color: #d8d2ff3d;
     background-image:
         linear-gradient(#a69fd61d 1px, transparent 1px),
         linear-gradient(90deg, #a69fd61d 1px, transparent 1px);
-
     background-size: 32px 32px;
 }
 
@@ -83,10 +91,6 @@ body {
 .animate__animated {
     /* animation-iteration-count: infinite; */
     animation-duration: 1s;
-}
-
-.animate__headShake {
-    animation-iteration-count: infinite;
 }
 
 i {
@@ -319,10 +323,7 @@ i {
     padding: 10px 18px;
 }
 
-/* ===================================== heder section =============================== */
-/* .heder-section {
-    min-height: 100vh;
-} */
+/* =================== heder section on dashboard page ======================== */
 
 .profile-div {
     height: 80px;
@@ -369,7 +370,7 @@ i {
     -webkit-backdrop-filter: blur(15px);
 }
 
-/*=====================================charts=======================================*/
+/*===================================== charts =======================================*/
 
 .chart-container1 {
     width: 550px;
@@ -419,7 +420,7 @@ i {
 }
 
 
-/* ===================================== heder section =============================== */
+/* =========================== heder section on products page ============================== */
 .heder-section {
     min-height: 100vh;
 }
@@ -490,7 +491,7 @@ i {
     color: white;
 }
 
-/*================================ product table=====================================*/
+/*================================ product table =====================================*/
 .product-listing {
     font-family: "Inter", sans-serif;
     display: flex;
@@ -565,7 +566,9 @@ tbody tr:hover {
 \**************************/
 
 .modal {
-    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont,
+        avenir next, avenir, helvetica neue, helvetica, ubuntu,
+        roboto, noto, segoe ui, arial, sans-serif;
 }
 
 .modal__overlay {
@@ -735,7 +738,7 @@ tbody tr:hover {
     will-change: transform;
 }
 
-/* =======================add new from============================= */
+/* =========================== add new from ============================= */
 .preview img {
     display: block;
     height: 130px;
@@ -791,15 +794,13 @@ select {
 }
 
 
-/* ================================ footer section ================================== */
+/* =================================== footer section ================================== */
 
 .footer-section {
-    right: 0;
-    bottom: 0;
-    left: 0;
-    position: relative;
+    margin-top: auto;
     background-color: #3b2ba3;
     color: #fff;
+    padding-top: 70px;
 }
 
 .footer-container span {

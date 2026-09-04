@@ -20,26 +20,6 @@ let modalTitleText = "Add New Product";
 let modalActionBtnText = "Add new";
 
 
-//
-// $('.owl-carousel').owlCarousel({
-//     stagePadding: 50,
-//     loop: true,
-//     margin: 20,
-//     nav: false,
-//     responsive: {
-//         0: {
-//             items: 1
-//         },
-//         600: {
-//             items: 2
-//         },
-//         1000: {
-//             items: 3
-//         }
-//     }
-// })
-
-
 // ###################################################################//
 // micro modal                                                       //
 // #################################################################//
@@ -242,7 +222,7 @@ function displayProducts() {
     } else {
         const row = document.createElement("tr");
         row.innerHTML = `
-        <td colspan="8" id="empty-message"><i class="ti ti-alert-triangle"></i><p>Products table is empty</p></td>`;
+        <td colspan="9" id="empty-message"><i class="ti ti-alert-triangle"></i><p>Products table is empty</p></td>`;
         tableBody.appendChild(row);
     }
 }

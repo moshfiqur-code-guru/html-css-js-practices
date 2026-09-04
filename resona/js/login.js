@@ -10,7 +10,7 @@ const loggedInContent = document.getElementById("logged-in-content");
 // creating user                                           //
 //========================================================//
 
-const admin = {
+const defaultAdmin = {
     userName: "admin",
     password: "admin123",
     image: "assets/img/dp.jpg",
@@ -47,19 +47,25 @@ function doLogin(event) {
 
     const savedAdmin = getAdminInfo();
 
-    if (admin.userName.trim() == "" && admin.password.trim() == "") {
-        loginErrorMsg.textContent = "Please put username and password.";
+    if (savedAdmin) {
 
-    } else {
-        if (admin.userName.trim() !== savedAdmin.userName || admin.password.trim() !== savedAdmin.password) {
-            loginErrorMsg.textContent = "Invalid login credentials."
+        if (admin.userName.trim() == "" && admin.password.trim() == "") {
+            loginErrorMsg.textContent = "Please put username and password.";
 
         } else {
-            loginErrorMsg.textContent = "";
-            savedAdmin.isLoggedIn = true;
-            saveAdminIntoStorage(savedAdmin);
-            loginStatus();
+            if (admin.userName.trim() !== savedAdmin.userName || admin.password.trim() !== savedAdmin.password) {
+                loginErrorMsg.textContent = "Invalid login credentials."
+
+            } else {
+                loginErrorMsg.textContent = "";
+                savedAdmin.isLoggedIn = true;
+                saveAdminIntoStorage(savedAdmin);
+                loginStatus();
+            }
         }
+    } else {
+        saveAdminIntoStorage(defaultAdmin)
+        doLogin();
     }
 }
 
