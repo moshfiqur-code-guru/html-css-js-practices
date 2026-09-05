@@ -12,7 +12,7 @@ const arrayOfMenu = [
         label: "shop"
     },
     {
-        label: "about"
+        label: "classes"
     }
 ];
 

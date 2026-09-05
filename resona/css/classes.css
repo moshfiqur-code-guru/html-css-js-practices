@@ -1,0 +1,35 @@
+.test {
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.counter-div {
+    width: 100%;
+    height: 100px;
+}
+
+.counter-div button {
+    background-color: rgb(64, 0, 124);
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.counter-div button:hover {
+    background-color: black;
+}
+
+.counter-div p {
+    display: block;
+    padding: 10px;
+    font-family: "Inter", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
