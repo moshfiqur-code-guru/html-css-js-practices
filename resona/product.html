@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/classes.css">
 </head>
 
 <body>
@@ -89,8 +90,9 @@
     </section>
 
     <section>
-        <div class="container product-container flex" id="product-container">
-            <!-- <div class="single-product">
+        <div class="container product-container ">
+            <div class="flex" id="product-container">
+                <!-- <div class="single-product">
                 <div class="product-img">
                     <img src="assets/img/t1 (5).jpg" alt="">
                 </div>
@@ -105,7 +107,16 @@
                     </div>
                 </div>
             </div> -->
+            </div>
+            <div class="flex align-center center-on-calc counter-div">
+                <button>Increment +</button>
+                <div>
+                    <input type="text" value="0" id="countResult">
+                </div>
+                <button>Decrement -</button>
+            </div>
         </div>
+
     </section>
 
 
@@ -146,8 +157,10 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="js/nav.js"></script>
+
+    <script src="js/counter.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/nav.js"></script>
 </body>
 
 </html>

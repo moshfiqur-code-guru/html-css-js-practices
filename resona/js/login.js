@@ -142,33 +142,6 @@ const arrayOfMenu = [
     }
 ];
 
-const ul = document.createElement("ul");
-const menu = document.querySelector(".main-menu");
-
-for (let i = 0; i < arrayOfMenu.length; i++) {
-    ul.innerHTML += `<li><a href = "${arrayOfMenu[i].label}.html" class="${arrayOfMenu[i].label}"> ${arrayOfMenu[i].label}</a></li > `
-}
-
-if (menu !== null) {
-    ul.classList.add("flex");
-    menu.appendChild(ul);
-}
-
-
-function activeMenu() {
-    const currentLocation = location.href;
-    let lastPart = currentLocation.split("/").pop().split(".")[0];
-    console.log(lastPart);
-
-    const activeItem = document.querySelector("." + lastPart);
-
-    if (activeItem !== null) {
-        activeItem.classList.add("active");
-    }
-}
-
-activeMenu();
-
 
 // ===============================================//
 // add logout  and home button                   //
@@ -181,13 +154,4 @@ if (logoutBtnAdd !== null) {
                             <i class="ti ti-logout"></i>
                             <span>logout</span>
                         </div>`;
-}
-
-const homeBtnAdd = document.querySelector(".first-items");
-
-if (homeBtnAdd !== null) {
-    homeBtnAdd.innerHTML = `<a href="home.html" class="logo flex align-center">
-                        <i class="ti ti-brand-framer"></i>
-                        <span>RESONA</span>
-                    </a>`;
 }

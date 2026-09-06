@@ -621,11 +621,12 @@ i {
     margin: 25px auto;
     padding: 20px;
     border-radius: 25px;
-    gap: 30px;
+
 
 }
 
 .single-product {
+    margin: 10px auto;
     display: flex;
     flex-wrap: wrap;
     width: calc((100% - 72px) / 3);

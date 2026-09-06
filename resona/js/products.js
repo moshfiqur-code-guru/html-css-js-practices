@@ -170,6 +170,41 @@ function saveProduct() {
 
 // saveProduct();
 
+// =====================================================================
+
+
+const arrayOfColumn = [
+    { label: "SL", shortStatus: false },
+    { label: "Image", shortStatus: false },
+    { label: "Product Name", shortStatus: true },
+    { label: "Product Model", shortStatus: true },
+    { label: "Type", shortStatus: true },
+    { label: "Product ID", shortStatus: true },
+    { label: "Price", shortStatus: true },
+    { label: "Quantity", shortStatus: true },
+    { label: "Action", shortStatus: false },
+
+];
+
+const tHade = document.getElementById("table-head");
+const tr = document.createElement("tr");
+
+for (let i = 0; i < arrayOfColumn.length; i++) {
+    tr.innerHTML += `<th>
+                        <div class="flex center align-center">
+                        <span>${arrayOfColumn[i].label}</span>
+                        ${arrayOfColumn[i].shortStatus ?
+            `<div class="flex column center align-center short-icon">
+                            <i class="ti ti-caret-up"></i>
+                            <i class="ti ti-caret-down"></i>
+                        </div>` : ""}
+                        </div >
+                    </th > `;
+}
+
+tHade.appendChild(tr);
+
+
 //################################################################//
 // displaying products in table from local storage               //
 //##############################################################//
@@ -177,14 +212,7 @@ function saveProduct() {
 const products = JSON.parse(localStorage.getItem('products')) || [];
 
 
-// ============= search product function ========= //
 
-function filterProduct(input) {
-    const keWords = input.value.replace(/\s/g, "");
-    productModerator.search = [keWords];
-    console.log(keWords);
-    displayProducts();
-}
 
 //=> const for search short >
 const productModerator = {
@@ -205,7 +233,7 @@ function displayProducts() {
         formattedProducts.forEach((products, index) => {
             const row = document.createElement("tr");
             row.innerHTML = `
-                <td>${index + 1}</td>
+                <td> ${index + 1}</td >
                 <td><img src="assets/img/${products.image}" alt=""></td>
                 <td>${products.productName}</td>
                 <td>${products.productModel}</td>
@@ -222,7 +250,7 @@ function displayProducts() {
     } else {
         const row = document.createElement("tr");
         row.innerHTML = `
-        <td colspan="9" id="empty-message"><i class="ti ti-alert-triangle"></i><p>Products table is empty</p></td>`;
+        < td colspan = "9" id = "empty-message" ><i class="ti ti-alert-triangle"></i><p>Products table is empty</p></ > `;
         tableBody.appendChild(row);
     }
 }
@@ -349,8 +377,21 @@ function typeLabel(typeValue) {
 }
 
 
+// ============= search product function ========= //
 
+function filterProduct(searchValue) {
+    productModerator.search = [searchValue];
+    displayProducts();
+}
 
+const searchDebounce = debounce(filterProduct);
+
+searchDebounce();
+
+function filterProductWithDebounce(input) {
+    let keWords = input.value.replace(/\s/g, "").toLowerCase();
+    searchDebounce(keWords)
+}
 
 
 

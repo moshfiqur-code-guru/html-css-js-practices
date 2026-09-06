@@ -61,7 +61,7 @@
                     <div class="flex align-center">
                         <div class="flex align-center search-bar">
                             <i class="ti ti-search"></i>
-                            <input type="input" placeholder="Search here" oninput="filterProduct(this)">
+                            <input type="input" placeholder="Search here" oninput="filterProductWithDebounce(this)">
                         </div>
                     </div>
                     <button>
@@ -80,8 +80,8 @@
 
                 <table border="1" align="center">
 
-                    <thead>
-                        <tr>
+                    <thead id="table-head">
+                        <!-- <tr>
                             <th>SL</th>
                             <th>Image</th>
                             <th>Product Name</th>
@@ -91,7 +91,7 @@
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Action</th>
-                        </tr>
+                        </tr> -->
                     </thead>
 
 
@@ -225,9 +225,10 @@
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/nav.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/debounce.js"></script>
     <script src="js/products.js"></script>
+    <script src="js/nav.js"></script>
 </body>
 
 </html>

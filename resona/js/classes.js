@@ -1,4 +1,3 @@
-// {
 //     function start(name, callback) {
 //         console.log("hello" + " " + name);
 
@@ -62,37 +61,52 @@
 // }
 
 
+
+
+// function counter() {
+//     let count = 0;
+
+//     function increment(inc) {
+//         count += inc;
+//         // countHTML.innerText = count.toString();
+//     }
+//     function decrement(dec) {
+//         count -= dec;
+//         // countHTML.innerText = count.toString();
+//     }
+//     function getCount() {
+//         countHTML.innerText = count.toString();
+//         return count;
+//     }
+//     return {
+//         increment,
+//         decrement,
+//         getCount
+//     }
+// }
+
+
 const countHTML = document.getElementById("count")
 
-function counter() {
-    let count = 0;
-
-    function increment(inc) {
-        count += inc;
-        // countHTML.innerText = count.toString();
-    }
-    function decrement(dec) {
-        count -= dec;
-        // countHTML.innerText = count.toString();
-    }
-    function getCount() {
-        countHTML.innerText = count.toString();
-        return count;
-    }
-    return {
-        increment,
-        decrement,
-        getCount
-    }
-}
-
 const method = counter();
-console.log(method.getCount());
 
 const btns = document.querySelectorAll(".center button")
 
 btns.forEach((btn, index) => {
     let fn = index === 0 ?
-        () => { method.increment(20); method.getCount() } : () => { method.decrement(30); method.getCount() }
+        () => {
+            method.increment(20);
+            displayResult();
+        }
+        : () => {
+            method.decrement(30);
+            displayResult();
+        }
     btn.addEventListener("click", fn)
 })
+
+function displayResult() {
+    const count = method.getCount();
+    countHTML.innerText = count.toString();
+
+}
