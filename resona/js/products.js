@@ -171,61 +171,118 @@ function saveProduct() {
 // saveProduct();
 
 // =====================================================================
-
+const products = JSON.parse(localStorage.getItem('products')) || [];
 
 const arrayOfColumn = [
-    { label: "SL", shortStatus: false },
-    { label: "Image", shortStatus: false },
-    { label: "Product Name", shortStatus: true },
-    { label: "Product Model", shortStatus: true },
-    { label: "Type", shortStatus: true },
-    { label: "Product ID", shortStatus: true },
-    { label: "Price", shortStatus: true },
-    { label: "Quantity", shortStatus: true },
-    { label: "Action", shortStatus: false },
+    { label: "SL", header: "", shortStatus: false },
+    { label: "Image", header: "image", shortStatus: false },
+    { label: "Product Name", header: "productName", shortStatus: true },
+    { label: "Product Model", header: "productModel", shortStatus: true },
+    { label: "Type", header: "type", shortStatus: true },
+    { label: "Product ID", header: "id", shortStatus: true },
+    { label: "Price", header: "price", shortStatus: true },
+    { label: "Quantity", header: "quantity", shortStatus: true },
+    { label: "Action", header: "", shortStatus: false },
 
 ];
 
-const tHade = document.getElementById("table-head");
-const tr = document.createElement("tr");
-
-for (let i = 0; i < arrayOfColumn.length; i++) {
-    tr.innerHTML += `<th>
-                        <div class="flex center align-center">
-                        <span>${arrayOfColumn[i].label}</span>
-                        ${arrayOfColumn[i].shortStatus ?
-            `<div class="flex column center align-center short-icon">
-                            <i class="ti ti-caret-up"></i>
-                            <i class="ti ti-caret-down"></i>
-                        </div>` : ""}
-                        </div >
-                    </th > `;
+//=> const for search short >
+const productModerator = {
+    search: "",
+    dir: "",
+    col: ""
 }
 
-tHade.appendChild(tr);
+
+
+function shortIconDecider(arrayOfColumn) {
+    const { shortStatus } = arrayOfColumn;
+    const { col, dir } = productModerator;
+
+    const active = arrayOfColumn.header === col;
+
+    if (!shortStatus) return "";
+
+    const icons = (!active || !dir)
+        ? `<i class="ti ti-caret-up"></i>
+           <i class="ti ti-caret-down"></i>`
+
+        : dir === "ASC"
+            ? `<i class="ti ti-caret-up"></i>`
+            : `<i class="ti ti-caret-down"></i>`;
+
+    let nextDir = "";
+    if (col !== "" && active) {
+        if (dir === "ASC") {
+            nextDir = "DESC"
+        } else {
+            nextDir = "ASC"
+        }
+    } else {
+        nextDir = "ASC"
+    }
+
+    return {
+        nextDir,
+        html: `<div class="flex column center align-center short-icon">${icons}</div>`
+    }
+}
+
+
+function displayColumn() {
+    const tHade = document.getElementById("table-head");
+    tHade.innerHTML = "";
+    const tr = document.createElement("tr");
+
+    arrayOfColumn.forEach(arrayOfColumn => {
+
+        const { nextDir, html } = shortIconDecider(arrayOfColumn);
+        let th = document.createElement("th");
+
+        th.innerHTML += ` <div class="flex center align-center">
+                          <span>${arrayOfColumn.label}</span>
+                          ${html ?? ""}
+                          </div >`;
+
+        tr.appendChild(th);
+        th.addEventListener("click",
+            () => productShorting(arrayOfColumn.header, shortIconDecider(arrayOfColumn).nextDir))
+    });
+    tHade.appendChild(tr);
+}
+
+function productShorting(arrayOfColumn, nextDir) {
+    productModerator["dir"] = nextDir;
+    productModerator["col"] = arrayOfColumn;
+    displayColumn();
+    displayProducts();
+}
 
 
 //################################################################//
 // displaying products in table from local storage               //
 //##############################################################//
 
-const products = JSON.parse(localStorage.getItem('products')) || [];
 
 
 
-
-//=> const for search short >
-const productModerator = {
-    search: "",
-    dir: "",
-    column: ""
-}
 
 //=> function for displaying product on table >
 function displayProducts() {
 
-    const formattedProducts = products.filter(product => (product.productName + product.productModel)
-        .replace(/\s/g, "").toLowerCase().includes(productModerator.search));
+    const { col, dir, search } = productModerator;
+
+    const formattedProducts = products.filter
+        (product => (product.productName + product.productModel)
+            .replace(/\s/g, "").toLowerCase().includes(search))
+        .sort((a, b) => {
+            const valueA = a[col];
+            const valueB = b[col];
+
+            if (col === "") return 0;
+
+            return dir === "ASC" ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA)
+        })
 
     tableBody.innerHTML = "";
 
@@ -256,7 +313,7 @@ function displayProducts() {
 }
 
 displayProducts();
-
+displayColumn();
 
 //########################################################################//
 // preview image                                                         //
@@ -377,20 +434,19 @@ function typeLabel(typeValue) {
 }
 
 
-// ============= search product function ========= //
+// ============= search product function using debounce ========= //
 
 function filterProduct(searchValue) {
     productModerator.search = [searchValue];
     displayProducts();
 }
 
-const searchDebounce = debounce(filterProduct);
+const searchDebounce = debounce();
 
-searchDebounce();
 
 function filterProductWithDebounce(input) {
     let keWords = input.value.replace(/\s/g, "").toLowerCase();
-    searchDebounce(keWords)
+    searchDebounce(keWords, filterProduct, 200)
 }
 
 
