@@ -110,3 +110,104 @@ function displayResult() {
     countHTML.innerText = count.toString();
 
 }
+
+
+
+columnArray = [
+    { label: "SL", header: "", shortStatus: false },
+    { label: "Name", header: "name", shortStatus: true },
+    { label: "Phone", header: "phone", shortStatus: true },
+    { label: "Email", header: "email", shortStatus: true },
+    { label: "Action", header: "", shortStatus: false }
+];
+
+const displayTable = displayTable()
+
+function tableContent(columnArray) {
+    columnArray.forEach(items => {
+        label = items.label
+        console.log(label);
+        displayTable(label);
+    })
+
+
+}
+
+tableContent(columnArray);
+
+// displayColumn()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//=> math function
+
+console.log(Math)
+
+console.log(Math.PI)
+
+console.log(Math.sin(90))
+
+console.log(Math.round(23.829))
+console.log(Math.round(23.29))
+
+console.log(Math.floor(34.67546))
+console.log(Math.floor(309.234543))
+console.log(Math.floor(-34.67546))
+
+console.log(Math.trunc(-34.67546))
+
+
+console.log(Math.ceil(4.1111))
+console.log(Math.ceil(4.0999))
+
+console.log(Math.abs(-123))
+console.log(Math.abs(123))
+
+console.log(Math.pow(8, 2))
+console.log(Math.pow(8, 3))
+console.log(Math.sqrt(64))
+console.log(Math.cbrt(512))
+
+console.log(Math.random())
+console.log(Math.random() * 10)
+console.log(Math.floor(Math.random() * 10))
+
+console.log(Math.max(12, 34, 45, 65, 87, 13, 23))
+console.log(Math.min(12, 34, 45, 65, 87, 13, 23))
+

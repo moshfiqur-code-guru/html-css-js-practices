@@ -263,10 +263,6 @@ function productShorting(arrayOfColumn, nextDir) {
 // displaying products in table from local storage               //
 //##############################################################//
 
-
-
-
-
 //=> function for displaying product on table >
 function displayProducts() {
 
@@ -279,9 +275,17 @@ function displayProducts() {
             const valueA = a[col];
             const valueB = b[col];
 
-            if (col === "") return 0;
+            if (col === "")
+                return 0;
 
-            return dir === "ASC" ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA)
+            if (col === "type")
+                return dir === "ASC" ? Number(valueA) - Number(valueB) : Number(valueB) - Number(valueA);
+
+            if (typeof valueA === "number")
+                return dir === "ASC" ? valueA - valueB : valueB - valueA;
+
+            return dir === "ASC" ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
+
         })
 
     tableBody.innerHTML = "";

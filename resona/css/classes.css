@@ -46,3 +46,23 @@
     font-weight: 600;
     padding: 5px;
 }
+
+.dinamicTable {
+
+    padding: 10px;
+}
+
+.dinamicTable table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    border: rgb(110 110 110 / 0.56);
+}
+
+table td {
+    padding: 5px 0;
+}
+
+table th {
+    padding: 10px 0;
+}
