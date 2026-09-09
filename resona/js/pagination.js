@@ -1,0 +1,30 @@
+
+// const paginationContainer = document.getElementById("pagination")
+// const conf = {
+//     currentPage,
+//     itemsPerPage,
+//     maxVisiblePages,
+//     container: paginationContainer
+// }
+
+
+
+function getPagination(config) {
+
+    let { currentPage = 1, itemsPerPage = 10, container, maxVisiblePages = 5, data } = config;
+
+    function getTotalPages() {
+        return Math.ceil(data / itemsPerPage);
+    }
+    function getCurrentPage() {
+        return currentPage;
+    }
+    function getStartIndex() {
+        return (currentPage - 1) * itemsPerPage;
+    }
+    function getEndIndex() {
+        return Math.min(getStartIndex() + itemsPerPage, data);
+    }
+
+    return { getTotalPages, getCurrentPage, getStartIndex, getEndIndex }
+}

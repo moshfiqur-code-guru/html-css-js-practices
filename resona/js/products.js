@@ -164,6 +164,7 @@ function clearErrors() {
 //     image: ""
 // }]
 
+
 function saveProduct() {
     localStorage.setItem('products', JSON.stringify(products));
 }
@@ -171,7 +172,8 @@ function saveProduct() {
 // saveProduct();
 
 // =====================================================================
-const products = JSON.parse(localStorage.getItem('products')) || [];
+let products = JSON.parse(localStorage.getItem('products')) || [];
+let temp = JSON.parse(localStorage.getItem('products')) || [];
 
 const arrayOfColumn = [
     { label: "SL", header: "", shortStatus: false },
@@ -186,11 +188,28 @@ const arrayOfColumn = [
 
 ];
 
+const config = {
+    currentPage: 1,
+    itemsPerPage: 10,
+    maxVisiblePages: 5,
+    container: document.getElementById("pagination")
+}
+
+
+const pagination = getPagination(config);
+
+function paginate() {
+    productModerator["startIndex"] = pagination.getStartIndex();
+    productModerator["endIndex"] = pagination.getEndIndex();
+}
+
 //=> const for search short >
 const productModerator = {
     search: "",
     dir: "",
-    col: ""
+    col: "",
+    startIndex: null,
+    endIndex: null
 }
 
 
@@ -259,12 +278,42 @@ function productShorting(arrayOfColumn, nextDir) {
 }
 
 
+
+
+function addDemoProducts() {
+    for (let i = 0; i < 100; i++) {
+        products.push({
+            id: generateProductID() + i,
+            productName: "Product" + i,
+            productModel: "CH" + Math.round(Math.random() * 10 + 651) + i + "FD",
+            type: Math.floor(Math.random() * 5 + 1),
+            price: "" +
+                Math.floor(Math.random() * 4 + 1) +
+                Math.floor(Math.random() * 10) +
+                Math.floor(Math.random() * 10),
+            quantity: "" +
+                Math.floor(Math.random() * 10) +
+                Math.floor(Math.random() * 10) +
+                Math.floor(Math.random() * 10),
+            image: "h4.png"
+        })
+    }
+    localStorage.setItem("products", JSON.stringify(products))
+}
+
+// addDemoProducts()
+
+
+
+
 //################################################################//
 // displaying products in table from local storage               //
 //##############################################################//
 
 //=> function for displaying product on table >
 function displayProducts() {
+
+    displayColumn();
 
     const { col, dir, search } = productModerator;
 
@@ -285,9 +334,8 @@ function displayProducts() {
                 return dir === "ASC" ? valueA - valueB : valueB - valueA;
 
             return dir === "ASC" ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
-
         })
-
+    products = formattedProducts;
     tableBody.innerHTML = "";
 
     if (products.length > 0) {
@@ -316,8 +364,10 @@ function displayProducts() {
     }
 }
 
+
+paginate();
 displayProducts();
-displayColumn();
+
 
 //########################################################################//
 // preview image                                                         //
@@ -442,6 +492,7 @@ function typeLabel(typeValue) {
 
 function filterProduct(searchValue) {
     productModerator.search = [searchValue];
+    if (searchValue === "") products = temp;
     displayProducts();
 }
 
@@ -452,7 +503,6 @@ function filterProductWithDebounce(input) {
     let keWords = input.value.replace(/\s/g, "").toLowerCase();
     searchDebounce(keWords, filterProduct, 200)
 }
-
 
 
 
