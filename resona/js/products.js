@@ -192,15 +192,19 @@ const config = {
     currentPage: 1,
     itemsPerPage: 10,
     maxVisiblePages: 5,
-    container: document.getElementById("pagination")
+    container: document.getElementById("pagination"),
+    data: products
 }
 
 
 const pagination = getPagination(config);
 
 function paginate() {
+    const pageNumber = document.getElementById("pageNumber");
+    pageNumber.textContent = pagination.getCurrentPage();
     productModerator["startIndex"] = pagination.getStartIndex();
     productModerator["endIndex"] = pagination.getEndIndex();
+
 }
 
 //=> const for search short >
@@ -313,9 +317,10 @@ function addDemoProducts() {
 //=> function for displaying product on table >
 function displayProducts() {
 
+    console.log(productModerator);
     displayColumn();
 
-    const { col, dir, search } = productModerator;
+    const { col, dir, search, startIndex, endIndex } = productModerator;
 
     const formattedProducts = products.filter
         (product => (product.productName + product.productModel)
@@ -334,7 +339,7 @@ function displayProducts() {
                 return dir === "ASC" ? valueA - valueB : valueB - valueA;
 
             return dir === "ASC" ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
-        })
+        }).slice(startIndex, endIndex);
     products = formattedProducts;
     tableBody.innerHTML = "";
 
@@ -359,7 +364,7 @@ function displayProducts() {
     } else {
         const row = document.createElement("tr");
         row.innerHTML = `
-        < td colspan = "9" id = "empty-message" ><i class="ti ti-alert-triangle"></i><p>Products table is empty</p></ > `;
+        <td colspan = "9" id = "empty-message" ><i class="ti ti-alert-triangle"></i><p>Products table is empty</p></td > `;
         tableBody.appendChild(row);
     }
 }
@@ -504,7 +509,19 @@ function filterProductWithDebounce(input) {
     searchDebounce(keWords, filterProduct, 200)
 }
 
+function next() {
+    products = temp;
+    pagination.nextPage();
+    paginate();
+    displayProducts();
+}
 
+function priv() {
+    products = temp;
+    pagination.previousPage();
+    paginate();
+    displayProducts();
+}
 
 
 

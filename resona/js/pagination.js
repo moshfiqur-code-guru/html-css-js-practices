@@ -23,8 +23,14 @@ function getPagination(config) {
         return (currentPage - 1) * itemsPerPage;
     }
     function getEndIndex() {
-        return Math.min(getStartIndex() + itemsPerPage, data);
+        return Math.min(getStartIndex() + itemsPerPage, data.length);
+    }
+    function nextPage() {
+        currentPage += 1;
+    }
+    function previousPage() {
+        currentPage -= 1;
     }
 
-    return { getTotalPages, getCurrentPage, getStartIndex, getEndIndex }
+    return { getTotalPages, getCurrentPage, getStartIndex, getEndIndex, nextPage, previousPage }
 }

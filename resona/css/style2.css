@@ -576,6 +576,31 @@ tbody tr:hover {
     font-size: 18px;
 }
 
+#pagination {
+    padding-top: 15px;
+    font-family: "Inter", sans-serif;
+}
+
+#pagination button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 400;
+    background-color: #a69af273;
+}
+
+#pageNumber {
+    border-radius: 8px;
+    margin: 0px 10px;
+    background: rgb(235, 235, 235);
+    padding: 8px 10px;
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
 /**************************\
   Basic Modal Styles
 \**************************/
