@@ -579,27 +579,37 @@ tbody tr:hover {
 #pagination {
     padding-top: 15px;
     font-family: "Inter", sans-serif;
+    gap: 5px;
 }
 
-#pagination button {
-    padding: 10px 20px;
+#pagination .page-button {
+    padding: 5px 10px;
     border: none;
     border-radius: 8px;
-    font-size: 15px;
-    font-weight: 400;
     background-color: #a69af273;
 }
 
-#pageNumber {
-    border-radius: 8px;
-    margin: 0px 10px;
-    background: rgb(235, 235, 235);
-    padding: 8px 10px;
-    display: block;
-    font-size: 18px;
-    font-weight: 600;
+#pagination .page-button i {
+    font-size: 26px;
 }
 
+#pagination .page-numbers button {
+    text-align: center;
+    width: 35px;
+    border-radius: 8px;
+    margin: 0px 3px;
+    background: rgb(235, 235, 235);
+    border: none;
+    padding: 10px 0px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#pagination .pageBTN.active {
+    background-color: #a69af273;
+    border-radius: 13px;
+    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
 /**************************\
   Basic Modal Styles

@@ -188,24 +188,36 @@ const arrayOfColumn = [
 
 ];
 
+
+function nextButton() {
+    const button = document.createElement("button");
+    button.innerHTML = "<i class='ti ti-caret-right'></i>";
+    button.className = "page-button";
+    return button;
+}
+
+function prevButton() {
+    const button = document.createElement("button");
+    button.innerHTML = "<i class='ti ti-caret-left'></i>";
+    button.className = "page-button";
+    return button;
+}
+
 const config = {
     currentPage: 1,
-    itemsPerPage: 10,
+    itemsPerPage: 20,
     maxVisiblePages: 5,
     container: document.getElementById("pagination"),
-    data: products
+    data: products,
+    callToAction: displayProducts,
+    nextBTN: nextButton(),
+    prevBTN: prevButton()
 }
 
 
 const pagination = getPagination(config);
 
-function paginate() {
-    const pageNumber = document.getElementById("pageNumber");
-    pageNumber.textContent = pagination.getCurrentPage();
-    productModerator["startIndex"] = pagination.getStartIndex();
-    productModerator["endIndex"] = pagination.getEndIndex();
-
-}
+pagination.render();
 
 //=> const for search short >
 const productModerator = {
@@ -317,12 +329,11 @@ function addDemoProducts() {
 //=> function for displaying product on table >
 function displayProducts() {
 
-    console.log(productModerator);
     displayColumn();
-
     const { col, dir, search, startIndex, endIndex } = productModerator;
+    let paginatedData = pagination.paginate(temp);
 
-    const formattedProducts = products.filter
+    const formattedProducts = paginatedData.filter
         (product => (product.productName + product.productModel)
             .replace(/\s/g, "").toLowerCase().includes(search))
         .sort((a, b) => {
@@ -339,12 +350,12 @@ function displayProducts() {
                 return dir === "ASC" ? valueA - valueB : valueB - valueA;
 
             return dir === "ASC" ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
-        }).slice(startIndex, endIndex);
+        });
     products = formattedProducts;
     tableBody.innerHTML = "";
 
     if (products.length > 0) {
-        formattedProducts.forEach((products, index) => {
+        products.forEach((products, index) => {
             const row = document.createElement("tr");
             row.innerHTML = `
                 <td> ${index + 1}</td >
@@ -370,7 +381,6 @@ function displayProducts() {
 }
 
 
-paginate();
 displayProducts();
 
 
