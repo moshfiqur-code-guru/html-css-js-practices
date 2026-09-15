@@ -78,13 +78,50 @@ function getPagination(config) {
             return pages;
         }
 
-        // if (totalPages <= maxVisiblePages) {
-        for (let page = 1; page <= totalPages; page++) {
-            pages.push(page)
+        if (totalPages <= maxVisiblePages) {
+            for (let page = 1; page <= totalPages; page++) {
+                pages.push(page)
+            }
+            return pages;
         }
-        return pages;
+        // First page
+        pages.push(1);
 
-        // return;
+        const middleCount = maxVisiblePages - 2;
+
+        let start = currentPage - Math.floor(middleCount / 2);
+        let end = start + middleCount - 1;
+
+        // Fix beginning
+        if (start < 2) {
+            start = 2;
+            end = start + middleCount - 1;
+        }
+
+        // Fix ending
+        if (end > totalPages - 1) {
+            end = totalPages - 1;
+            start = end - middleCount + 1;
+        }
+
+        // Left dots
+        if (start > 2) {
+            pages.push("...");
+        }
+
+        // Middle pages
+        for (let page = start; page <= end; page++) {
+            pages.push(page);
+        }
+
+        // Right dots
+        if (end < totalPages - 1) {
+            pages.push("...");
+        }
+
+        // Last page
+        pages.push(totalPages);
+        return pages;
     }
 
     function render() {
@@ -110,9 +147,13 @@ function getPagination(config) {
         pageContainer.className = "page-numbers";
         const pages = getPageNumbers();
         pages.forEach(page => {
-            const pageButton = createButton(page, "pageBTN", () => goToPage(page));
+            const pageButton = createButton(page, page === "..." ? "pageDotBTN" : "pageBTN", () => goToPage(page));
             if (page === currentPage) {
                 pageButton.classList.add("active")
+
+                requestAnimationFrame(() => {
+                    pageButton.classList.add("animate");
+                });
             }
             pageContainer.appendChild(pageButton)
         })

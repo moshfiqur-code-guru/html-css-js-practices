@@ -583,17 +583,22 @@ tbody tr:hover {
 }
 
 #pagination .page-button {
-    padding: 5px 10px;
+    padding: 0px 8px;
     border: none;
     border-radius: 8px;
     background-color: #a69af273;
+    transition: 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#pagination .page-button:active {
+    transform: scale(0.9);
 }
 
 #pagination .page-button i {
     font-size: 26px;
 }
 
-#pagination .page-numbers button {
+#pagination .pageBTN {
     text-align: center;
     width: 35px;
     border-radius: 8px;
@@ -603,12 +608,53 @@ tbody tr:hover {
     padding: 10px 0px;
     font-size: 14px;
     font-weight: 400;
+    transition: 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#pagination .page-numbers button:active {
+    transform: scale(0.9);
+}
+
+#pagination .pageBTN {
+    transition:
+        transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        background-color 300ms ease,
+        border-radius 300ms ease;
+}
+
+#pagination .pageDotBTN {
+    border: none;
+    background: none;
+    padding: 10px;
+    font-weight: 600;
 }
 
 #pagination .pageBTN.active {
     background-color: #a69af273;
     border-radius: 13px;
-    transition: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: scale(1.05);
+}
+
+#pagination .pageBTN.active:active {
+    transform: scale(0.9);
+}
+
+#pagination .pageBTN.active.animate {
+    animation: pageActive 350ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pageActive {
+    0% {
+        transform: scale(0.9);
+    }
+
+    60% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
 }
 
 /**************************\
