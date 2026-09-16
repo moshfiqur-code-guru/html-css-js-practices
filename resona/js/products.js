@@ -85,20 +85,31 @@ modalActionBtn.addEventListener("click", (event) => {
 
     if (Object.keys(validationErrors).length === 0) {
         if (editableIndex !== null) {
-            products[editableIndex] = product;
+
+            let updatedTemp = temp.map(privProduct => {
+                if (privProduct.id === currentID) {
+                    return product;
+                }
+                return privProduct;
+            })
+            temp = updatedTemp;
+            saveProduct(updatedTemp);
+            // products[editableIndex] = product;
             currentID = null;
             editableIndex = null;
             message = "Updated";
             productForm.reset();
             MicroModal.close('modal-1');
         } else {
+
             message = "Saved";
-            products.push(product);
+            temp.push(product);
             MicroModal.close('modal-1');
             productForm.reset();
+            saveProduct(temp);
         }
         clearErrors();
-        saveProduct();
+
         displayProducts();
         productForm.reset();
         Swal.fire({
@@ -165,8 +176,9 @@ function clearErrors() {
 // }]
 
 
-function saveProduct() {
-    localStorage.setItem('products', JSON.stringify(products));
+function saveProduct(updatedProduct) {
+    localStorage.setItem('products', JSON.stringify(updatedProduct));
+    products = updatedProduct;
 }
 
 // saveProduct();
@@ -208,7 +220,7 @@ const config = {
     itemsPerPage: 20,
     maxVisiblePages: 5,
     container: document.getElementById("pagination"),
-    data: products,
+    data: temp,
     callToAction: displayProducts,
     nextBTN: nextButton(),
     prevBTN: prevButton()
@@ -331,9 +343,8 @@ function displayProducts() {
 
     displayColumn();
     const { col, dir, search, startIndex, endIndex } = productModerator;
-    let paginatedData = pagination.paginate(temp);
 
-    const formattedProducts = paginatedData.filter
+    const formattedProducts = temp.filter
         (product => (product.productName + product.productModel)
             .replace(/\s/g, "").toLowerCase().includes(search))
         .sort((a, b) => {
@@ -351,7 +362,7 @@ function displayProducts() {
 
             return dir === "ASC" ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
         });
-    products = formattedProducts;
+    products = pagination.paginate(formattedProducts);
     tableBody.innerHTML = "";
 
     if (products.length > 0) {
@@ -378,6 +389,7 @@ function displayProducts() {
         <td colspan = "9" id = "empty-message" ><i class="ti ti-alert-triangle"></i><p>Products table is empty</p></td > `;
         tableBody.appendChild(row);
     }
+    pagination.render();
 }
 
 
@@ -428,8 +440,12 @@ function deleteProduct(index) {
 
         if (result.isConfirmed) {
 
-            products.splice(index, 1);
-            saveProduct();
+            temp.splice(index, 1);
+
+            if (products.length === 1) {
+                pagination.goToPage(pagination.getCurrentPage() - 1)
+            }
+            saveProduct(temp);
             displayProducts();
 
             Swal.fire({
@@ -517,20 +533,6 @@ const searchDebounce = debounce();
 function filterProductWithDebounce(input) {
     let keWords = input.value.replace(/\s/g, "").toLowerCase();
     searchDebounce(keWords, filterProduct, 200)
-}
-
-function next() {
-    products = temp;
-    pagination.nextPage();
-    paginate();
-    displayProducts();
-}
-
-function priv() {
-    products = temp;
-    pagination.previousPage();
-    paginate();
-    displayProducts();
 }
 
 
