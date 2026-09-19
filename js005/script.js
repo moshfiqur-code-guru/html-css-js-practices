@@ -31,26 +31,26 @@ function getUserFromStorage() {
     return JSON.parse(localStorage.getItem("user"));
 }
 
-// function userLoginStatus() {
-//     const user = getUserFromStorage();
-//     if (user && user.isLoggedIn) {
-//         if (window.location.href.includes("index.html")) {
-//             window.location.href = "dashboard.html"
-//         }
-//         let author = document.getElementById("author-img");
-//         let img = document.createElement("img");
-//         img.src = user.image;
-//         img.alt = "image";
-//
-//         author.appendChild(img);
-//
-//     } else {
-//         if (!window.location.href.includes("index.html")) {
-//             window.location.href = "index.html"
-//
-//         }
-//     }
-// }
+function userLoginStatus() {
+    const user = getUserFromStorage();
+    if (user && user.isLoggedIn) {
+        if (window.location.href.includes("index.html")) {
+            window.location.href = "dashboard.html"
+        }
+        let author = document.getElementById("author-img");
+        let img = document.createElement("img");
+        img.src = user.image;
+        img.alt = "image";
+
+        author.appendChild(img);
+
+    } else {
+        if (!window.location.href.includes("index.html")) {
+            window.location.href = "index.html"
+
+        }
+    }
+}
 
 
 function doLogin() {
@@ -174,14 +174,14 @@ function toggleVisible(type) {
 
 
 const arrayOfMenu = [
-    {label: "dashboard", icon: "home"},
-    {label: "classes", icon: "table"},
-    {label: "teachers", icon: "pen-tool"},
-    {label: "students", icon: "users"},
-    {label: "guardians", icon: "umbrella"},
-    {label: "results", icon: "bar-chart-2"},
-    {label: "calculator", icon: "divide-square"},
-    {label: "settings", icon: "settings"},
+    { label: "dashboard", icon: "home" },
+    { label: "classes", icon: "table" },
+    { label: "teachers", icon: "pen-tool" },
+    { label: "students", icon: "users" },
+    { label: "guardians", icon: "umbrella" },
+    { label: "results", icon: "bar-chart-2" },
+    { label: "calculator", icon: "divide-square" },
+    { label: "settings", icon: "settings" },
 ];
 const ul = document.createElement("ul");
 
@@ -209,3 +209,24 @@ function activeMenu() {
 feather.replace();
 activeMenu();
 userLoginStatus();
+
+
+const toggleMenu = document.querySelector(".toggle-menu");
+const sideBar = document.querySelector(".side-panel");
+const overlay = document.querySelector(".overlay");
+
+let isOpen = false;
+toggleMenu.addEventListener("click", () => {
+    if (!isOpen) {
+        document.body.classList.add("open");
+        isOpen = true;
+    } else {
+        document.body.classList.remove("open");
+    }
+});
+overlay.addEventListener("click", () => {
+    if (isOpen) {
+        document.body.classList.remove("open");
+        isOpen = false;
+    }
+})
