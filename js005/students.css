@@ -222,6 +222,7 @@
 
 .add-new {
     height: 39px;
+    transition: 400ms ease-in-out;
 }
 
 .add-new button {
@@ -246,6 +247,7 @@
     font-family: "Outfit", sans-serif;
     display: inline-block;
     transform: translate(0px, -3px);
+    transition: 400ms ease-in-out;
 }
 
 .add-new button:hover {
@@ -269,8 +271,6 @@
 form.add-student-form .picker {
     display: none;
 }
-
-.add-student-form {}
 
 
 form.add-student-form input {
@@ -309,7 +309,13 @@ select {
     margin-top: 20px;
 }
 
+.table-wrapper {
+    width: 100%;
+    overflow-x: scroll;
+}
+
 table {
+    min-width: 800px;
     width: 100%;
     border-collapse: collapse;
     text-align: center;
