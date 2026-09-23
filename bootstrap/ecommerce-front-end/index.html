@@ -7,8 +7,9 @@
     <title>Ecommerce 001 | Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght,ROND@6..144,1..1000,100&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/bootstrap/ecommerce-front-end/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/bootstrap/ecommerce-front-end/assets/css/bootstrap-icons.css">
@@ -139,7 +140,7 @@
     </section>
 
     <section id="heder-buttom">
-        <nav class="navbar navbar-expand-lg py-2">
+        <nav class="navbar navbar-expand-lg bg-light py-2">
             <div class="container">
 
                 <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#heder-bottom-element"
@@ -162,11 +163,11 @@
                                 <option>Accessories</option>
                             </select>
 
-                            <div class="input-group border rounded-3">
-                                <input type="text" class="form-control form-control-sm border-0 rounded-4"
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-sm"
                                     placeholder="Search products...">
 
-                                <button class="btn btn-dark border-0 rounded-3" type="button">
+                                <button class="btn btn-dark" type="button">
                                     <i class="bi bi-search"></i>
                                 </button>
                             </div>
@@ -215,6 +216,108 @@
                 </div>
             </div>
         </nav>
+    </section>
+
+    <section id="offer-section">
+        <div class="container border my-3">
+            <div class="row">
+                <div class="col border d-flex align-items-center gap-4 px-4 py-3">
+                    <div><i class="bi bi-truck fs-2"></i></div>
+                    <figure>
+                        <blockquote class="blockquote">
+                            <p class="fw-bold">FREE SHIPPING & RETURN</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            Free shipping on all order over $99
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col border d-flex align-items-center gap-4 px-4 py-3">
+                    <div><i class="bi bi-cash-coin fs-2"></i></div>
+                    <figure>
+                        <blockquote class="blockquote">
+                            <p class="fw-bold">MONEY BACK GUARANTEE</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            100% Money back guarantee on return
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col border d-flex align-items-center gap-4 px-4 py-3">
+                    <div><i class="bi bi-chat-left-dots fs-2"></i></div>
+                    <figure>
+                        <blockquote class="blockquote">
+                            <p class="fw-bold">ONLINE SUPPORT</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            24/7 online support available
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 gx-0">
+                    <ul class="list-group">
+                        <li class="list-group-item active rounded-4 fs-6 mb-2" aria-current="true">Categories</li>
+                    </ul>
+                    <ul class="list-group rounded-4">
+                        <a href="#" class="list-group-item list-group-item-action fw-normal">Men’s Clothing</a>
+                        <a href="#" class="list-group-item list-group-item-action fw-normal">Women’s
+                            Clothing</a>
+                        <a href="#" class="list-group-item list-group-item-action fw-normal">Kids’s
+                            Clothing</a>
+                        <a href="#" class="list-group-item list-group-item-action fw-normal">Shoes</a>
+                        <a href="#" class="list-group-item list-group-item-action fw-normal">Bags</a>
+                        <a href="#" class="list-group-item list-group-item-action fw-normal">Watches</a>
+                        <a href="#" class="list-group-item list-group-item-action fw-normal">Jewelry</a>
+                        <a href="#" class="list-group-item list-group-item-action fw-normal">Accessories</a>
+                    </ul>
+                </div>
+                <div class="col-9">
+                    <div class="offer-slider">
+                        <div id="offer-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#offer-carousel" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#offer-carousel" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#offer-carousel" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner rounded-4">
+                                <div class="carousel-item active">
+                                    <div class="offer-img-wraper"><img src="assets/img/h7.jpg"></div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="offer-img-wraper"><img src="assets/img/t1 (1).jpg"></div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="offer-img-wraper"><img src="assets/img/t1 (4).jpg"></div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#offer-carousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#offer-carousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
     </section>
 
 

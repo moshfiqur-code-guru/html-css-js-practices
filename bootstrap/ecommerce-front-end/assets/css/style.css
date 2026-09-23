@@ -39,3 +39,22 @@ body {
 .account figure {
     margin: 0;
 }
+
+#offer-section figure {
+    margin: 0;
+}
+
+#offer-section .blockquote-footer {
+    margin-bottom: 0;
+}
+
+.offer-img-wraper {
+    width: 100%;
+    height: 500px;
+}
+
+.offer-img-wraper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
