@@ -58,3 +58,38 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
+.indicator-wraper {
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    border: 2px solid rgba(250, 250, 250, 0.5);
+    display: flex;
+    margin: 3px;
+    justify-content: center;
+    align-items: center;
+    transition: 500ms ease-in-out;
+}
+
+.carousel-indicators [data-bs-target] {
+    margin: 0px;
+    height: 80%;
+    width: 80%;
+    border-radius: 50%;
+}
+
+.indicator-wraper:has(.active) {
+    border-color: #fff;
+    transform: scale(1.1);
+}
+
+.todays-deals img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* .carousel-indicators [data-bs-target].active {
+    width: 20px;
+    border-radius: 10%;
+} */
