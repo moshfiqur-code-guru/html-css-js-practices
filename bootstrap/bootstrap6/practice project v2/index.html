@@ -1,0 +1,981 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice project v2</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <!-- animated icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Bootstrap styles -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <header class="bg-body">
+        <nav class="container py-4">
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                <a href="#">
+                    <img src="assets/img/logo.svg" alt="" width="130" height="32">
+                </a>
+
+                <div class="search-bar">
+                    <form class="d-flex" role="search">
+                        <label class="visually-hidden" for="site-search">Search products</label>
+                        <input id="site-search" class="search-input" type="search" placeholder="Search products...">
+                        <button class="btn-solid" type="submit" aria-label="Search">
+                            <i class="material-symbols-rounded animate-icon">search</i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="primary-options">
+                    <ul class="list-unstyled d-flex align-items-center gap-3 mb-0 main-font">
+                        <li><a class="btn text-decoration-none d-flex align-items-center justify-content-center"
+                                href="#track">
+                                <i class="material-symbols-rounded animate-icon">where_to_vote</i>
+                                Track order
+                            </a>
+                        </li>
+                        <li><a class="btn text-decoration-none d-flex align-items-center justify-content-center"
+                                href="#wishlist">
+                                <i class="material-symbols-rounded animate-icon">favorite</i>
+                                Wishlist
+                            </a>
+                        </li>
+                        <li><a class="btn text-decoration-none d-flex align-items-center justify-content-center"
+                                href="#cart">
+                                <i class="material-symbols-rounded animate-icon">shopping_bag</i>
+                                Cart
+                            </a>
+                        </li>
+                        <li><a class="btn text-decoration-none d-flex align-items-center justify-content-center"
+                                href="#sign-in">
+                                <i class="material-symbols-rounded animate-icon">person</i>
+                                Sign in
+                            </a>
+                        </li>
+                        <li><a class="btn text-decoration-none d-flex align-items-center justify-content-center"
+                                href="#sign-in">
+                                <i class="material-symbols-rounded animate-icon">more_vert</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="categories-nav border-bottom">
+        <nav class="container py-2" aria-label="Product categories">
+            <ul class="nav nav-pills gap-2">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> All products </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> Headphone </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> Power Bank</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> Charger </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Mouse</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Keyboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">More</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="container best-offers px-4 pt-5 text-center">
+        <div class="row gap-4">
+            <div class="col">
+                <div class="row offer px-3 py-4 rounded-4 d-flex align-items-center justify-content-between">
+                    <div class="col-2">
+                        <div class="material-symbols-rounded animate-icon icons me-3">delivery_truck_bolt</div>
+                    </div>
+                    <div class="col-8">
+                        <span class="fw-bolder d-block text-start">Get up to 25% of on first order</span>
+                        <span class="d-block text-start">Shop now and save more</span>
+                    </div>
+                    <div class="col-2">
+                        <div class="material-symbols-rounded animate-icon">arrow_right_alt</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row offer px-3 py-4 rounded-4 d-flex align-items-center justify-content-between">
+                    <div class="col-2">
+                        <div class="material-symbols-rounded animate-icon icons me-3">percent_discount</div>
+                    </div>
+                    <div class="col-8">
+                        <span class="fw-bolder d-block text-start">10% discount at all combo</span>
+                        <span class="d-block text-start">More items, more savings</span>
+                    </div>
+                    <div class="col-2">
+                        <div class="material-symbols-rounded animate-icon">arrow_right_alt</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row offer px-3 py-4 rounded-4 d-flex align-items-center justify-content-between">
+                    <div class="col-2">
+                        <div class="material-symbols-rounded animate-icon icons me-3">shoppingmode</div>
+                    </div>
+                    <div class="col-8">
+                        <span class="fw-bolder d-block text-start">Black friday sell</span>
+                        <span class="d-block text-start">Limited time, don't miss out</span>
+                    </div>
+                    <div class="col-2">
+                        <div class="material-symbols-rounded animate-icon">arrow_right_alt</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero-section container p-0 my-5 rounded-5 border overflow-hidden">
+        <div class="row">
+            <div class="hero-content col-5 d-flex flex-column align-items-start gap-4">
+                <div class="badge bg-body-secondary text-white">BEST DEALS</div>
+                <h1>Upgrade Your Everyday Tech.</h1>
+                <p>Discover the latest gadgets, powerful accessories,
+                    and unbeatable deals all in one place.</p>
+
+                <button class="btn bg-body-secondary fw-bolder">
+                    Shop Now
+                    <i class="material-symbols-rounded">arrow_forward</i>
+                </button>
+            </div>
+            <div class="col-7 m-0 h-100"><img src="assets/img/hero1.jpg" alt="" class="img-fluid"></div>
+        </div>
+    </section>
+
+    <section class="featured-products container px-0 py-5 my-5">
+        <div id="carouselMultiple" class="carousel slide featured-products-carousel mt-4"
+            style="--bs-carousel-items: 4; --bs-carousel-items-gap: 1.5rem;">
+            <div class="featured-products-heading d-flex justify-content-between align-items-center border-bottom pb-3">
+                <h4 class="fw-bold mb-0">Featured Products</h4>
+                <div>
+                    <button class="btn-icon btn-sm" type="button" data-bs-target="#carouselMultiple"
+                        data-bs-slide="prev" aria-label="Previous featured products"
+                        style="--bs-carousel-control-icon-width: 1rem;">
+                        <span class="carousel-icon-prev" aria-hidden="true"></span>
+                    </button>
+                    <button class="btn-icon btn-sm" type="button" data-bs-target="#carouselMultiple"
+                        data-bs-slide="next" aria-label="Next featured products"
+                        style="--bs-carousel-control-icon-width: 1rem;">
+                        <span class="carousel-icon-next" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-inner mt-4">
+                <div class="carousel-item item active rounded-3 border border-2">
+                    <div class="position-relative p-2 rounded-3 overflow-hidden"><img src="assets/img/s3.jpg"
+                            alt="SonicBeat S3 Speaker" class="img-fluid"></div>
+                    <div
+                        class="actions position-absolute top-0 h-100 w-100 d-flex align-items-start justify-content-between">
+                        <div class="badge fs-sm secondary-accent">10%</div>
+                        <i class="material-symbols-rounded animate-icon secondary-accent p-3 rounded-circle"
+                            aria-label="Add to wishlist">favorite</i>
+                    </div>
+                    <div class="p-2 featured-products-content">
+                        <h5 class="fw-bolder">SonicBeat S3 Speaker</h5>
+                        <span class="stars" aria-label="5 out of 5 stars"><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span></span>
+                        <h5 class="fw-bold">$180</h5>
+                        <button class="btn fw-semibold add-to-cart-btn"><i
+                                class="material-symbols-rounded small">shopping_cart</i> Add
+                            to cart</button>
+                    </div>
+                </div>
+                <div class="carousel-item item rounded-3 border border-2">
+                    <div class="position-relative p-2 rounded-3 overflow-hidden"><img src="assets/img/k3.jpg"
+                            alt="KeyPro K3 Wireless Keyboard" class="img-fluid"></div>
+                    <div
+                        class="actions position-absolute top-0 h-100 w-100 d-flex align-items-start justify-content-between">
+                        <div class="badge fs-sm secondary-accent">15%</div>
+                        <i class="material-symbols-rounded animate-icon secondary-accent p-3 rounded-circle"
+                            aria-label="Add to wishlist">favorite</i>
+                    </div>
+                    <div class="p-2 featured-products-content">
+                        <h5 class="fw-bolder">KeyPro K3 Wireless Keyboard</h5>
+                        <span class="stars" aria-label="5 out of 5 stars"><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span></span>
+                        <h5 class="fw-bold">$72</h5>
+                        <button class="btn fw-semibold add-to-cart-btn"><i
+                                class="material-symbols-rounded small">shopping_cart</i> Add
+                            to cart</button>
+                    </div>
+                </div>
+                <div class="carousel-item item rounded-3 border border-2">
+                    <div class="position-relative p-2 rounded-3 overflow-hidden"><img src="assets/img/m2.jpg"
+                            alt="SwiftClick M2 Mouse" class="img-fluid"></div>
+                    <div
+                        class="actions position-absolute top-0 h-100 w-100 d-flex align-items-start justify-content-between">
+                        <div class="badge fs-sm secondary-accent">12%</div>
+                        <i class="material-symbols-rounded animate-icon secondary-accent p-3 rounded-circle"
+                            aria-label="Add to wishlist">favorite</i>
+                    </div>
+                    <div class="p-2 featured-products-content">
+                        <h5 class="fw-bolder">SwiftClick M2 Mouse</h5>
+                        <span class="stars" aria-label="5 out of 5 stars"><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span></span>
+                        <h5 class="fw-bold">$36</h5>
+                        <button class="btn fw-semibold add-to-cart-btn"><i
+                                class="material-symbols-rounded small">shopping_cart</i> Add
+                            to cart</button>
+                    </div>
+                </div>
+                <div class="carousel-item item rounded-3 border border-2">
+                    <div class="position-relative p-2 rounded-3 overflow-hidden"><img src="assets/img/c4.jpg"
+                            alt="VoltFast 45W Charger" class="img-fluid"></div>
+                    <div
+                        class="actions position-absolute top-0 h-100 w-100 d-flex align-items-start justify-content-between">
+                        <div class="badge fs-sm secondary-accent">20%</div>
+                        <i class="material-symbols-rounded animate-icon secondary-accent p-3 rounded-circle"
+                            aria-label="Add to wishlist">favorite</i>
+                    </div>
+                    <div class="p-2 featured-products-content">
+                        <h5 class="fw-bolder">VoltFast 45W Charger</h5>
+                        <span class="stars" aria-label="5 out of 5 stars"><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span></span>
+                        <h5 class="fw-bold">$28</h5>
+                        <button class="btn fw-semibold add-to-cart-btn"><i
+                                class="material-symbols-rounded small">shopping_cart</i> Add
+                            to cart</button>
+                    </div>
+                </div>
+                <div class="carousel-item item rounded-3 border border-2">
+                    <div class="position-relative p-2 rounded-3 overflow-hidden"><img src="assets/img/p2.jpg"
+                            alt="PowerGo 20K Power Bank" class="img-fluid"></div>
+                    <div
+                        class="actions position-absolute top-0 h-100 w-100 d-flex align-items-start justify-content-between">
+                        <div class="badge fs-sm secondary-accent">18%</div>
+                        <i class="material-symbols-rounded animate-icon secondary-accent p-3 rounded-circle"
+                            aria-label="Add to wishlist">favorite</i>
+                    </div>
+                    <div class="p-2 featured-products-content">
+                        <h5 class="fw-bolder">PowerGo 20K Power Bank</h5>
+                        <span class="stars" aria-label="5 out of 5 stars"><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span></span>
+                        <h5 class="fw-bold">$54</h5>
+                        <button class="btn fw-semibold add-to-cart-btn"><i
+                                class="material-symbols-rounded small">shopping_cart</i> Add
+                            to cart</button>
+                    </div>
+                </div>
+                <div class="carousel-item item rounded-3 border border-2">
+                    <div class="position-relative p-2 rounded-3 overflow-hidden"><img src="assets/img/mi3.jpg"
+                            alt="StudioCast USB Microphone" class="img-fluid"></div>
+                    <div
+                        class="actions position-absolute top-0 h-100 w-100 d-flex align-items-start justify-content-between">
+                        <div class="badge fs-sm secondary-accent">8%</div>
+                        <i class="material-symbols-rounded animate-icon secondary-accent p-3 rounded-circle"
+                            aria-label="Add to wishlist">favorite</i>
+                    </div>
+                    <div class="p-2 featured-products-content">
+                        <h5 class="fw-bolder">StudioCast USB Microphone</h5>
+                        <span class="stars" aria-label="5 out of 5 stars"><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span></span>
+                        <h5 class="fw-bold">$89</h5>
+                        <button class="btn fw-semibold add-to-cart-btn"><i
+                                class="material-symbols-rounded small">shopping_cart</i> Add
+                            to cart</button>
+                    </div>
+                </div>
+                <div class="carousel-item item rounded-3 border border-2">
+                    <div class="position-relative p-2 rounded-3 overflow-hidden"><img src="assets/img/s8.jpg"
+                            alt="BassWave Portable Speaker" class="img-fluid"></div>
+                    <div
+                        class="actions position-absolute top-0 h-100 w-100 d-flex align-items-start justify-content-between">
+                        <div class="badge fs-sm secondary-accent">14%</div>
+                        <i class="material-symbols-rounded animate-icon secondary-accent p-3 rounded-circle"
+                            aria-label="Add to wishlist">favorite</i>
+                    </div>
+                    <div class="p-2 featured-products-content">
+                        <h5 class="fw-bolder">BassWave Portable Speaker</h5>
+                        <span class="stars" aria-label="5 out of 5 stars"><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span></span>
+                        <h5 class="fw-bold">$125</h5>
+                        <button class="btn fw-semibold add-to-cart-btn"><i
+                                class="material-symbols-rounded small">shopping_cart</i> Add
+                            to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="shop-by-category container px-0 py-5 my-5">
+        <div class="shop-category-heading mb-4 pb-4 d-flex align-items-center justify-content-between border-bottom">
+            <h4 class="fw-bold mb-1">Shop by Category</h4>
+            <button class="btn fw-semibold">
+                View All
+                <i class="material-symbols-rounded">arrow_forward</i>
+            </button>
+
+        </div>
+        <div class="shop-category-grid">
+            <a class="category-card" href="#" aria-label="Shop headphones">
+                <img src="assets/img/h1 ils.jpg" alt="Headphones">
+                <span>Headphones</span>
+            </a>
+            <a class="category-card" href="#" aria-label="Shop keyboards">
+                <img src="assets/img/key ils.png" alt="Keyboard">
+                <span>Keyboards</span>
+            </a>
+            <a class="category-card" href="#" aria-label="Shop mice">
+                <img src="assets/img/m ils.webp" alt="Computer mouse">
+                <span>Mice</span>
+            </a>
+            <a class="category-card" href="#" aria-label="Shop chargers">
+                <img src="assets/img/s ils.jpg" alt="Charger">
+                <span>Spikers</span>
+            </a>
+            <a class="category-card" href="#" aria-label="Shop power banks">
+                <img src="assets/img/pb ils.avif" alt="Power bank">
+                <span>Power Banks</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="featured-products container px-0 py-5 my-5">
+        <div id="carouselMultiple-2" class="carousel slide featured-products-carousel mt-4"
+            style="--bs-carousel-items: 4; --bs-carousel-items-gap: 1.5rem;">
+            <div class="featured-products-heading d-flex justify-content-between align-items-center border-bottom pb-3">
+                <h4 class="fw-bold mb-0">Top Shelling Products</h4>
+                <div>
+                    <button class="btn-icon btn-sm" type="button" data-bs-target="#carouselMultiple-2"
+                        data-bs-slide="prev" aria-label="Previous featured products"
+                        style="--bs-carousel-control-icon-width: 1rem;">
+                        <span class="carousel-icon-prev" aria-hidden="true"></span>
+                    </button>
+                    <button class="btn-icon btn-sm" type="button" data-bs-target="#carouselMultiple-2"
+                        data-bs-slide="next" aria-label="Next featured products"
+                        style="--bs-carousel-control-icon-width: 1rem;">
+                        <span class="carousel-icon-next" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="carousel-inner mt-4">
+                <div class="carousel-item item active rounded-3 border border-2">
+                    <div class="position-relative p-2 rounded-3 overflow-hidden"><img src="assets/img/k7.jpg"
+                            alt="MechFlow RGB Keyboard" class="img-fluid"></div>
+                    <div
+                        class="actions position-absolute top-0 h-100 w-100 d-flex align-items-start justify-content-between">
+                        <div class="badge fs-sm secondary-accent">22%</div>
+                        <i class="material-symbols-rounded animate-icon secondary-accent p-3 rounded-circle"
+                            aria-label="Add to wishlist">favorite</i>
+                    </div>
+                    <div class="p-2 featured-products-content">
+                        <h5 class="fw-bolder">MechFlow RGB Keyboard</h5>
+                        <span class="stars" aria-label="5 out of 5 stars"><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span></span>
+                        <h5 class="fw-bold">$96</h5>
+                        <button class="btn fw-semibold add-to-cart-btn"><i
+                                class="material-symbols-rounded small">shopping_cart</i> Add
+                            to cart</button>
+                    </div>
+                </div>
+                <div class="carousel-item item rounded-3 border border-2">
+                    <div class="position-relative p-2 rounded-3 overflow-hidden"><img src="assets/img/m6.jpg"
+                            alt="PrecisionPro Gaming Mouse" class="img-fluid"></div>
+                    <div
+                        class="actions position-absolute top-0 h-100 w-100 d-flex align-items-start justify-content-between">
+                        <div class="badge fs-sm secondary-accent">16%</div>
+                        <i class="material-symbols-rounded animate-icon secondary-accent p-3 rounded-circle"
+                            aria-label="Add to wishlist">favorite</i>
+                    </div>
+                    <div class="p-2 featured-products-content">
+                        <h5 class="fw-bolder">PrecisionPro Gaming Mouse</h5>
+                        <span class="stars" aria-label="5 out of 5 stars"><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span></span>
+                        <h5 class="fw-bold">$48</h5>
+                        <button class="btn fw-semibold add-to-cart-btn"><i
+                                class="material-symbols-rounded small">shopping_cart</i> Add
+                            to cart</button>
+                    </div>
+                </div>
+                <div class="carousel-item item rounded-3 border border-2">
+                    <div class="position-relative p-2 rounded-3 overflow-hidden"><img src="assets/img/c2.jpg"
+                            alt="DualPort 30W Charger" class="img-fluid"></div>
+                    <div
+                        class="actions position-absolute top-0 h-100 w-100 d-flex align-items-start justify-content-between">
+                        <div class="badge fs-sm secondary-accent">25%</div>
+                        <i class="material-symbols-rounded animate-icon secondary-accent p-3 rounded-circle"
+                            aria-label="Add to wishlist">favorite</i>
+                    </div>
+                    <div class="p-2 featured-products-content">
+                        <h5 class="fw-bolder">DualPort 30W Charger</h5>
+                        <span class="stars" aria-label="5 out of 5 stars"><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span></span>
+                        <h5 class="fw-bold">$19</h5>
+                        <button class="btn fw-semibold add-to-cart-btn"><i
+                                class="material-symbols-rounded small">shopping_cart</i> Add
+                            to cart</button>
+                    </div>
+                </div>
+                <div class="carousel-item item rounded-3 border border-2">
+                    <div class="position-relative p-2 rounded-3 overflow-hidden"><img src="assets/img/p5.jpg"
+                            alt="TravelCell 10K Power Bank" class="img-fluid"></div>
+                    <div
+                        class="actions position-absolute top-0 h-100 w-100 d-flex align-items-start justify-content-between">
+                        <div class="badge fs-sm secondary-accent">6%</div>
+                        <i class="material-symbols-rounded animate-icon secondary-accent p-3 rounded-circle"
+                            aria-label="Add to wishlist">favorite</i>
+                    </div>
+                    <div class="p-2 featured-products-content">
+                        <h5 class="fw-bolder">TravelCell 10K Power Bank</h5>
+                        <span class="stars" aria-label="5 out of 5 stars"><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span></span>
+                        <h5 class="fw-bold">$39</h5>
+                        <button class="btn fw-semibold add-to-cart-btn"><i
+                                class="material-symbols-rounded small">shopping_cart</i> Add
+                            to cart</button>
+                    </div>
+                </div>
+                <div class="carousel-item item rounded-3 border border-2">
+                    <div class="position-relative p-2 rounded-3 overflow-hidden"><img src="assets/img/mi6.jpg"
+                            alt="StreamMic Mini Condenser" class="img-fluid"></div>
+                    <div
+                        class="actions position-absolute top-0 h-100 w-100 d-flex align-items-start justify-content-between">
+                        <div class="badge fs-sm secondary-accent">11%</div>
+                        <i class="material-symbols-rounded animate-icon secondary-accent p-3 rounded-circle"
+                            aria-label="Add to wishlist">favorite</i>
+                    </div>
+                    <div class="p-2 featured-products-content">
+                        <h5 class="fw-bolder">StreamMic Mini Condenser</h5>
+                        <span class="stars" aria-label="5 out of 5 stars"><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span></span>
+                        <h5 class="fw-bold">$65</h5>
+                        <button class="btn fw-semibold add-to-cart-btn"><i
+                                class="material-symbols-rounded small">shopping_cart</i> Add
+                            to cart</button>
+                    </div>
+                </div>
+                <div class="carousel-item item rounded-3 border border-2">
+                    <div class="position-relative p-2 rounded-3 overflow-hidden"><img src="assets/img/s10.jpg"
+                            alt="BoomBox Go Speaker" class="img-fluid"></div>
+                    <div
+                        class="actions position-absolute top-0 h-100 w-100 d-flex align-items-start justify-content-between">
+                        <div class="badge fs-sm secondary-accent">17%</div>
+                        <i class="material-symbols-rounded animate-icon secondary-accent p-3 rounded-circle"
+                            aria-label="Add to wishlist">favorite</i>
+                    </div>
+                    <div class="p-2 featured-products-content">
+                        <h5 class="fw-bolder">BoomBox Go Speaker</h5>
+                        <span class="stars" aria-label="5 out of 5 stars"><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span></span>
+                        <h5 class="fw-bold">$210</h5>
+                        <button class="btn fw-semibold add-to-cart-btn"><i
+                                class="material-symbols-rounded small">shopping_cart</i> Add
+                            to cart</button>
+                    </div>
+                </div>
+                <div class="carousel-item item rounded-3 border border-2">
+                    <div class="position-relative p-2 rounded-3 overflow-hidden"><img src="assets/img/c7.jpg"
+                            alt="ChargeHub 4-Port Adapter" class="img-fluid"></div>
+                    <div
+                        class="actions position-absolute top-0 h-100 w-100 d-flex align-items-start justify-content-between">
+                        <div class="badge fs-sm secondary-accent">9%</div>
+                        <i class="material-symbols-rounded animate-icon secondary-accent p-3 rounded-circle"
+                            aria-label="Add to wishlist">favorite</i>
+                    </div>
+                    <div class="p-2 featured-products-content">
+                        <h5 class="fw-bolder">ChargeHub 4-Port Adapter</h5>
+                        <span class="stars" aria-label="5 out of 5 stars"><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span><span
+                                class="material-symbols-rounded">star_rate</span></span>
+                        <h5 class="fw-bold">$32</h5>
+                        <button class="btn fw-semibold add-to-cart-btn"><i
+                                class="material-symbols-rounded small">shopping_cart</i> Add
+                            to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero-2 container p-0">
+        <div id="carouselExampleContent" class="carousel slide carousel-overlay" data-bs-ride="carousel"
+            data-bs-interval="2500">
+            <div class="carousel-inner rounded-5">
+                <div class="carousel-item active">
+                    <div class="d-flex flex-wrap align-items-center justify-content-between bg-subtle-primary bg-1 rounded-5 overflow-hidden"
+                        style="min-height: 320px;">
+                        <div class="flex-grow-1 hero-slide-copy" style="flex-basis: 52%;">
+                            <span class="badge bg-primary-subtle text-primary mb-3">AUDIO DEAL</span>
+                            <h3 class="fw-bold">Bring your music to life</h3>
+                            <p class="fg-emphasis-secondary mb-3">Find your next favorite speaker and enjoy clear,
+                                powerful sound wherever you go.</p>
+                            <a class="btn-solid theme-primary rounded-pill" href="#">Shop speakers</a>
+                        </div>
+                        <img src="assets/img/s3.jpg" alt="Featured speaker" class="img-fluid hero-slide-image">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-wrap align-items-center justify-content-between bg-subtle-success bg-2 rounded-5 overflow-hidden"
+                        style="min-height: 320px;">
+                        <div class="flex-grow-1 hero-slide-copy" style="flex-basis: 52%;">
+                            <span class="badge bg-success-subtle text-success mb-3">DESK UPGRADE</span>
+                            <h3 class="fw-bold">Make every keystroke count</h3>
+                            <p class="fg-emphasis-secondary mb-3">Explore keyboards built for comfortable work, smooth
+                                play, and a cleaner setup.</p>
+                            <a class="btn-solid theme-success rounded-pill" href="#">Shop keyboards</a>
+                        </div>
+                        <img src="assets/img/key ils.png" alt="Keyboard product illustration"
+                            class="img-fluid hero-slide-image">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-wrap align-items-center justify-content-between bg-subtle-warning bg-3 rounded-5 overflow-hidden"
+                        style="min-height: 320px;">
+                        <div class="flex-grow-1 hero-slide-copy" style="flex-basis: 52%;">
+                            <span class="badge bg-warning-subtle text-dark mb-3">POWER ON THE GO</span>
+                            <h3 class="fw-bold">Stay charged wherever you roam</h3>
+                            <p class="fg-emphasis-secondary mb-3">Keep your everyday devices ready with a reliable power
+                                bank in your bag.</p>
+                            <a class="btn-solid theme-info rounded-pill" href="#">Shop power banks</a>
+                        </div>
+                        <img src="assets/img/pb ils.avif" alt="Power bank product illustration"
+                            class="img-fluid hero-slide-image">
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end gap-2 carousel-overlay-controls">
+                <button class="btn-icon btn-sm" type="button" data-bs-target="#carouselExampleContent"
+                    data-bs-slide="prev" style="--bs-carousel-control-icon-width: 1rem;">
+                    <span class="carousel-icon-prev" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="btn-icon btn-sm" type="button" data-bs-target="#carouselExampleContent"
+                    data-bs-slide="next" style="--bs-carousel-control-icon-width: 1rem;">
+                    <span class="carousel-icon-next" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-comments container px-0 py-5 my-5">
+        <div class="border-bottom pb-4 position-relative">
+            <h4 class="fw-bold">Review &amp; Comments</h4>
+        </div>
+        <div id="reviewCarousel" class="carousel slide" style="--bs-carousel-items: 4; --bs-carousel-items-gap: 1rem;"
+            data-bs-ride="carousel" data-bs-interval="2500">
+            <div class="carousel-inner py-4">
+                <div class="carousel-item active">
+                    <div class="card h-100" style="max-width: 320px;">
+                        <div class="card-body review-card-body">
+                            <div class="review-card-heading">
+                                <div class="reviewer-info">
+                                    <div class="review-avatar" aria-hidden="true">AR</div>
+                                    <h5 class="card-title fw-bolder mb-0 reviewer-name">Amina Rahman</h5>
+                                </div>
+                                <span class="stars review-stars" aria-label="5 out of 5 stars">
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                </span>
+                            </div>
+                            <p class="card-text m-0">The speaker sounds clear and full, and delivery arrived the next
+                                day.</p><a class="review-read-more" href="#">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="card h-100" style="max-width: 320px;">
+                        <div class="card-body review-card-body">
+                            <div class="review-card-heading">
+                                <div class="reviewer-info">
+                                    <div class="review-avatar" aria-hidden="true">FA</div>
+                                    <h5 class="card-title fw-bolder mb-0 reviewer-name">Farhan Ahmed</h5>
+                                </div>
+                                <span class="stars review-stars" aria-label="5 out of 5 stars">
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                </span>
+                            </div>
+                            <p class="card-text m-0">The keyboard feels solid, and the keys are comfortable for long
+                                work sessions.</p><a class="review-read-more" href="#">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="card h-100" style="max-width: 320px;">
+                        <div class="card-body review-card-body">
+                            <div class="review-card-heading">
+                                <div class="reviewer-info">
+                                    <div class="review-avatar" aria-hidden="true">NJ</div>
+                                    <h5 class="card-title fw-bolder mb-0 reviewer-name">Nusrat Jahan</h5>
+                                </div>
+                                <span class="stars review-stars" aria-label="5 out of 5 stars">
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                </span>
+                            </div>
+                            <p class="card-text m-0">My new mouse is smooth and accurate. Setup took less than a minute.
+                            </p><a class="review-read-more" href="#">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="card h-100" style="max-width: 320px;">
+                        <div class="card-body review-card-body">
+                            <div class="review-card-heading">
+                                <div class="reviewer-info">
+                                    <div class="review-avatar" aria-hidden="true">RI</div>
+                                    <h5 class="card-title fw-bolder mb-0 reviewer-name">Rafi Islam</h5>
+                                </div>
+                                <span class="stars review-stars" aria-label="5 out of 5 stars">
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                </span>
+                            </div>
+                            <p class="card-text m-0">The charger works quickly and stays cool while charging my phone.
+                            </p><a class="review-read-more" href="#">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="card h-100" style="max-width: 320px;">
+                        <div class="card-body review-card-body">
+                            <div class="review-card-heading">
+                                <div class="reviewer-info">
+                                    <div class="review-avatar" aria-hidden="true">SK</div>
+                                    <h5 class="card-title fw-bolder mb-0 reviewer-name">Sadia Karim</h5>
+                                </div>
+                                <span class="stars review-stars" aria-label="5 out of 5 stars">
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                </span>
+                            </div>
+                            <p class="card-text m-0">The power bank lasted through a full day of travel. Great value.
+                            </p><a class="review-read-more" href="#">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="card h-100" style="max-width: 320px;">
+                        <div class="card-body review-card-body">
+                            <div class="review-card-heading">
+                                <div class="reviewer-info">
+                                    <div class="review-avatar" aria-hidden="true">TH</div>
+                                    <h5 class="card-title fw-bolder mb-0 reviewer-name">Tanvir Hossain</h5>
+                                </div>
+                                <span class="stars review-stars" aria-label="5 out of 5 stars">
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                </span>
+                            </div>
+                            <p class="card-text m-0">The microphone picks up my voice clearly during calls and
+                                recordings.</p><a class="review-read-more" href="#">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="card h-100" style="max-width: 320px;">
+                        <div class="card-body review-card-body">
+                            <div class="review-card-heading">
+                                <div class="reviewer-info">
+                                    <div class="review-avatar" aria-hidden="true">MC</div>
+                                    <h5 class="card-title fw-bolder mb-0 reviewer-name">Maliha Chowdhury</h5>
+                                </div>
+                                <span class="stars review-stars" aria-label="5 out of 5 stars">
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                </span>
+                            </div>
+                            <p class="card-text m-0">The product matched the photos and was packed carefully.</p><a
+                                class="review-read-more" href="#">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="card h-100" style="max-width: 320px;">
+                        <div class="card-body review-card-body">
+                            <div class="review-card-heading">
+                                <div class="reviewer-info">
+                                    <div class="review-avatar" aria-hidden="true">IK</div>
+                                    <h5 class="card-title fw-bolder mb-0 reviewer-name">Imran Kabir</h5>
+                                </div>
+                                <span class="stars review-stars" aria-label="5 out of 5 stars">
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                    <span class="material-symbols-rounded">star_rate</span>
+                                </span>
+                            </div>
+                            <p class="card-text m-0">Helpful support answered my delivery question quickly.</p><a
+                                class="review-read-more" href="#">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="brands-prartners container p-0">
+        <div class="border-bottom pb-4 position-relative">
+            <h4 class="fw-bold">Our Brands & Partners</h4>
+        </div>
+        <div class="brands p-5 grid text-center" style="--bs-columns: 6;">
+            <div><img src="assets/img/batman-tdk-1.svg" alt="" class="img-fluid" width="110"></div>
+            <div><img src="assets/img/bbva-2.svg" alt="" class="img-fluid" width="110"></div>
+            <div><img src="assets/img/heineken.svg" alt="" class="img-fluid" width="160"></div>
+            <div><img src="assets/img/levis-1.svg" alt="" class="img-fluid" width="100"></div>
+            <div><img src="assets/img/logo-bre-b.svg" alt="" class="img-fluid" width="100"></div>
+            <div><img src="assets/img/logo-amazon.svg" alt="" class="img-fluid" width="120"></div>
+        </div>
+    </section>
+
+    <section class="our-aprochs container px-0 py-4">
+        <div class="border-bottom px-0 pb-4 position-relative">
+            <h4 class="fw-bold">Our Approaches</h4>
+        </div>
+        <div class="row gap-4 py-4 px-0">
+            <div class="col">
+                <div class="row offer px-3 py-4 rounded-4 d-flex align-items-center justify-content-between">
+                    <div class="col-2">
+                        <div class="material-symbols-rounded animate-icon icons me-3">delivery_truck_bolt</div>
+                    </div>
+                    <div class="col-10">
+                        <span class="fw-bolder d-block text-start">FREE SHIPPING</span>
+                        <span class="d-block text-start"> Enjoy free shipping nationwide on your orders shop your
+                            favorite products from anywhere in the country and have them delivered to your
+                            doorstep.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row offer px-3 py-4 rounded-4 d-flex align-items-center justify-content-between">
+                    <div class="col-2">
+                        <div class="material-symbols-rounded animate-icon icons me-3">percent_discount</div>
+                    </div>
+                    <div class="col-10">
+                        <span class="fw-bolder d-block text-start">100% MONEY BACK GUARANTEE</span>
+                        <span class="d-block text-start"> You get 100% refund on eligible returned or damaged products
+                            swap with confidence knowing your satisfaction and Peace of Mind are our top priorities
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row offer px-3 py-4 rounded-4 d-flex align-items-center justify-content-between">
+                    <div class="col-2">
+                        <div class="material-symbols-rounded animate-icon icons me-3">support_agent</div>
+                    </div>
+                    <div class="col-10">
+                        <span class="fw-bolder d-block text-start">24/7 ONLINE SUPPORT</span>
+                        <span class="d-block text-start"> Our support team is available 24/7 to assist you with your
+                            question and provide quick solution whenever you need help </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer-container">
+        <div class="container footer-inner">
+            <div class="footer-columns">
+                <div class="footer-brand">
+                    <div><img src="assets/img/logo.svg" alt="Electro" class="img-fluid" width="130"></div>
+                    <p class="fs-sm m-0">Electro is an e-commerce platform dedicated to providing high quality and
+                        reliable electronic devices and accessories for your everyday needs.</p>
+
+                    <ul class="footer-contact list-unstyled fs-sm">
+                        <li><a href="#" class="d-flex align-items-center">
+                                <div class="material-symbols-rounded animate-icon icons me-3">location_on</div>
+                                <p class="m-0">Rampura, Dhaka, Bangladesh</p>
+                            </a></li>
+                        <li><a href="#" class="d-flex align-items-center">
+                                <div class="material-symbols-rounded animate-icon icons me-3">call</div>
+                                <p class="m-0">+880123456789</p>
+                            </a></li>
+                        <li><a href="#" class="d-flex align-items-center">
+                                <div class="material-symbols-rounded animate-icon icons me-3">alternate_email</div>
+                                <p class="m-0">example@e-mail.com</p>
+                            </a></li>
+                    </ul>
+                    <div>
+                        <p class="fw-semibold m-0 pb-2">Follow us on</p>
+                        <div class="d-flex align-items-center gap-4">
+                            <div><img src="assets/img/facebook-2020-1-1.svg" alt="" class="img-fluid" width="30"></div>
+                            <div><img src="assets/img/instagram-2016-5.svg" alt="" class="img-fluid" width="30"></div>
+                            <div><img src="assets/img/tiktok-icon-2.svg" alt="" class="img-fluid" width="30"></div>
+                            <div><img src="assets/img/youtube-icon-5.svg" alt="" class="img-fluid" width="30"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="fw-semibold m-0 pb-3">Download our apps on</p>
+                        <div class="d-flex align-items-center gap-4">
+                            <div><img src="assets/img/apple-app-store.svg" alt="" class="img-fluid" width="30"></div>
+                            <div><img src="assets/img/google-play-5.svg" alt="" class="img-fluid" width="25"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-group">
+                    <p class="footer-heading">Information</p>
+                    <ul class="footer-links list-unstyled fs-sm">
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-group">
+                    <p class="footer-heading">Shop By</p>
+                    <ul class="footer-links list-unstyled fs-sm">
+                        <li><a href="#">Headphone</a></li>
+                        <li><a href="#">Power bank</a></li>
+                        <li><a href="#">Charger</a></li>
+                        <li><a href="#">Mouse</a></li>
+                        <li><a href="#">Keyboard</a></li>
+                        <li><a href="#">Speaker</a></li>
+                        <li><a href="#">Mic</a></li>
+                    </ul>
+                </div>
+                <div class="footer-group">
+                    <p class="footer-heading">Support</p>
+                    <ul class="footer-links list-unstyled fs-sm">
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">How to Order</a></li>
+                        <li><a href="#">Order Tracking</a></li>
+                        <li><a href="#">Payment</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+
+                </div>
+                <div class="footer-group">
+                    <p class="footer-heading">Consumer Policy</p>
+                    <ul class="footer-links list-unstyled fs-sm">
+                        <li><a href="#">Happy Return</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Exchange</a></li>
+                        <li><a href="#">Cancellation</a></li>
+                        <li><a href="#">Pre-Order</a></li>
+                        <li><a href="#">Extra Discount</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <span>&COPY; Electro ecom 2026. All Rights Reserved</span>
+                </div>
+                <div class="footer-payments">
+                    <div class="footer-payment-list">
+                        <span>Payment with</span>
+                        <img src="assets/img/visa-10.svg" alt="" class="img-fluid" width="40">
+                        <img src="assets/img/mastercard-modern-design-.svg" alt="" class="img-fluid" width="40">
+                        <img src="assets/img/bkash.svg" alt="" class="img-fluid" width="50">
+                        <img src="assets/img/nagad-1.svg" alt="" class="img-fluid" width="50">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
