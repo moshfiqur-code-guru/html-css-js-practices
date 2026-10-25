@@ -1,5 +1,79 @@
 const categoriesNav = document.querySelector('.categories-nav');
 
+// Use the native dialog API for the Bootstrap 6 drawer component.
+document.querySelectorAll('[data-bs-toggle="drawer"]').forEach((toggle) => {
+    const drawer = document.querySelector(toggle.dataset.bsTarget);
+    if (!(drawer instanceof HTMLDialogElement)) return;
+
+    toggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (!drawer.open) drawer.showModal();
+        toggle.setAttribute('aria-expanded', String(drawer.open));
+    });
+
+    drawer.querySelectorAll('[data-bs-dismiss="drawer"]').forEach((closeButton) => {
+        closeButton.addEventListener('click', () => drawer.close());
+    });
+
+    drawer.addEventListener('click', (event) => {
+        if (event.target === drawer) drawer.close();
+    });
+    drawer.addEventListener('close', () => {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+    });
+});
+
+const cartDrawer = document.querySelector('#drawerExample');
+
+if (cartDrawer) {
+    const cartItems = cartDrawer.querySelector('.cart-items');
+    const countLabel = cartDrawer.querySelector('.cart-item-count');
+    const countBadge = document.querySelector('[data-bs-target="#drawerExample"] .badge');
+    const subtotalLabel = cartDrawer.querySelector('.cart-subtotal strong');
+    const emptyState = cartDrawer.querySelector('.cart-empty');
+
+    const formatPrice = (amount) => `$${amount.toFixed(2)}`;
+    const refreshCart = () => {
+        const items = [...cartItems.querySelectorAll('.cart-item')];
+        const count = items.reduce((sum, item) => sum + Number(item.querySelector('output').value || item.querySelector('output').textContent), 0);
+        const subtotal = items.reduce((sum, item) => {
+            const quantity = Number(item.querySelector('output').value || item.querySelector('output').textContent);
+            const price = Number(item.dataset.price);
+            item.querySelector('.cart-line-total').textContent = formatPrice(price * quantity);
+            return sum + price * quantity;
+        }, 0);
+
+        countLabel.textContent = `${count} ${count === 1 ? 'item' : 'items'}`;
+        countBadge.textContent = count;
+        countBadge.hidden = count === 0;
+        subtotalLabel.textContent = formatPrice(subtotal);
+        emptyState.hidden = count !== 0;
+        cartDrawer.classList.toggle('is-empty', count === 0);
+        cartItems.hidden = count === 0;
+    };
+
+    cartDrawer.addEventListener('click', (event) => {
+        const quantityButton = event.target.closest('[data-quantity-change]');
+        if (quantityButton) {
+            const item = quantityButton.closest('.cart-item');
+            const output = item.querySelector('output');
+            const quantity = Number(output.textContent) + Number(quantityButton.dataset.quantityChange);
+            output.textContent = Math.max(1, quantity);
+            refreshCart();
+            return;
+        }
+
+        const removeButton = event.target.closest('.cart-remove');
+        if (removeButton) {
+            removeButton.closest('.cart-item').remove();
+            refreshCart();
+        }
+    });
+
+    refreshCart();
+}
+
 if (categoriesNav) {
     const updateCategoriesNav = () => {
         categoriesNav.classList.toggle('scrolled', window.scrollY > 30);

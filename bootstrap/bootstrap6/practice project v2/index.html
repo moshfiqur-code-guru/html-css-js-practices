@@ -41,34 +41,129 @@
 
                 <div class="primary-options">
                     <ul class="list-unstyled d-flex align-items-center gap-3 mb-0 main-font">
-                        <li><a class="btn text-decoration-none d-flex align-items-center justify-content-center"
+                        <li>
+                            <div class="btn text-decoration-none d-flex align-items-center justify-content-center"
                                 href="#track">
                                 <i class="material-symbols-rounded animate-icon">where_to_vote</i>
                                 Track order
-                            </a>
+                            </div>
                         </li>
-                        <li><a class="btn text-decoration-none d-flex align-items-center justify-content-center"
+                        <li>
+                            <div class="btn text-decoration-none d-flex align-items-center justify-content-center"
                                 href="#wishlist">
                                 <i class="material-symbols-rounded animate-icon">favorite</i>
                                 Wishlist
-                            </a>
+                            </div>
                         </li>
-                        <li><a class="btn text-decoration-none d-flex align-items-center justify-content-center"
-                                href="#cart">
+                        <li>
+                            <button
+                                class="btn text-decoration-none d-flex align-items-center justify-content-center position-relative"
+                                href="#cart" data-bs-toggle="drawer" data-bs-target="#drawerExample"
+                                aria-controls="drawerExample" aria-expanded="false">
                                 <i class="material-symbols-rounded animate-icon">shopping_bag</i>
                                 Cart
-                            </a>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill border badge-subtle theme-primary">
+                                    2
+                                </span>
+                            </button>
+                            <dialog class="drawer drawer-end cart-drawer" tabindex="-1" id="drawerExample"
+                                aria-labelledby="drawerExampleLabel" aria-modal="true">
+                                <div class="drawer-header">
+                                    <div>
+                                        <h2 class="drawer-title" id="drawerExampleLabel">Your cart</h2>
+                                        <p class="cart-item-count mb-0" aria-live="polite">3 items</p>
+                                    </div>
+
+                                    <button type="button" class="btn-close" data-bs-dismiss="drawer"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="drawer-body cart-drawer-body">
+                                    <div class="cart-items" aria-label="Items in your cart">
+                                        <article class="cart-item" data-price="150">
+                                            <img class="cart-item-image" src="assets/img/c3.jpg" alt="Headphone">
+                                            <div class="cart-item-info">
+                                                <h3>Headphone</h3>
+                                                <p>$150.00 <span>each</span></p>
+                                                <div class="cart-quantity" aria-label="Quantity for Headphone">
+                                                    <button type="button" data-quantity-change="-1"
+                                                        aria-label="Decrease Headphone quantity"><span
+                                                            class="material-symbols-rounded"
+                                                            aria-hidden="true">remove</span></button>
+                                                    <output aria-live="polite">1</output>
+                                                    <button type="button" data-quantity-change="1"
+                                                        aria-label="Increase Headphone quantity"><span
+                                                            class="material-symbols-rounded"
+                                                            aria-hidden="true">add</span></button>
+                                                </div>
+                                            </div>
+                                            <div class="cart-item-end">
+                                                <strong class="cart-line-total">$150.00</strong>
+                                                <button class="cart-remove" type="button"
+                                                    aria-label="Remove Headphone from cart"><span
+                                                        class="material-symbols-rounded"
+                                                        aria-hidden="true">close</span></button>
+                                            </div>
+                                        </article>
+                                        <article class="cart-item" data-price="150">
+                                            <img class="cart-item-image" src="assets/img/k10.jpg"
+                                                alt="Wireless headphones">
+                                            <div class="cart-item-info">
+                                                <h3>Wireless headphones</h3>
+                                                <p>$150.00 <span>each</span></p>
+                                                <div class="cart-quantity"
+                                                    aria-label="Quantity for Wireless headphones">
+                                                    <button type="button" data-quantity-change="-1"
+                                                        aria-label="Decrease Wireless headphones quantity"><span
+                                                            class="material-symbols-rounded"
+                                                            aria-hidden="true">remove</span></button>
+                                                    <output aria-live="polite">2</output>
+                                                    <button type="button" data-quantity-change="1"
+                                                        aria-label="Increase Wireless headphones quantity"><span
+                                                            class="material-symbols-rounded"
+                                                            aria-hidden="true">add</span></button>
+                                                </div>
+                                            </div>
+                                            <div class="cart-item-end">
+                                                <strong class="cart-line-total">$300.00</strong>
+                                                <button class="cart-remove" type="button"
+                                                    aria-label="Remove Wireless headphones from cart"><span
+                                                        class="material-symbols-rounded"
+                                                        aria-hidden="true">close</span></button>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="cart-empty" hidden>
+                                        <span class="material-symbols-rounded" aria-hidden="true">shopping_bag</span>
+                                        <h3>Your cart is empty</h3>
+                                        <p>Looks like you haven't added anything yet.</p>
+                                        <button class="btn cart-continue" type="button"
+                                            data-bs-dismiss="drawer">Continue shopping</button>
+                                    </div>
+                                    <footer class="cart-summary">
+                                        <div class="cart-subtotal"><span>Subtotal</span><strong>$450.00</strong></div>
+                                        <p>Shipping and taxes calculated at checkout.</p>
+                                        <button class="btn cart-checkout" type="button">Go to checkout</button>
+                                        <button class="cart-continue-link" type="button"
+                                            data-bs-dismiss="drawer">Continue shopping</button>
+                                    </footer>
+                                </div>
+                            </dialog>
+
+
                         </li>
-                        <li><a class="btn text-decoration-none d-flex align-items-center justify-content-center"
+                        <li>
+                            <div class="btn text-decoration-none d-flex align-items-center justify-content-center"
                                 href="#sign-in">
                                 <i class="material-symbols-rounded animate-icon">person</i>
                                 Sign in
-                            </a>
+                            </div>
                         </li>
-                        <li><a class="btn text-decoration-none d-flex align-items-center justify-content-center"
+                        <li>
+                            <div class="btn text-decoration-none d-flex align-items-center justify-content-center"
                                 href="#sign-in">
                                 <i class="material-symbols-rounded animate-icon">more_vert</i>
-                            </a>
+                            </div>
                         </li>
                     </ul>
                 </div>

@@ -122,14 +122,82 @@
                                 </div>
 
                                 <!-- Wishlist -->
-                                <a href="#" class="text-white fs-4 lh-1">
+                                <div href="#" class="text-white fs-4 lh-1">
                                     <i class="bi bi-heart"></i>
-                                </a>
+                                </div>
 
                                 <!-- Cart -->
-                                <a href="#" class="text-white fs-4 lh-1">
-                                    <i class="bi bi-cart"></i>
-                                </a>
+                                <div class="dropdown">
+                                    <a href="#" class="btn text-white fs-4 lh-1 dropdown-toggle" aria-expanded="false"
+                                        data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static">
+                                        <i class="bi bi-cart"></i>
+                                        <span
+                                            class="cart-badge position-absolute start-50 translate-middle badge rounded-pill bg-danger">
+                                            2
+                                        </span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-lg-end">
+                                        <div
+                                            class="m-2 px-2 d-flex align-items-center justify-content-between border-bottom">
+                                            <p class="m-0">3 items</p>
+                                            <a href="cart.html" class="btn btn-sm bg-primary text-white mb-2">View
+                                                Cart</a>
+                                        </div>
+
+                                        <div
+                                            class="m-2 px-2 border-bottom d-flex align-items-center justify-content-between">
+                                            <div><img class="img-fluid rounded-2" src="assets/img/t1 (4).jpg" alt="">
+                                            </div>
+                                            <div>
+                                                <span>Headphone</span>
+                                                <span class="d-block">$150</span>
+                                            </div>
+                                            <div class="qty-slider d-flex flex-column align-items-center">
+                                                <i class="bi bi-chevron-up"></i>
+                                                <span>1</span>
+                                                <i class="bi bi-chevron-down"></i>
+                                            </div>
+                                            <i class="bi bi-x"></i>
+                                            <span>$150</span>
+                                            <span>=</span>
+                                            <span>$150</span>
+                                            <i class="bi bi-x fs-4 text-danger"></i>
+                                        </div>
+
+                                        <div
+                                            class="mx-2 px-2 border-bottom d-flex align-items-center justify-content-between">
+                                            <div><img class="img-fluid rounded-2" src="assets/img/t1 (4).jpg" alt="">
+                                            </div>
+                                            <div>
+                                                <span>Headphone</span>
+                                                <span class="d-block">$150</span>
+                                            </div>
+                                            <div class="qty-slider d-flex flex-column align-items-center">
+                                                <i class="bi bi-chevron-up"></i>
+                                                <span>2</span>
+                                                <i class="bi bi-chevron-down"></i>
+                                            </div>
+                                            <i class="bi bi-x"></i>
+                                            <span>$150</span>
+                                            <span>=</span>
+                                            <span>$300</span>
+                                            <i class="bi bi-x fs-4 text-danger"></i>
+                                        </div>
+
+                                        <div class="py-3 d-flex align-items-center justify-content-around">
+                                            <span>Sub Total:</span>
+                                            <span class="fs-5 fw-semibold">$450</span>
+                                        </div>
+
+                                        <div class="mx-2">
+                                            <a href="checkout.html" class="btn bg-primary text-white w-100"
+                                                type="button">
+                                                Go to Checkout
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
 
                             </div>
 
@@ -1050,6 +1118,7 @@
 
 
     <script src="/bootstrap/ecommerce-front-end/assets/js/owl carousel/jquery.min.js"></script>
+    <script src="/bootstrap/ecommerce-front-end/assets/js/popper.min.js"></script>
     <script src="/bootstrap/ecommerce-front-end/assets/js/bootstrap.min.js"></script>
     <script src="/bootstrap/ecommerce-front-end/assets/js/owl carousel/owl.carousel.min.js"></script>
     <script src="/bootstrap/ecommerce-front-end/assets/js/main.js"></script>
