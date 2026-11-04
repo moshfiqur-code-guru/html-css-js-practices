@@ -81,12 +81,14 @@ function ecomManagement() {
     }
 
     function displayProducts() {
+        const Cart = cart();
         const products = getProduct();
         const carousel = document.getElementById("carousel-items")
         carousel.innerHTML = "";
 
         products.map(product => {
-            const item = `<div class="item">
+            const template = document.createElement("template")
+            template.innerHTML = `<div class="item">
                                 <div class="product-thumb d-flex">
                                     <div class="thumb-img">
                                         <a href="details.html"><img src="${product.image}" alt=""></a>
@@ -94,7 +96,7 @@ function ecomManagement() {
                                     <div class="view-action d-flex flex-column justify-content-center">
                                         <div class="d-flex align-items-center justify-content-center flex-grow-1">
                                             <div class="buttons">
-                                                <div class="button bg-primary" onclick="addToCart(${product.pID})">
+                                                <div class="button bg-primary cartBtn">
                                                     <i class="bi bi-bag text-white"></i>
                                                 </div>
                                                 <div class="button bg-primary">
@@ -123,15 +125,80 @@ function ecomManagement() {
                                 </div>
                             </div>`;
 
-            carousel.innerHTML += item;
-
+            const item = template.content.firstElementChild;
+            item.querySelector(".cartBtn").addEventListener("click", () => Cart.addToCart(2, product));
+            carousel.appendChild(item);
         })
+    }
+    return { saveProductsIntoStorage, getProduct, displayProducts }
+}
 
+function cart() {
+    let totalItem = 0;
+    let totalPrice = 0;
+    let cartItems = [];
+
+    function addToCart(qty, product) {
+        totalPrice += product.price * qty;
+        totalItem += qty;
+        cartItems.push({ ...product, qty: qty });
+        displayCart();
     }
 
-    return { saveProductsIntoStorage, getProduct, displayProducts }
+    function displayCart() {
+        let cartQty = document.getElementById("cartQty");
+        let cartQty1 = document.getElementById("cartQty1");
+        let subTotal = document.getElementById("subTotal");
+        let cart = document.querySelector(".cartItems");
+
+        cart.innerHTML = "";
+        cartQty.innerText = "0";
+        cartQty1.innerText = "0";
+        subTotal.innerText = "0";
+        cartQty.innerText = totalItem;
+        cartQty1.innerText = totalItem;
+        subTotal.innerText = '$' + totalPrice.toFixed(2);
+
+        if (cartItems.length === 0) {
+            cart.innerHTML =
+                ` <div class="text-center py-4">
+                <i class="bi bi-cart-x fs-1 text-secondary"></i>
+                <p class="mb-0 mt-2 text-muted">
+                    No items added to the cart.
+                </p>
+            </div>`;
+            return;
+        }
+        else {
+
+            cart.innerHTML = cartItems.map(product => (
+                `<div
+                                            class="m-2 px-2 border-bottom d-flex align-items-center justify-content-between">
+                                            <div><img class="img-fluid rounded-2" src="${product.image}" alt="">
+                                            </div>
+                                            <div>
+                                                <span>${product.name}</span>
+                                                <span class="d-block">$ ${product.price.toFixed(2)}</span>
+                                            </div>
+                                            <div class="qty-slider d-flex flex-column align-items-center">
+                                                <i class="bi bi-chevron-up"></i>
+                                                <span>${product.qty}</span>
+                                                <i class="bi bi-chevron-down"></i>
+                                            </div>
+                                            <i class="bi bi-x"></i>
+                                            <span>$ ${product.price.toFixed(2)}</span>
+                                            <span>=</span>
+                                            <span>$ ${(product.price) * (product.qty).toFixed(2)}</span>
+                                            <i class="bi bi-x fs-4 text-danger"></i>
+                                        </div>`
+            )).join("");
+        }
+    }
+
+    return { totalPrice, totalItem, cartItems, addToCart, displayCart }
 
 }
+
 
 
 const ecom = ecomManagement();
@@ -139,7 +206,5 @@ const ecom = ecomManagement();
 ecom.displayProducts();
 
 
-function addToCart(pID) {
-    console.log(pID);
-}
-
+const Cart = cart();
+Cart.displayCart()
