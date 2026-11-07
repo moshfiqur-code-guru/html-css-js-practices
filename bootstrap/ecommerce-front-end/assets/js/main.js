@@ -70,19 +70,17 @@ const Products = [
 
 function ecomManagement() {
 
+
+
     function saveProductsIntoStorage() {
         const productsJSON = JSON.stringify(Products);
         localStorage.setItem("products", productsJSON);
     }
 
-    function getProduct() {
-        const productsJSON = localStorage.getItem("products");
-        return JSON.parse(productsJSON);
-    }
+    const products = JSON.parse(localStorage.getItem("products")) || [];
 
     function displayProducts() {
         const Cart = cart();
-        const products = getProduct();
         const carousel = document.getElementById("carousel-items")
         carousel.innerHTML = "";
 
@@ -129,35 +127,55 @@ function ecomManagement() {
             item.querySelector(".cartBtn").addEventListener("click", () => Cart.addToCart(2, product));
             carousel.appendChild(item);
         })
+        Cart.displayCart();
     }
-    return { saveProductsIntoStorage, getProduct, displayProducts }
+    return { saveProductsIntoStorage, displayProducts }
 }
 
 function cart() {
+
+    let cartItems = JSON.parse(localStorage.getItem("carts")) || [];
     let totalItem = 0;
     let totalPrice = 0;
-    let cartItems = [];
+
+    function saveToCarts() {
+        localStorage.setItem("carts", JSON.stringify(cartItems))
+    }
+
+    function calculateCart() {
+        const totalItem = cartItems.reduce((totalItem, cartItems) => totalItem + cartItems.qty, 0) ?? 0;
+        const totalPrice = cartItems.reduce((price, cartItems) => price + (cartItems.price * cartItems.qty), 0) ?? 0;
+        return { totalItem, totalPrice }
+    }
 
     function addToCart(qty, product) {
-        totalPrice += product.price * qty;
-        totalItem += qty;
-        cartItems.push({ ...product, qty: qty });
+        if (!Number(qty) || qty <= 0) return;
+        const alreadyAddedProduct = cartItems.find(item => item.pID === product.pID);
+        if (!alreadyAddedProduct) {
+            cartItems.push({ ...product, qty: qty });
+        } else {
+            const updatedCart = cartItems.map(item => {
+                if (item.pID === product.pID) {
+                    return { ...item, qty: item.qty + qty }
+                }
+                return item;
+            });
+            cartItems = updatedCart;
+        }
         displayCart();
     }
 
     function displayCart() {
+        const { totalItem, totalPrice } = calculateCart();
         let cartQty = document.getElementById("cartQty");
         let cartQty1 = document.getElementById("cartQty1");
         let subTotal = document.getElementById("subTotal");
         let cart = document.querySelector(".cartItems");
 
         cart.innerHTML = "";
-        cartQty.innerText = "0";
-        cartQty1.innerText = "0";
-        subTotal.innerText = "0";
-        cartQty.innerText = totalItem;
-        cartQty1.innerText = totalItem;
+        cartQty.innerText = totalItem.toString();
         subTotal.innerText = '$' + totalPrice.toFixed(2);
+        cartQty1.innerText = totalItem + ((totalItem === 0 || totalItem > 1) ? " items" : "item")
 
         if (cartItems.length === 0) {
             cart.innerHTML =
@@ -171,8 +189,9 @@ function cart() {
         }
         else {
 
-            cart.innerHTML = cartItems.map(product => (
-                `<div
+            cartItems.map(product => {
+                const template = document.createElement("template")
+                template.innerHTML = `<div
                                             class="m-2 px-2 border-bottom d-flex align-items-center justify-content-between">
                                             <div><img class="img-fluid rounded-2" src="${product.image}" alt="">
                                             </div>
@@ -181,17 +200,24 @@ function cart() {
                                                 <span class="d-block">$ ${product.price.toFixed(2)}</span>
                                             </div>
                                             <div class="qty-slider d-flex flex-column align-items-center">
-                                                <i class="bi bi-chevron-up"></i>
+                                                <i class="bi bi-chevron-up increment"></i>
                                                 <span>${product.qty}</span>
-                                                <i class="bi bi-chevron-down"></i>
+                                                <i class="bi bi-chevron-down decrement"></i>
                                             </div>
                                             <i class="bi bi-x"></i>
                                             <span>$ ${product.price.toFixed(2)}</span>
                                             <span>=</span>
-                                            <span>$ ${(product.price) * (product.qty).toFixed(2)}</span>
+                                            <span class="itemTotal">$ ${(product.price) * (product.qty).toFixed(2)}</span>
                                             <i class="bi bi-x fs-4 text-danger"></i>
                                         </div>`
-            )).join("");
+
+                const item = template.content.firstElementChild;
+                item.querySelector(".increment").addEventListener("click", () => {
+                    addToCart(1, product);
+                })
+                cart.appendChild(item)
+            })
+            cartFooter.style.display = "block"
         }
     }
 
@@ -199,12 +225,11 @@ function cart() {
 
 }
 
+const cartFooter = document.getElementById("cartFooter");
+cartFooter.style.display = "none"
+
 
 
 const ecom = ecomManagement();
 // ecom.saveProductsIntoStorage();
 ecom.displayProducts();
-
-
-const Cart = cart();
-Cart.displayCart()

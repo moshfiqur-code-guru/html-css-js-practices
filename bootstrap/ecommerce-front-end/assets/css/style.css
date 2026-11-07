@@ -353,6 +353,18 @@ body {
     top: 8px !important;
 }
 
+.cart-dropdown.dropdown-menu {
+    width: 500px;
+}
+
+.qty-slider {
+    width: 50px;
+}
+
+.itemTotal {
+    width: 60px;
+}
+
 .dropdown-menu {
     width: 400px;
     font-size: 15px;
