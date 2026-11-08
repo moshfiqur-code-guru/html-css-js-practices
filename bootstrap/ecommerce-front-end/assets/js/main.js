@@ -70,8 +70,6 @@ const Products = [
 
 function ecomManagement() {
 
-
-
     function saveProductsIntoStorage() {
         const productsJSON = JSON.stringify(Products);
         localStorage.setItem("products", productsJSON);
@@ -80,10 +78,8 @@ function ecomManagement() {
     const products = JSON.parse(localStorage.getItem("products")) || [];
 
     function displayProducts() {
-        const Cart = cart();
         const carousel = document.getElementById("carousel-items")
         carousel.innerHTML = "";
-
         products.map(product => {
             const template = document.createElement("template")
             template.innerHTML = `<div class="item">
@@ -124,16 +120,18 @@ function ecomManagement() {
                             </div>`;
 
             const item = template.content.firstElementChild;
-            item.querySelector(".cartBtn").addEventListener("click", () => Cart.addToCart(2, product));
+            item.querySelector(".cartBtn").addEventListener("click", () => {
+                Cart.addToCart(1, product, "increment");
+                displayCart()
+            })
             carousel.appendChild(item);
         })
-        Cart.displayCart();
+        displayCart();
     }
     return { saveProductsIntoStorage, displayProducts }
 }
 
 function cart() {
-
     let cartItems = JSON.parse(localStorage.getItem("carts")) || [];
     let totalItem = 0;
     let totalPrice = 0;
@@ -148,50 +146,60 @@ function cart() {
         return { totalItem, totalPrice }
     }
 
-    function addToCart(qty, product) {
+    function addToCart(qty, product, type) {
         if (!Number(qty) || qty <= 0) return;
         const alreadyAddedProduct = cartItems.find(item => item.pID === product.pID);
-        if (!alreadyAddedProduct) {
-            cartItems.push({ ...product, qty: qty });
+        let qtyRound = Math.floor(Number(qty))
+        if (alreadyAddedProduct) {
+            let updatedQty = type === "increment" ? qtyRound : -qtyRound;
+            alreadyAddedProduct["qty"] = Math.max(1, (alreadyAddedProduct.qty + updatedQty));
         } else {
-            const updatedCart = cartItems.map(item => {
-                if (item.pID === product.pID) {
-                    return { ...item, qty: item.qty + qty }
-                }
-                return item;
-            });
-            cartItems = updatedCart;
+            cartItems.push({ ...product, qty: qtyRound });
         }
-        displayCart();
+        saveToCarts()
     }
 
-    function displayCart() {
-        const { totalItem, totalPrice } = calculateCart();
-        let cartQty = document.getElementById("cartQty");
-        let cartQty1 = document.getElementById("cartQty1");
-        let subTotal = document.getElementById("subTotal");
-        let cart = document.querySelector(".cartItems");
+    function deleteCart(pID) {
+        const cart = cartItems.slice();
+        const updatedCart = cart.filter(item => item.pID !== pID);
+        cartItems = updatedCart;
+        saveToCarts();
+    }
+    return { totalPrice, get cartItems() { return cartItems }, addToCart, calculateCart, deleteCart }
+}
 
-        cart.innerHTML = "";
-        cartQty.innerText = totalItem.toString();
-        subTotal.innerText = '$' + totalPrice.toFixed(2);
-        cartQty1.innerText = totalItem + ((totalItem === 0 || totalItem > 1) ? " items" : "item")
+const cartFooter = document.getElementById("cartFooter");
+cartFooter.style.display = "none"
 
-        if (cartItems.length === 0) {
-            cart.innerHTML =
-                ` <div class="text-center py-4">
+const Cart = cart()
+
+function displayCart() {
+    const { totalItem, totalPrice } = Cart.calculateCart();
+    let cartQty = document.getElementById("cartQty");
+    let cartQty1 = document.getElementById("cartQty1");
+    let subTotal = document.getElementById("subTotal");
+    let cart = document.querySelector(".cartItems");
+
+    cart.innerHTML = "";
+    cartQty.innerText = totalItem.toString();
+    subTotal.innerText = '$' + totalPrice.toFixed(2);
+    cartQty1.innerText = totalItem + ((totalItem === 0 || totalItem > 1) ? " items" : "item")
+
+    if (Cart.cartItems.length === 0) {
+        cart.innerHTML =
+            ` <div class="text-center py-4">
                 <i class="bi bi-cart-x fs-1 text-secondary"></i>
                 <p class="mb-0 mt-2 text-muted">
                     No items added to the cart.
                 </p>
             </div>`;
-            return;
-        }
-        else {
+        cartFooter.style.display = "none";
+    }
+    else {
 
-            cartItems.map(product => {
-                const template = document.createElement("template")
-                template.innerHTML = `<div
+        Cart.cartItems.map(product => {
+            const template = document.createElement("template")
+            template.innerHTML = `<div
                                             class="m-2 px-2 border-bottom d-flex align-items-center justify-content-between">
                                             <div><img class="img-fluid rounded-2" src="${product.image}" alt="">
                                             </div>
@@ -200,34 +208,33 @@ function cart() {
                                                 <span class="d-block">$ ${product.price.toFixed(2)}</span>
                                             </div>
                                             <div class="qty-slider d-flex flex-column align-items-center">
-                                                <i class="bi bi-chevron-up increment"></i>
+                                                <i class="bi bi-chevron-up qty-updater" data-qty="increment"></i>
                                                 <span>${product.qty}</span>
-                                                <i class="bi bi-chevron-down decrement"></i>
+                                                <i class="bi bi-chevron-down qty-updater" data-qty="decrement"></i>
                                             </div>
                                             <i class="bi bi-x"></i>
                                             <span>$ ${product.price.toFixed(2)}</span>
                                             <span>=</span>
                                             <span class="itemTotal">$ ${(product.price) * (product.qty).toFixed(2)}</span>
-                                            <i class="bi bi-x fs-4 text-danger"></i>
+                                            <i class="bi bi-x fs-4 text-danger delete-item"></i>
                                         </div>`
 
-                const item = template.content.firstElementChild;
-                item.querySelector(".increment").addEventListener("click", () => {
-                    addToCart(1, product);
-                })
-                cart.appendChild(item)
-            })
-            cartFooter.style.display = "block"
-        }
+            const item = template.content.firstElementChild;
+            const updater = item.querySelectorAll(".qty-updater")
+            updater.forEach(button => button.addEventListener("click", function () {
+                const type = event.target.dataset.qty;
+                Cart.addToCart(1, product, type);
+                displayCart();
+            }));
+            item.querySelector(".delete-item").addEventListener("click", () => {
+                Cart.deleteCart(product.pID);
+                displayCart();
+            });
+            cart.appendChild(item)
+        })
+        cartFooter.style.display = "block"
     }
-
-    return { totalPrice, totalItem, cartItems, addToCart, displayCart }
-
 }
-
-const cartFooter = document.getElementById("cartFooter");
-cartFooter.style.display = "none"
-
 
 
 const ecom = ecomManagement();
