@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecommerce 001 | Home</title>
+    <title>Ecommerce 001 | Checkout</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,463 +19,231 @@
 
 </head>
 
-<body>
-    <section id="heder-top">
-        <nav class="navbar bg-primary navbar-expand-lg py-1">
+<body class="checkout-page">
+    <section id="heder-top" class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary site-header-navbar">
             <div class="container">
-
-                <a class="navbar-brand text-white p-0" href="#">
-                    <img src="assets/img/logo-white.webp" class="logo-img" alt="...">
+                <a class="navbar-brand site-header-brand" href="index.html" aria-label="Nomu home">
+                    <img src="assets/img/logo-white.webp" class="logo-img" alt="Nomu">
                 </a>
 
-                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#heder-top-element"
-                    aria-controls="heder-top-element" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler site-header-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#site-header-collapse" aria-controls="site-header-collapse" aria-expanded="false" aria-label="Toggle main navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div id="heder-top-element" class="collapse navbar-collapse">
-
-                    <div class="row w-100 align-items-center">
-
-                        <!-- Left -->
-                        <div class="col-lg-3 d-flex align-items-center gap-2 select-menu">
-                            <select class="text-white form-select form-select-sm w-auto form-select-custome-size">
-                                <option selected>U.S.D</option>
-                                <option>B.D.T</option>
-                                <option>E.U.R</option>
-                                <option>G.B.P</option>
+                <div class="collapse navbar-collapse" id="site-header-collapse">
+                    <div class="site-header-inner">
+                        <div class="site-header-preferences" aria-label="Display preferences">
+                            <label class="visually-hidden" for="site-currency">Currency</label>
+                            <select id="site-currency" class="form-select form-select-sm">
+                                <option selected>USD</option><option>BDT</option><option>EUR</option><option>GBP</option>
                             </select>
-
-                            <select class="text-white form-select form-select-sm w-auto form-select-custome-size">
-                                <option selected>Eng</option>
-                                <option>Ban</option>
+                            <label class="visually-hidden" for="site-language">Language</label>
+                            <select id="site-language" class="form-select form-select-sm">
+                                <option selected>English</option><option>Bangla</option>
                             </select>
                         </div>
 
+                        <ul class="navbar-nav site-main-nav">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#carousel-items">Shop</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#offer-section">Collection</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#product-blog-carousel">Blogs</a></li>
+                            <li class="nav-item"><a class="nav-link" href="account.html">Pages</a></li>
+                        </ul>
 
-                        <!-- Center -->
-                        <div class="col-lg-6">
-                            <ul class="navbar-nav justify-content-center gap-2">
-
-                                <li class="nav-item">
-                                    <a class="nav-link active text-white px-2" href="#">
-                                        Home
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link active text-white px-2" href="#">
-                                        Shop
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link active text-white px-2" href="#">
-                                        Collection
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link active text-white px-2" href="#">
-                                        Blogs
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link active text-white px-2" href="#">
-                                        Pages
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-
-
-                        <!-- Right -->
-                        <div class="col-lg-3 d-flex justify-content-end align-items-center">
-
-                            <div class="d-flex align-items-center gap-3">
-
-                                <!-- Account -->
-                                <div class="d-flex align-items-center gap-2 text-white">
-                                    <i class="bi bi-person-square fs-4"></i>
-
-                                    <div class="small lh-1">
-                                        <div class="fw-semibold fs-6">Account</div>
-
-                                        <div>
-                                            <a href="#" class="text-white text-decoration-none">
-                                                Login
-                                            </a>
-                                            <span> | </span>
-                                            <a href="#" class="text-white text-decoration-none">
-                                                Register
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Wishlist -->
-                                <div href="#" class="text-white fs-4 lh-1">
-                                    <i class="bi bi-heart"></i>
-                                </div>
-
-                                <!-- Cart -->
-                                <div class="dropdown">
-                                    <a href="#" class="btn text-white fs-4 lh-1 dropdown-toggle" aria-expanded="false"
-                                        data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static">
-                                        <i class="bi bi-cart"></i>
-                                        <span
-                                            class="cart-badge position-absolute start-50 translate-middle badge rounded-pill bg-danger">
-                                            2
-                                        </span>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-lg-end">
-                                        <div
-                                            class="m-2 px-2 d-flex align-items-center justify-content-between border-bottom">
-                                            <p class="m-0">3 items</p>
-                                            <a href="cart.html" class="btn btn-sm bg-primary text-white mb-2">View
-                                                Cart</a>
-                                        </div>
-
-                                        <div
-                                            class="m-2 px-2 border-bottom d-flex align-items-center justify-content-between">
-                                            <div><img class="img-fluid rounded-2" src="assets/img/t1 (4).jpg" alt="">
-                                            </div>
-                                            <div>
-                                                <span>Headphone</span>
-                                                <span class="d-block">$150</span>
-                                            </div>
-                                            <div class="qty-slider d-flex flex-column align-items-center">
-                                                <i class="bi bi-chevron-up"></i>
-                                                <span>1</span>
-                                                <i class="bi bi-chevron-down"></i>
-                                            </div>
-                                            <i class="bi bi-x"></i>
-                                            <span>$150</span>
-                                            <span>=</span>
-                                            <span>$150</span>
-                                            <i class="bi bi-x fs-4 text-danger"></i>
-                                        </div>
-
-                                        <div
-                                            class="mx-2 px-2 border-bottom d-flex align-items-center justify-content-between">
-                                            <div><img class="img-fluid rounded-2" src="assets/img/t1 (4).jpg" alt="">
-                                            </div>
-                                            <div>
-                                                <span>Headphone</span>
-                                                <span class="d-block">$150</span>
-                                            </div>
-                                            <div class="qty-slider d-flex flex-column align-items-center">
-                                                <i class="bi bi-chevron-up"></i>
-                                                <span>2</span>
-                                                <i class="bi bi-chevron-down"></i>
-                                            </div>
-                                            <i class="bi bi-x"></i>
-                                            <span>$150</span>
-                                            <span>=</span>
-                                            <span>$300</span>
-                                            <i class="bi bi-x fs-4 text-danger"></i>
-                                        </div>
-
-                                        <div class="py-3 d-flex align-items-center justify-content-around">
-                                            <span>Sub Total:</span>
-                                            <span class="fs-5 fw-semibold">$450</span>
-                                        </div>
-
-                                        <div class="mx-2">
-                                            <a href="checkout.html" class="btn bg-primary text-white w-100"
-                                                type="button">
-                                                Go to Checkout
-                                            </a>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </section>
-
-    <section id="heder-buttom">
-        <nav class="navbar navbar-expand-lg bg-light py-2">
-            <div class="container">
-
-                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#heder-bottom-element"
-                    aria-controls="heder-bottom-element" aria-expanded="false" aria-label="Toggle navigation">
-
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div id="heder-bottom-element" class="collapse navbar-collapse">
-
-                    <div class="row w-100 align-items-center">
-
-                        <!-- Search -->
-                        <div class="col-lg-7 d-flex gap-2">
-
-                            <select class="form-select form-select-sm w-auto rounded-3">
-                                <option selected>All Categories</option>
-                                <option>Headphones</option>
-                                <option>Earbuds</option>
-                                <option>Accessories</option>
-                            </select>
-
-                            <div class="input-group">
-                                <input type="text" class="form-control form-control-sm"
-                                    placeholder="Search products...">
-
-                                <button class="btn btn-dark" type="button">
-                                    <i class="bi bi-search"></i>
-                                </button>
-                            </div>
-
-                        </div>
-
-                        <!-- Social Media & Phone -->
-                        <div class="col-lg-5 d-flex justify-content-end mt-2 mt-lg-0 gap-3">
-
-                            <div class="d-flex align-items-center gap-2 text-end">
-
-                                <i class="bi bi-telephone-plus fs-4"></i>
-
-                                <div class="small lh-1">
-                                    <div class="fw-semibold fs-6">
-                                        Call us now
-                                    </div>
-
-                                    <div class="fst-italic">
-                                        +8801797405013
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="d-flex align-items-center gap-3">
-
-                                <a href="#" class="fs-5 lh-1 text-black">
-                                    <i class="bi bi-facebook"></i>
-                                </a>
-
-                                <a href="#" class="fs-5 lh-1 text-black">
-                                    <i class="bi bi-twitter-x"></i>
-                                </a>
-
-                                <a href="#" class="fs-5 lh-1 text-black">
-                                    <i class="bi bi-instagram"></i>
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </nav>
-    </section>
-
-    <section id="main-content">
-        <div class="container">
-            <div class="row my-3">
-                <div class="col-12">
-                    <span>Checkout</span>
-                </div>
-            </div>
-            <div class="row">
-                <div class=" col-8 pe-3">
-                    <div class="card small">
-                        <div class="card-body">
-                            <div class="my-2 border-bottom">
-                                <span class="fw-bold">BILLING INFO</span>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <form>
-                                        <div class="mb-2">
-                                            <label for="firstname" class="form-label">First Name</label>
-                                            <input type="text" class="form-control" id="firstname">
-                                        </div>
-                                        <div class="mb-2">
-                                            <label for="lastname" class="form-label">Last Name</label>
-                                            <input type="text" class="form-control" id="lastname">
-                                        </div>
-                                        <div class="mb-2">
-                                            <label class="form-label">Country</label>
-                                            <select class="form-select form-select-sm">
-                                                <option value="1">United States</option>
-                                                <option value="2">United Kingdom</option>
-                                                <option value="3">Canada</option>
-                                            </select>
-                                        </div>
-                                        <div class="mb-2">
-                                            <label for="city-town" class="form-label">City/Town</label>
-                                            <input type="text" class="form-control" id="city-town">
-                                        </div>
-                                        <div class="mb-2">
-                                            <label for="apartment" class="form-label">Apartment</label>
-                                            <input type="text" class="form-control" id="apartment">
-                                        </div>
-                                    </form>
-                                </div>
-
-                                <div class="col-6">
-                                    <form>
-                                        <div class="mb-2">
-                                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                                aria-describedby="emailHelp">
-                                        </div>
-                                        <div class="mb-2">
-                                            <label for="phonenumber" class="form-label">Phone Number</label>
-                                            <input type="number" class="form-control" id="phonenumber">
-                                        </div>
-                                        <div class="mb-2">
-                                            <label class="form-label">State/Province</label>
-                                            <select class="form-select form-select-sm">
-                                                <option value="1">Alabama</option>
-                                                <option value="1">Alaska</option>
-                                                <option value="1">Arizona</option>
-                                                <option value="1">California</option>
-                                            </select>
-                                        </div>
-                                        <div class="mb-2">
-                                            <label for="street-address" class="form-label">Street Address</label>
-                                            <input type="text" class="form-control" id="street-address">
-                                        </div>
-                                        <div class="mb-2">
-                                            <label class="form-label">Zip Code</label>
-                                            <input class="form-control" type="text" />
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card p-3 my-2 small">
-                        <div class="my-2 border-bottom">
-                            <span class="fw-bold">ADDITIONAL INFO INFO</span>
-                        </div>
-                        <form>
-                            <div class="mb-3">
-                                <label class="form-label">Order notes (optional)</label>
-                                <textarea class="form-control" placeholder="Note about your order, e.g. special request"
-                                    rows="3"></textarea>
-                            </div>
-
-                        </form>
-                    </div>
-
-                </div>
-
-                <div class="col-4 gx-0">
-                    <div class="card small">
-                        <div class="card-header text-uppercase">ORDER SUMMARY</div>
-                        <div class="card-body pb-0">
-
-                            <div class="cart-title d-flex align-items-center justify-content-between border-bottom">
-                                <span>2 Items</span>
-                            </div>
-                            <div class="cart-items py-2">
-                                <div
-                                    class="cart-item d-flex align-items-center justify-content-between border-1 border-bottom pb-2">
-                                    <img class="img-fluid rounded-3" src="assets/img/t1 (2).jpg" width="50" />
-                                    <div class="name">
-                                        <span>Brown Bag</span>
-                                        <span class="d-block price">$100.00</span>
-                                    </div>
-                                    <div class="qty d-flex align-items-center gap-1">
-                                        <div
-                                            class="qty-navigator d-flex flex-column justify-content-center align-items-center">
-                                            <span>1</span>
-                                        </div>
-                                        <span class="bi bi-x"></span>
-                                        <span class="text-muted">$100.00</span>
-                                        <span>=</span>
-                                        <span>$100.00</span>
-                                    </div>
-                                </div>
-                                <div class="cart-item d-flex align-items-center justify-content-between py-2">
-                                    <img class="img-fluid rounded-3" src="assets/img/t1 (2).jpg" width="50" />
-                                    <div class="name">
-                                        <span>Brown Bag</span>
-                                        <span class="d-block price">$100.00</span>
-                                    </div>
-                                    <div class="qty d-flex align-items-center gap-1">
-                                        <div
-                                            class="qty-navigator d-flex flex-column justify-content-center align-items-center">
-                                            <span>1</span>
-                                        </div>
-                                        <span class="bi bi-x"></span>
-                                        <span class="text-muted">$100.00</span>
-                                        <span>=</span>
-                                        <span>$100.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card p-3 my-2">
-                        <div class="my-2 border-bottom">
-                            <span class="fw-bold">PAYMENT METHOD</span>
-                        </div>
-                        <form>
-                            <div class="p-2 mb-2 border rounded-1">
-                                <div class="form-check d-flex align-items-center gap-2 small">
-                                    <input class="form-check-input" type="radio" name="shipping" id="radioDefault1">
-                                    <div>
-                                        <label class="form-check-label" for="radioDefault1">
-                                            Cash one delivery
-                                        </label>
-                                        <p class="m-0 text-muted">Pay with cash when your order is delivered to you</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="p-2 mb-2 border rounded-1">
-                                <div class="form-check d-flex align-items-center gap-2 small">
-                                    <input class="form-check-input" type="radio" name="shipping" id="radioDefault1">
-                                    <div>
-                                        <label class="form-check-label" for="radioDefault1">
-                                            Direct bank transfer
-                                        </label>
-                                        <p class="m-0 text-muted">Make payment directly from your bank account</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="p-2 mb-2 border rounded-1">
-                                <div class="form-check d-flex align-items-center gap-2 small">
-                                    <input class="form-check-input" type="radio" name="shipping" id="radioDefault1">
-                                    <div>
-                                        <label class="form-check-label" for="radioDefault1">
-                                            PayPal
-                                        </label>
-                                        <p class="m-0 text-muted">Pay from your paypal account securely</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="success.html" class="btn bg-primary text-white w-100">
-                                PLACE ORDER
+                        <div class="site-header-actions">
+                            <a class="btn site-header-icon" href="account.html" aria-label="Account" title="Account"><i class="bi bi-person-circle" aria-hidden="true"></i></a>
+                            <a class="site-header-icon" href="account.html" aria-label="Wishlist" title="Wishlist">
+                                <i class="bi bi-heart" aria-hidden="true"></i>
                             </a>
-                        </form>
+                            <div class="dropdown cart-menu">
+                                <button class="btn site-header-icon cart-toggle" type="button" aria-label="Open shopping cart" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static">
+                                    <i class="bi bi-cart3" aria-hidden="true"></i>
+                                    <span id="cartQty" class="cart-badge d-none position-absolute badge rounded-pill bg-danger">0</span>
+                                </button>
+                                <div class="cart-dropdown dropdown-menu dropdown-menu-lg-end">
+                                    <div class="cart-dropdown-header">
+                                        <div><strong>Your cart</strong><span id="cartQty1" class="cart-dropdown-count">0 items</span></div>
+                                        <a href="cart.html" class="cart-view-link">View cart <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+                                    </div>
+                                    <div class="cartItems"></div>
+                                    <div id="cartFooter" class="cart-dropdown-footer">
+                                        <div class="cart-dropdown-subtotal"><span>Subtotal</span><span id="subTotal">$0.00</span></div>
+                                        <a href="checkout.html" class="btn btn-primary cart-dropdown-checkout">Go to checkout <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></a>
+                                        <p class="cart-dropdown-note"><i class="bi bi-shield-check me-1" aria-hidden="true"></i>Shipping and taxes calculated at checkout</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-
-
-
-
                 </div>
-
             </div>
-
+        </nav>
     </section>
 
-    <section id="footer">
+    <section id="heder-buttom" class="site-utility-header">
+        <nav class="navbar navbar-expand-lg utility-navbar">
+            <div class="container">
+                <button class="btn btn-outline-primary utility-toggle d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#site-utility-collapse" aria-controls="site-utility-collapse" aria-expanded="false" aria-label="Toggle search and support">
+                    <i class="bi bi-search" aria-hidden="true"></i><span>Search and support</span>
+                </button>
+                <div class="collapse navbar-collapse" id="site-utility-collapse">
+                    <div class="row w-100 align-items-center g-3">
+                        <div class="col-12 col-lg-8">
+                            <form class="utility-search-form" role="search">
+                                <label class="visually-hidden" for="utility-category">Product category</label>
+                                <select class="form-select utility-category" id="utility-category">
+                                    <option selected>All categories</option>
+                                    <option>Headphones</option><option>Earbuds</option><option>Accessories</option>
+                                </select>
+                                <div class="input-group utility-search-group">
+                                    <label class="visually-hidden" for="utility-search">Search products</label>
+                                    <input type="search" class="form-control" id="utility-search" placeholder="Search products...">
+                                    <button class="btn btn-primary" type="button" aria-label="Search"><i class="bi bi-search" aria-hidden="true"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="utility-support">
+                                <a href="tel:+8801797405013" class="utility-social-button" aria-label="Call +880 1797-405013" title="Call us"><i class="bi bi-telephone" aria-hidden="true"></i></a>
+                                <div class="utility-social" aria-label="Social media">
+                                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+                                    <a href="#" aria-label="X"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+                                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <section id="main-content" class="checkout-main">
+    <div class="container">
+        <div class="checkout-heading">
+            <div>
+                <span class="checkout-eyebrow">ALMOST THERE</span>
+                <h1>Checkout</h1>
+                <p>Enter your details and review your order before placing it.</p>
+            </div>
+            <div class="checkout-secure-label"><i class="bi bi-shield-lock" aria-hidden="true"></i> Secure checkout</div>
+        </div>
+
+        <div class="row g-4 align-items-start">
+            <div class="col-12 col-lg-7">
+                <form class="checkout-form">
+                    <section class="checkout-card">
+                        <header class="checkout-card-heading">
+                            <span class="checkout-step">01</span>
+                            <div><h2>Billing information</h2><p>Your contact and delivery details</p></div>
+                        </header>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <label for="firstname" class="form-label">First name</label>
+                                <input type="text" class="form-control" id="firstname" autocomplete="given-name" placeholder="e.g. Alex">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="lastname" class="form-label">Last name</label>
+                                <input type="text" class="form-control" id="lastname" autocomplete="family-name" placeholder="e.g. Morgan">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="checkout-email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="checkout-email" autocomplete="email" placeholder="you@example.com">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="phonenumber" class="form-label">Phone number</label>
+                                <input type="tel" class="form-control" id="phonenumber" autocomplete="tel" placeholder="Your phone number">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="checkout-country" class="form-label">Country</label>
+                                <select class="form-select" id="checkout-country" autocomplete="country-name">
+                                    <option value="" selected disabled>Select a country</option>
+                                    <option>United States</option><option>United Kingdom</option><option>Canada</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="checkout-state" class="form-label">State / Province</label>
+                                <select class="form-select" id="checkout-state" autocomplete="address-level1">
+                                    <option value="" selected disabled>Select a state</option>
+                                    <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>California</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="city-town" class="form-label">City / Town</label>
+                                <input type="text" class="form-control" id="city-town" autocomplete="address-level2" placeholder="Your city">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="checkout-zip" class="form-label">ZIP / Postal code</label>
+                                <input type="text" class="form-control" id="checkout-zip" autocomplete="postal-code" placeholder="Postal code">
+                            </div>
+                            <div class="col-12">
+                                <label for="street-address" class="form-label">Street address</label>
+                                <input type="text" class="form-control" id="street-address" autocomplete="street-address" placeholder="House number and street name">
+                            </div>
+                            <div class="col-12">
+                                <label for="apartment" class="form-label">Apartment, suite, etc. <span class="text-muted fw-normal">(optional)</span></label>
+                                <input type="text" class="form-control" id="apartment" autocomplete="address-line2" placeholder="Apartment or unit">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="checkout-card checkout-notes-card">
+                        <header class="checkout-card-heading">
+                            <span class="checkout-step"><i class="bi bi-chat-left-text" aria-hidden="true"></i></span>
+                            <div><h2>Order notes</h2><p>Anything we should know about your delivery?</p></div>
+                        </header>
+                        <label for="order-notes" class="visually-hidden">Order notes (optional)</label>
+                        <textarea class="form-control" id="order-notes" placeholder="Add a note about your order (optional)" rows="3"></textarea>
+                    </section>
+                </form>
+            </div>
+
+            <aside class="col-12 col-lg-5 checkout-sidebar">
+                <section class="checkout-card checkout-order-card">
+                    <header class="checkout-order-heading">
+                        <div><span class="checkout-eyebrow">YOUR PURCHASE</span><h2>Order summary</h2></div>
+                        <span id="pd-qty" class="checkout-item-count">0 items</span>
+                    </header>
+                    <div class="product-from-cart checkout-order-items"></div>
+                    <div class="checkout-order-totals">
+                        <div><span>Items subtotal</span><strong class="checkout-subtotal">$0.00</strong></div>
+                        <p>Delivery and applicable taxes are confirmed from your address.</p>
+                    </div>
+                    <div class="checkout-order-footnote"><i class="bi bi-info-circle" aria-hidden="true"></i> You can review your order details before placing it.</div>
+                </section>
+
+                <section class="checkout-card checkout-payment-card">
+                    <header class="checkout-card-heading">
+                        <span class="checkout-step">02</span>
+                        <div><h2>Payment method</h2><p>Choose how you would like to pay</p></div>
+                    </header>
+                    <div class="checkout-payment-options">
+                        <label class="checkout-payment-option" for="payment-cod">
+                            <input class="form-check-input" type="radio" name="payment" id="payment-cod" value="cod" checked>
+                            <span class="checkout-payment-icon"><i class="bi bi-truck" aria-hidden="true"></i></span>
+                            <span class="checkout-payment-copy"><strong>Cash on delivery</strong><small>Pay when your order arrives</small></span>
+                        </label>
+                        <label class="checkout-payment-option" for="payment-bank">
+                            <input class="form-check-input" type="radio" name="payment" id="payment-bank" value="bank">
+                            <span class="checkout-payment-icon"><i class="bi bi-bank" aria-hidden="true"></i></span>
+                            <span class="checkout-payment-copy"><strong>Direct bank transfer</strong><small>Pay directly from your bank account</small></span>
+                        </label>
+                        <label class="checkout-payment-option" for="payment-paypal">
+                            <input class="form-check-input" type="radio" name="payment" id="payment-paypal" value="paypal">
+                            <span class="checkout-payment-icon"><i class="bi bi-paypal" aria-hidden="true"></i></span>
+                            <span class="checkout-payment-copy"><strong>PayPal</strong><small>Pay securely with PayPal</small></span>
+                        </label>
+                    </div>
+                    <a href="success.html" class="btn btn-primary checkout-place-order">Place order <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></a>
+                    <p class="checkout-payment-note"><i class="bi bi-lock-fill me-1" aria-hidden="true"></i> Your payment details are protected</p>
+                </section>
+            </aside>
+        </div>
+    </div>
+</section>
+<section id="footer">
 
         <div class="container">
             <div class="row text-white about-us">
@@ -578,6 +346,7 @@
     <script src="/bootstrap/ecommerce-front-end/assets/js/bootstrap.min.js"></script>
     <script src="/bootstrap/ecommerce-front-end/assets/js/owl carousel/owl.carousel.min.js"></script>
     <script src="/bootstrap/ecommerce-front-end/assets/js/main.js"></script>
+    <script src="/bootstrap/ecommerce-front-end/assets/js/checkout.js"></script>
 </body>
 
 </html>

@@ -19,244 +19,140 @@
 
 </head>
 
-<body>
+<body class="home-page">
     <div class="alert alert-info alert-dismissible text-center p-2 mb-0 rounded-0 fade show">
         <span>50% off on New Collection</span>
         <span class="badge text-bg-secondary rounded-1">Men</span>
         <span class="badge text-bg-secondary rounded-1">Women</span>
         <button type="button" class="btn-close pb-lg-1 small" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-    <section id="heder-top">
-        <nav class="navbar bg-primary navbar-expand-lg py-1">
+    <section id="heder-top" class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary site-header-navbar">
             <div class="container">
-
-                <a class="navbar-brand text-white p-0" href="#">
-                    <img src="assets/img/logo-white.webp" class="logo-img" alt="...">
+                <a class="navbar-brand site-header-brand" href="index.html" aria-label="Nomu home">
+                    <img src="assets/img/logo-white.webp" class="logo-img" alt="Nomu">
                 </a>
 
-                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#heder-top-element"
-                    aria-controls="heder-top-element" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler site-header-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#site-header-collapse" aria-controls="site-header-collapse" aria-expanded="false"
+                    aria-label="Toggle main navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div id="heder-top-element" class="collapse navbar-collapse">
-
-                    <div class="row w-100 align-items-center">
-
-                        <!-- Left -->
-                        <div class="col-lg-3 d-flex align-items-center gap-2 select-menu">
-                            <select class="text-white form-select form-select-sm w-auto form-select-custome-size">
-                                <option selected>U.S.D</option>
-                                <option>B.D.T</option>
-                                <option>E.U.R</option>
-                                <option>G.B.P</option>
+                <div class="collapse navbar-collapse" id="site-header-collapse">
+                    <div class="site-header-inner">
+                        <div class="site-header-preferences" aria-label="Display preferences">
+                            <label class="visually-hidden" for="site-currency">Currency</label>
+                            <select id="site-currency" class="form-select form-select-sm">
+                                <option selected>USD</option>
+                                <option>BDT</option>
+                                <option>EUR</option>
+                                <option>GBP</option>
                             </select>
-
-                            <select class="text-white form-select form-select-sm w-auto form-select-custome-size">
-                                <option selected>Eng</option>
-                                <option>Ban</option>
+                            <label class="visually-hidden" for="site-language">Language</label>
+                            <select id="site-language" class="form-select form-select-sm">
+                                <option selected>English</option>
+                                <option>Bangla</option>
                             </select>
                         </div>
 
+                        <ul class="navbar-nav site-main-nav">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#carousel-items">Shop</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#offer-section">Collection</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.html#product-blog-carousel">Blogs</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="account.html">Pages</a></li>
+                        </ul>
 
-                        <!-- Center -->
-                        <div class="col-lg-6">
-                            <ul class="navbar-nav justify-content-center gap-2">
-
-                                <li class="nav-item">
-                                    <a class="nav-link active text-white px-2" href="#">
-                                        Home
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link active text-white px-2" href="#">
-                                        Shop
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link active text-white px-2" href="#">
-                                        Collection
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link active text-white px-2" href="#">
-                                        Blogs
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link active text-white px-2" href="#">
-                                        Pages
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-
-
-                        <!-- Right -->
-                        <div class="col-lg-3 d-flex justify-content-end align-items-center">
-
-                            <div class="d-flex align-items-center gap-3">
-
-                                <!-- Account -->
-                                <div class="d-flex align-items-center gap-2 text-white">
-                                    <i class="bi bi-person-square fs-4"></i>
-
-                                    <div class="small lh-1">
-                                        <div class="fw-semibold fs-6">Account</div>
-
-                                        <div>
-                                            <a href="#" class="text-white text-decoration-none">
-                                                Login
-                                            </a>
-                                            <span> | </span>
-                                            <a href="#" class="text-white text-decoration-none">
-                                                Register
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Wishlist -->
-                                <div href="#" class="text-white fs-4 lh-1">
-                                    <i class="bi bi-heart"></i>
-                                </div>
-
-                                <!-- Cart -->
-                                <div class="dropdown">
-                                    <a href="#" class="btn text-white fs-4 lh-1 dropdown-toggle" aria-expanded="false"
-                                        data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-display="static">
-                                        <i class="bi bi-cart"></i>
-                                        <span id="cartQty"
-                                            class="cart-badge position-absolute start-50 translate-middle badge rounded-pill bg-danger">
-                                            2
-                                        </span>
-                                    </a>
-                                    <div class="cart-dropdown dropdown-menu dropdown-menu-lg-end">
-                                        <div
-                                            class="m-2 px-2 d-flex align-items-center justify-content-between border-bottom">
-                                            <p id="cartQty1" class="m-0">3 items</p>
-                                            <a href="cart.html" class="btn btn-sm bg-primary text-white mb-2">View
-                                                Cart</a>
-                                        </div>
-                                        <div class="cartItems">
-
-                                        </div>
-
-                                        <div id="cartFooter">
-                                            <div class="py-3 d-flex align-items-center justify-content-around">
-                                                <span>Sub Total:</span>
-                                                <span id="subTotal" class="fs-5 fw-semibold">$450</span>
-                                            </div>
-
-                                            <div class="mx-2">
-                                                <a href="checkout.html" class="btn bg-primary text-white w-100"
-                                                    type="button">
-                                                    Go to Checkout
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </section>
-
-    <section id="heder-buttom">
-        <nav class="navbar navbar-expand-lg bg-light py-2">
-            <div class="container">
-
-                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#heder-bottom-element"
-                    aria-controls="heder-bottom-element" aria-expanded="false" aria-label="Toggle navigation">
-
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div id="heder-bottom-element" class="collapse navbar-collapse">
-
-                    <div class="row w-100 align-items-center">
-
-                        <!-- Search -->
-                        <div class="col-lg-7 d-flex gap-2">
-
-                            <select class="form-select form-select-sm w-auto rounded-3">
-                                <option selected>All Categories</option>
-                                <option>Headphones</option>
-                                <option>Earbuds</option>
-                                <option>Accessories</option>
-                            </select>
-
-                            <div class="input-group">
-                                <input type="text" class="form-control form-control-sm"
-                                    placeholder="Search products...">
-
-                                <button class="btn btn-dark" type="button">
-                                    <i class="bi bi-search"></i>
+                        <div class="site-header-actions">
+                            <a class="btn site-header-icon" href="account.html" aria-label="Account" title="Account"><i
+                                    class="bi bi-person-circle" aria-hidden="true"></i></a>
+                            <a class="site-header-icon" href="account.html" aria-label="Wishlist" title="Wishlist">
+                                <i class="bi bi-heart" aria-hidden="true"></i>
+                            </a>
+                            <div class="dropdown cart-menu">
+                                <button class="btn site-header-icon cart-toggle" type="button"
+                                    aria-label="Open shopping cart" aria-expanded="false" data-bs-toggle="dropdown"
+                                    data-bs-auto-close="outside" data-bs-display="static">
+                                    <i class="bi bi-cart3" aria-hidden="true"></i>
+                                    <span id="cartQty"
+                                        class="cart-badge d-none position-absolute badge rounded-pill bg-danger">0</span>
                                 </button>
-                            </div>
-
-                        </div>
-
-                        <!-- Social Media & Phone -->
-                        <div class="col-lg-5 d-flex justify-content-end mt-2 mt-lg-0 gap-3">
-
-                            <div class="d-flex align-items-center gap-2 text-end">
-
-                                <i class="bi bi-telephone-plus fs-4"></i>
-
-                                <div class="small lh-1">
-                                    <div class="fw-semibold fs-6">
-                                        Call us now
+                                <div class="cart-dropdown dropdown-menu dropdown-menu-lg-end">
+                                    <div class="cart-dropdown-header">
+                                        <div><strong>Your cart</strong><span id="cartQty1" class="cart-dropdown-count">0
+                                                items</span></div>
+                                        <a href="cart.html" class="cart-view-link">View cart <i
+                                                class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
                                     </div>
-
-                                    <div class="fst-italic">
-                                        +8801797405013
+                                    <div class="cartItems"></div>
+                                    <div id="cartFooter" class="cart-dropdown-footer">
+                                        <div class="cart-dropdown-subtotal"><span>Subtotal</span><span
+                                                id="subTotal">$0.00</span></div>
+                                        <a href="checkout.html" class="btn btn-primary cart-dropdown-checkout">Go to
+                                            checkout <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></a>
+                                        <p class="cart-dropdown-note"><i class="bi bi-shield-check me-1"
+                                                aria-hidden="true"></i>Shipping and taxes calculated at checkout</p>
                                     </div>
                                 </div>
-
                             </div>
-
-                            <div class="d-flex align-items-center gap-3">
-
-                                <a href="#" class="fs-5 lh-1 text-black">
-                                    <i class="bi bi-facebook"></i>
-                                </a>
-
-                                <a href="#" class="fs-5 lh-1 text-black">
-                                    <i class="bi bi-twitter-x"></i>
-                                </a>
-
-                                <a href="#" class="fs-5 lh-1 text-black">
-                                    <i class="bi bi-instagram"></i>
-                                </a>
-
-                            </div>
-
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </nav>
     </section>
 
-    <section id="offer-section">
-        <div class="container border my-3">
-            <div class="row">
-                <div class="col border d-flex align-items-center gap-4 px-4 py-3">
+    <section id="heder-buttom" class="site-utility-header">
+        <nav class="navbar navbar-expand-lg utility-navbar">
+            <div class="container">
+                <button class="btn btn-outline-primary utility-toggle d-lg-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#site-utility-collapse" aria-controls="site-utility-collapse" aria-expanded="false"
+                    aria-label="Toggle search and support">
+                    <i class="bi bi-search" aria-hidden="true"></i><span>Search and support</span>
+                </button>
+                <div class="collapse navbar-collapse m-0 p-0" id="site-utility-collapse">
+                    <div class="row d-flex w-100 align-items-center justify-content-between m-0 p-0">
+                        <div class="col-9">
+                            <form class="utility-search-form" role="search">
+                                <label class="visually-hidden" for="utility-category">Product category</label>
+                                <select class="form-select utility-category" id="utility-category">
+                                    <option selected>All categories</option>
+                                    <option>Headphones</option>
+                                    <option>Earbuds</option>
+                                    <option>Accessories</option>
+                                </select>
+                                <div class="input-group utility-search-group">
+                                    <label class="visually-hidden" for="utility-search">Search products</label>
+                                    <input type="search" class="form-control" id="utility-search"
+                                        placeholder="Search products...">
+                                    <button class="btn btn-primary" type="button" aria-label="Search"><i
+                                            class="bi bi-search" aria-hidden="true"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-3">
+                            <div class="utility-support utility-social">
+                                <a href="tel:+8801797405013" class="utility-social-button"
+                                    aria-label="Call +880 1797-405013" title="Call us"><i class="bi bi-telephone"
+                                        aria-hidden="true"></i></a>
+                                <a href="#" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+                                <a href="#" aria-label="X"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"
+                                        aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <section id="offer-section" class="home-promises">
+        <div class="container">
+            <div class="home-promise-row d-grid gap-2">
+                <div class="home-promise-card">
                     <div><i class="bi bi-truck fs-2"></i></div>
                     <figure>
                         <blockquote class="blockquote">
@@ -267,7 +163,7 @@
                         </figcaption>
                     </figure>
                 </div>
-                <div class="col border d-flex align-items-center gap-4 px-4 py-3">
+                <div class="home-promise-card">
                     <div><i class="bi bi-cash-coin fs-2"></i></div>
                     <figure>
                         <blockquote class="blockquote">
@@ -278,7 +174,7 @@
                         </figcaption>
                     </figure>
                 </div>
-                <div class="col border d-flex align-items-center gap-4 px-4 py-3">
+                <div class="home-promise-card">
                     <div><i class="bi bi-chat-left-dots fs-2"></i></div>
                     <figure>
                         <blockquote class="blockquote">
@@ -293,10 +189,10 @@
         </div>
     </section>
 
-    <section id="main-content">
+    <section id="main-content" class="home-content">
         <div class="container">
-            <div class="row">
-                <div class="col-3 gx-0">
+            <div class="row g-4 home-main-row">
+                <div class="col-12 col-lg-3 home-sidebar">
                     <ul class="list-group">
                         <li class="list-group-item active rounded-4 fs-6 mb-2" aria-current="true">
                             <div>
@@ -310,7 +206,7 @@
                             class="list-group-item list-group-item-action fw-normal d-flex align-items-center justify-content-between">
                             <div>
                                 <i class="bi bi-gender-male pe-2"></i>
-                                Men’s Clothing
+                                Men's Clothing
                             </div>
                             <i class="bi bi-chevron-right pe-2"></i>
                         </a>
@@ -318,7 +214,7 @@
                             class="list-group-item list-group-item-action fw-normal d-flex align-items-center justify-content-between">
                             <div>
                                 <i class="bi bi-gender-female pe-2"></i>
-                                Women’s Clothing
+                                Women's Clothing
                             </div>
                             <i class="bi bi-chevron-right pe-2"></i>
                         </a>
@@ -326,7 +222,7 @@
                             class="list-group-item list-group-item-action fw-normal d-flex align-items-center justify-content-between">
                             <div>
                                 <i class="bi bi-balloon pe-2"></i>
-                                Kids’s Clothing
+                                Kids' Clothing
                             </div>
                             <i class="bi bi-chevron-right pe-2"></i>
                         </a>
@@ -373,174 +269,21 @@
                     </ul>
 
 
-                    <div
-                        class="newsletter bg-body-tertiary d-flex flex-column align-items-center justify-content-center border border-1 rounded-3 my-4 p-3">
-                        <div class="text-center">
-                            <span>SUBSCRIBE NEWSLETTER</span>
-                            <p>Get all the latest information on Events, Sales and Offers.</p>
-                        </div>
-                        <input type="email" placeholder="example@email.com" class="form-control rounded-5">
-                        <button class="btn bg-primary text-white mt-3">SUBSCRIBE</button>
-                    </div>
 
-                    <div class="review-section border border-1 rounded-3 p-3">
-
-                        <div id="review-section-carousel" class="carousel slide">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="d-flex gap-3 align-items-center">
-                                        <div class="revewer-dp d-flex align-items-center justify-content-center">
-                                            <span class="d-block">S</span>
-                                        </div>
-                                        <figure class="m-0 p-0">
-                                            <blockquote class="blockquote m-0 p-0">
-                                                <p class="small">Moshfiqur Rahman</p>
-                                            </blockquote>
-                                            <figcaption class="blockquote-footer m-0 p-0 small">
-                                                CEO & Founder</cite>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <p class="small fs-6s ps-5 pt-2">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex culpa, velit facere
-                                        cupiditate
-                                        quibusdam doloribus.
-                                    </p>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="d-flex gap-3 align-items-center">
-                                        <div class="revewer-dp d-flex align-items-center justify-content-center">
-                                            <span class="d-block">S</span>
-                                        </div>
-                                        <figure class="m-0 p-0">
-                                            <blockquote class="blockquote m-0 p-0">
-                                                <p class="small">Moshfiqur Rahman</p>
-                                            </blockquote>
-                                            <figcaption class="blockquote-footer m-0 p-0 small">
-                                                CEO & Founder</cite>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <p class="small fs-6s ps-5 pt-2">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex culpa, velit facere
-                                        cupiditate quibusdam doloribus.
-                                    </p>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="d-flex gap-3 align-items-center">
-                                        <div class="revewer-dp d-flex align-items-center justify-content-center">
-                                            <span class="d-block">S</span>
-                                        </div>
-                                        <figure class="m-0 p-0">
-                                            <blockquote class="blockquote m-0 p-0">
-                                                <p class="small">Moshfiqur Rahman</p>
-                                            </blockquote>
-                                            <figcaption class="blockquote-footer m-0 p-0 small">
-                                                CEO & Founder</cite>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <p class="small fs-6s ps-5 pt-2">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex culpa, velit facere
-                                        cupiditate
-                                        quibusdam doloribus.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#review-section-carousel" data-bs-slide-to="0"
-                                    class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#review-section-carousel" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#review-section-carousel" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-blog-section border border-1 rounded-3 my-4 overflow-hidden">
-                        <div id="product-blog-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel"
-                            data-bs-interval="3000">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="card">
-                                        <div class="product-blog-thumb position-relative">
-                                            <img src="assets/img/t1 (4).jpg" alt="" class="card-img-top">
-                                            <span
-                                                class="date-badge badge text-bg-secondary bg-opacity-75 position-absolute">
-                                                09 Oct</span>
-                                        </div>
-                                        <div class="card-body">
-                                            <p class="card-text small m-0">Lorem ipsum dolor sit amet, consectetur
-                                                adipisicing
-                                                elit.
-                                                Aspernatur, culpa dignissimos
-                                                dolor et excepturi facere illo...</p>
-                                            <a href="#" class="btn m-0 p-0">read more ></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="card">
-                                        <div class="product-blog-thumb position-relative">
-                                            <img src="assets/img/t1 (3).jpg" alt="" class="card-img-top">
-                                            <span
-                                                class="date-badge badge text-bg-secondary bg-opacity-75 position-absolute">
-                                                10 Oct</span>
-                                        </div>
-                                        <div class="card-body">
-                                            <p class="card-text small m-0">Lorem ipsum dolor sit amet, consectetur
-                                                adipisicing
-                                                elit.
-                                                Aspernatur, culpa dignissimos
-                                                dolor et excepturi facere illo...</p>
-                                            <a href="#" class="btn m-0 p-0">read more ></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="card">
-                                        <div class="product-blog-thumb position-relative">
-                                            <img src="assets/img/t1 (2).jpg" alt="" class="card-img-top">
-                                            <span
-                                                class="date-badge badge text-bg-secondary bg-opacity-75 position-absolute">
-                                                11 Oct</span>
-                                        </div>
-                                        <div class="card-body">
-                                            <p class="card-text small m-0">Lorem ipsum dolor sit amet, consectetur
-                                                adipisicing
-                                                elit.
-                                                Aspernatur, culpa dignissimos
-                                                dolor et excepturi facere illo...</p>
-                                            <a href="#" class="btn m-0 p-0">read more ></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
 
 
 
                 </div>
-                <div class=" col-9 pe-0">
+                <div class="col-12 col-lg-9 home-featured-content">
                     <div class="offer-slider">
                         <div id="offer-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
                             <div class="carousel-indicators">
-                                <div class="indicator-wraper">
-                                    <button type="button" data-bs-target="#offer-carousel" data-bs-slide-to="0"
-                                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                                </div>
-                                <div class="indicator-wraper">
-                                    <button type="button" data-bs-target="#offer-carousel" data-bs-slide-to="1"
-                                        aria-label="Slide 2"></button>
-                                </div>
-                                <div class="indicator-wraper">
-                                    <button type="button" data-bs-target="#offer-carousel" data-bs-slide-to="2"
-                                        aria-label="Slide 3"></button>
-                                </div>
+                                <button type="button" data-bs-target="#offer-carousel" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#offer-carousel" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#offer-carousel" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
                             </div>
                             <div class="carousel-inner rounded-4">
                                 <div class="carousel-item active">
@@ -566,8 +309,15 @@
                         </div>
                     </div>
                     <div class="todays-deals">
-                        <div class="row my-4 rounded-2">
-                            <div class="col-4">
+                        <div class="home-section-heading">
+                            <div><span class="home-section-kicker">CURATED FOR YOU</span>
+                                <h2>Today's deals</h2>
+                            </div>
+                            <a href="index.html#carousel-items" class="home-section-link btn btn-primary">Explore
+                                products <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="row g-3 my-4 rounded-2">
+                            <div class="col-12 col-sm-4">
                                 <div class="deal">
                                     <img src="assets/img/t1 (3).jpg" alt="" class="opacity-75">
                                     <div
@@ -578,7 +328,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-12 col-sm-4">
                                 <div class="deal">
                                     <img src="assets/img/t1 (4).jpg" alt="" class="opacity-75">
                                     <div
@@ -589,7 +339,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-12 col-sm-4">
                                 <div class="deal">
                                     <img src="assets/img/t1 (1).jpg" alt="" class="opacity-75">
                                     <div
@@ -605,8 +355,10 @@
 
 
                     <div class="product-carousel">
-                        <div class="m-0">
-                            <span class="fs-4 m-0">Top products</span>
+                        <div class="home-section-heading">
+                            <div><span class="home-section-kicker">POPULAR PICKS</span>
+                                <h2>Top products</h2>
+                            </div>
                         </div>
                         <div class="owl-carousel owl-theme pt-4" id="carousel-items">
                             <div class="item">
@@ -909,12 +661,18 @@
                                                     <span class="text-muted">sku: </span> <span
                                                         class="fw-semibold">343502334</span>
                                                 </p>
-                                                <p class="text-uppercase mb-3 d-flex align-items-center gap-2 small">
+                                                <p
+                                                    class="qv-color-selector text-uppercase mb-3 d-flex align-items-center gap-2 small">
                                                     <span class="text-muted">Color: </span>
                                                     <span class="fw-semibold d-flex gap-1 align-items-center">
-                                                        <button class="btn bg-primary p-2"></button>
-                                                        <button class="btn bg-danger p-2"></button>
-                                                        <button class="btn bg-dark p-2"></button>
+                                                        <button type="button" class="qv-color-swatch is-selected"
+                                                            aria-label="Blue" aria-pressed="true"></button>
+                                                        <button type="button"
+                                                            class="qv-color-swatch qv-color-swatch-red" aria-label="Red"
+                                                            aria-pressed="false"></button>
+                                                        <button type="button"
+                                                            class="qv-color-swatch qv-color-swatch-black"
+                                                            aria-label="Black" aria-pressed="false"></button>
                                                     </span>
                                                 </p>
                                                 <div class="text-uppercase mb-3 d-flex align-items-center gap-2 small">
@@ -983,7 +741,7 @@
 
                     <div class="section product-block">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-12 col-md-4">
                                 <div class="m-0">
                                     <span class="fs-4 m-0">Best selling products</span>
                                 </div>
@@ -1047,7 +805,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-12 col-md-4">
                                 <div class="m-0">
                                     <span class="fs-4 m-0">Latest products</span>
                                 </div>
@@ -1111,7 +869,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-12 col-md-4">
                                 <div class="m-0">
                                     <span class="fs-4 m-0">Featured products</span>
                                 </div>
@@ -1181,6 +939,175 @@
                     </div>
                 </div>
             </div>
+
+            <div class="home-community-grid">
+                <div
+                    class="newsletter bg-body-tertiary d-flex flex-column align-items-center justify-content-center border border-1 rounded-3 my-4 p-3">
+                    <div class="home-newsletter-heading">
+                        <span class="home-newsletter-icon"><i class="bi bi-envelope" aria-hidden="true"></i></span>
+                        <div>
+                            <span class="home-section-kicker">A LITTLE GOOD NEWS</span>
+                            <h2>Join our newsletter</h2>
+                            <p>Get the latest updates, events, and offers delivered to your inbox.</p>
+                        </div>
+                    </div>
+                    <label class="visually-hidden" for="home-newsletter-email">Email address</label>
+                    <input type="email" id="home-newsletter-email" placeholder="you@example.com" class="form-control">
+                    <button type="button" class="btn btn-primary">Subscribe <i class="bi bi-arrow-right ms-1"
+                            aria-hidden="true"></i></button>
+                    <small class="home-newsletter-note"><i class="bi bi-shield-check me-1" aria-hidden="true"></i>No
+                        spam. Unsubscribe anytime.</small>
+                </div>
+
+                <div class="review-section border border-1 rounded-3 p-3">
+                    <div class="home-review-heading">
+                        <div><span class="home-section-kicker">WHAT SHOPPERS SAY</span>
+                            <h2>Customer reviews</h2>
+                        </div>
+                        <i class="bi bi-chat-square-quote" aria-hidden="true"></i>
+                    </div>
+                    <div id="review-section-carousel" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="d-flex gap-3 align-items-center">
+                                    <div class="revewer-dp d-flex align-items-center justify-content-center">
+                                        <span class="d-block">S</span>
+                                    </div>
+                                    <figure class="m-0 p-0">
+                                        <blockquote class="blockquote m-0 p-0">
+                                            <p class="small">Moshfiqur Rahman</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer m-0 p-0 small">
+                                            CEO & Founder</cite>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <p class="small fs-6s ps-5 pt-2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex culpa, velit facere
+                                    cupiditate quibusdam doloribus.Lorem ipsum dolor sit amet consectetur adipisicing
+                                    elit. Ex culpa, velit facere.
+                                </p>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-flex gap-3 align-items-center">
+                                    <div class="revewer-dp d-flex align-items-center justify-content-center">
+                                        <span class="d-block">S</span>
+                                    </div>
+                                    <figure class="m-0 p-0">
+                                        <blockquote class="blockquote m-0 p-0">
+                                            <p class="small">Moshfiqur Rahman</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer m-0 p-0 small">
+                                            CEO & Founder</cite>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <p class="small fs-6s ps-5 pt-2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex culpa, velit facere
+                                    cupiditate quibusdam doloribus.Lorem ipsum dolor sit amet consectetur adipisicing
+                                    elit. Ex culpa, velit facere.
+                                </p>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-flex gap-3 align-items-center">
+                                    <div class="revewer-dp d-flex align-items-center justify-content-center">
+                                        <span class="d-block">S</span>
+                                    </div>
+                                    <figure class="m-0 p-0">
+                                        <blockquote class="blockquote m-0 p-0">
+                                            <p class="small">Moshfiqur Rahman</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer m-0 p-0 small">
+                                            CEO & Founder</cite>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <p class="small fs-6s ps-5 pt-2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex culpa, velit facere
+                                    cupiditate quibusdam doloribus.Lorem ipsum dolor sit amet consectetur adipisicing
+                                    elit. Ex culpa, velit facere.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#review-section-carousel" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#review-section-carousel" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#review-section-carousel" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-blog-section border border-1 rounded-3 my-4 overflow-hidden">
+                    <div id="product-blog-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                        data-bs-interval="3000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card">
+                                    <div class="product-blog-thumb position-relative">
+                                        <img src="assets/img/t1 (4).jpg" alt="A featured look from the collection"
+                                            class="card-img-top">
+                                        <span
+                                            class="date-badge badge text-bg-secondary bg-opacity-75 position-absolute">
+                                            09 Oct</span>
+                                    </div>
+                                    <div class="card-body">
+                                        <span class="home-blog-category">STYLE GUIDE</span>
+                                        <h3>Small details, standout style</h3>
+                                        <p class="card-text">Explore accessories that bring a polished finish to
+                                            everyday looks.</p>
+                                        <a href="#" class="home-blog-link">Read article <i class="bi bi-arrow-right"
+                                                aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="product-blog-thumb position-relative">
+                                        <img src="assets/img/t1 (3).jpg" alt="A new seasonal outfit from the collection"
+                                            class="card-img-top">
+                                        <span
+                                            class="date-badge badge text-bg-secondary bg-opacity-75 position-absolute">
+                                            10 Oct</span>
+                                    </div>
+                                    <div class="card-body">
+                                        <span class="home-blog-category">NEW ARRIVALS</span>
+                                        <h3>Fresh picks for the new season</h3>
+                                        <p class="card-text">Discover new arrivals designed for effortless, everyday
+                                            styling.</p>
+                                        <a href="#" class="home-blog-link">Read article <i class="bi bi-arrow-right"
+                                                aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="product-blog-thumb position-relative">
+                                        <img src="assets/img/t1 (2).jpg"
+                                            alt="A customer-favorite look from the collection" class="card-img-top">
+                                        <span
+                                            class="date-badge badge text-bg-secondary bg-opacity-75 position-absolute">
+                                            11 Oct</span>
+                                    </div>
+                                    <div class="card-body">
+                                        <span class="home-blog-category">CUSTOMER FAVORITES</span>
+                                        <h3>The pieces our customers love</h3>
+                                        <p class="card-text">Take a closer look at a few favorites from our collection.
+                                        </p>
+                                        <a href="#" class="home-blog-link">Read article <i class="bi bi-arrow-right"
+                                                aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
 
         </div>
 

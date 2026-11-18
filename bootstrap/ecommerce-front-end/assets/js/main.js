@@ -4,8 +4,13 @@ $(document).ready(function () {
         nav: true,
         dots: false,
         items: 4,
-        margin: 10,
-        scroll: true
+        margin: 16,
+        responsive: {
+            0: { items: 1 },
+            420: { items: 2 },
+            768: { items: 3 },
+            1200: { items: 4 }
+        }
     });
 });
 
@@ -79,6 +84,10 @@ function ecomManagement() {
 
     function displayProducts() {
         const carousel = document.getElementById("carousel-items")
+        if (!carousel) {
+            displayCart();
+            return;
+        }
         carousel.innerHTML = "";
         products.map(product => {
             const template = document.createElement("template")
@@ -133,7 +142,6 @@ function ecomManagement() {
 
 function cart() {
     let cartItems = JSON.parse(localStorage.getItem("carts")) || [];
-    let totalItem = 0;
     let totalPrice = 0;
 
     function saveToCarts() {
@@ -169,7 +177,7 @@ function cart() {
 }
 
 const cartFooter = document.getElementById("cartFooter");
-cartFooter.style.display = "none"
+if (cartFooter) cartFooter.style.display = "none";
 
 const Cart = cart()
 
@@ -181,58 +189,59 @@ function displayCart() {
     let cart = document.querySelector(".cartItems");
 
     cart.innerHTML = "";
-    cartQty.innerText = totalItem.toString();
-    subTotal.innerText = '$' + totalPrice.toFixed(2);
-    cartQty1.innerText = totalItem + ((totalItem === 0 || totalItem > 1) ? " items" : "item")
+    if (cartQty) {
+        cartQty.innerText = totalItem.toString();
+        cartQty.classList.toggle("d-none", totalItem === 0);
+    }
+    if (subTotal) subTotal.innerText = '$' + totalPrice.toFixed(2);
+    if (cartQty1) cartQty1.innerText = `${totalItem} ${totalItem === 1 ? "item" : "items"}`;
 
     if (Cart.cartItems.length === 0) {
         cart.innerHTML =
-            ` <div class="text-center py-4">
-                <i class="bi bi-cart-x fs-1 text-secondary"></i>
-                <p class="mb-0 mt-2 text-muted">
-                    No items added to the cart.
-                </p>
+            ` <div class="cart-empty-state">
+                <i class="bi bi-bag" aria-hidden="true"></i>
+                <p>Your cart is empty</p>
+                <span>Find something you love and it will show up here.</span>
             </div>`;
-        cartFooter.style.display = "none";
+        if (cartFooter) cartFooter.style.display = "none";
     }
     else {
 
-        Cart.cartItems.map(product => {
+        Cart.cartItems.forEach(product => {
             const template = document.createElement("template")
-            template.innerHTML = `<div
-                                            class="m-2 px-2 border-bottom d-flex align-items-center justify-content-between">
-                                            <div><img class="img-fluid rounded-2" src="${product.image}" alt="">
-                                            </div>
-                                            <div>
-                                                <span>${product.name}</span>
-                                                <span class="d-block">$ ${product.price.toFixed(2)}</span>
-                                            </div>
-                                            <div class="qty-slider d-flex flex-column align-items-center">
-                                                <i class="bi bi-chevron-up qty-updater" data-qty="increment"></i>
-                                                <span>${product.qty}</span>
-                                                <i class="bi bi-chevron-down qty-updater" data-qty="decrement"></i>
-                                            </div>
-                                            <i class="bi bi-x"></i>
-                                            <span>$ ${product.price.toFixed(2)}</span>
-                                            <span>=</span>
-                                            <span class="itemTotal">$ ${(product.price) * (product.qty).toFixed(2)}</span>
-                                            <i class="bi bi-x fs-4 text-danger delete-item"></i>
-                                        </div>`
+            template.innerHTML = `<article class="cart-dropdown-item">
+                <img class="cart-dropdown-image" src="${product.image}" alt="${product.name}">
+                <div class="cart-dropdown-product">
+                    <span class="cart-dropdown-product-name">${product.name}</span>
+                    <span class="cart-dropdown-unit-price">$${product.price.toFixed(2)} each</span>
+                </div>
+                <div class="cart-dropdown-item-end">
+                    <div class="cart-qty-control" aria-label="Quantity">
+                        <button type="button" class="qty-updater" data-qty="decrement" aria-label="Decrease ${product.name} quantity"><i class="bi bi-dash"></i></button>
+                        <span>${product.qty}</span>
+                        <button type="button" class="qty-updater" data-qty="increment" aria-label="Increase ${product.name} quantity"><i class="bi bi-plus"></i></button>
+                    </div>
+                    <strong class="cart-dropdown-item-total">$${(product.price * product.qty).toFixed(2)}</strong>
+                </div>
+                <button type="button" class="cart-dropdown-remove delete-item" aria-label="Remove ${product.name} from cart"><i class="bi bi-x-lg"></i></button>
+            </article>`
 
             const item = template.content.firstElementChild;
             const updater = item.querySelectorAll(".qty-updater")
             updater.forEach(button => button.addEventListener("click", function () {
-                const type = event.target.dataset.qty;
+                const type = button.dataset.qty;
                 Cart.addToCart(1, product, type);
                 displayCart();
+                displayCartPage();
             }));
             item.querySelector(".delete-item").addEventListener("click", () => {
                 Cart.deleteCart(product.pID);
                 displayCart();
+                displayCartPage();
             });
             cart.appendChild(item)
         })
-        cartFooter.style.display = "block"
+        if (cartFooter) cartFooter.style.display = "block";
     }
 }
 
